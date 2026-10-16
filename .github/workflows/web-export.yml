@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Install Godot ${{ env.GODOT_VERSION }}
         shell: bash
@@ -72,13 +72,18 @@ jobs:
             "${GITHUB_WORKSPACE}/exports/web/index.html"
 
       - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Upload web build
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./exports/web/
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
+
+      - name: Upload web build
+        uses: actions/upload-artifact@v7
+        with:
+          path: ./exports/web/
