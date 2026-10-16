@@ -1,0 +1,84 @@
+name: Export and deploy Godot web build
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  GODOT_VERSION: "4.7.2"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  web-export:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Install Godot ${{ env.GODOT_VERSION }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          GODOT_BINARY="Godot_v${GODOT_VERSION}-stable_linux.x86_64"
+          RELEASE_URL="https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable"
+          TEMPLATE_DIR="${HOME}/.local/share/godot/export_templates/${GODOT_VERSION}.stable"
+
+          wget -q "${RELEASE_URL}/${GODOT_BINARY}.zip"
+          unzip -q "${GODOT_BINARY}.zip"
+          rm "${GODOT_BINARY}.zip"
+          chmod +x "${GODOT_BINARY}"
+
+          wget -q "${RELEASE_URL}/Godot_v${GODOT_VERSION}-stable_export_templates.tpz"
+          mkdir -p "${TEMPLATE_DIR}"
+          unzip -q -j \
+            "Godot_v${GODOT_VERSION}-stable_export_templates.tpz" \
+            'templates/*' \
+            -d "${TEMPLATE_DIR}"
+          rm "Godot_v${GODOT_VERSION}-stable_export_templates.tpz"
+
+      - name: Import project resources
+        shell: bash
+        run: |
+          "./Godot_v${GODOT_VERSION}-stable_linux.x86_64" \
+            --headless \
+            --path "${GITHUB_WORKSPACE}/godot" \
+            --import
+
+      - name: Export project for web
+        shell: bash
+        run: |
+          mkdir -p "${GITHUB_WORKSPACE}/exports/web"
+
+          "./Godot_v${GODOT_VERSION}-stable_linux.x86_64" \
+            --headless \
+            --path "${GITHUB_WORKSPACE}/godot" \
+            --export-release "Web" \
+            "${GITHUB_WORKSPACE}/exports/web/index.html"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload web build
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./exports/web/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
