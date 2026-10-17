@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b1wvg1mgpdkib"]
+
+[ext_resource type="Script" uid="uid://k5e563d3qnx5" path="res://playingfield/elements/slingshot/slingshot.gd" id="1_pgwqk"]
+[ext_resource type="Texture2D" uid="uid://bmsvy7u0v7yk" path="res://playingfield/elements/slingshot/slingshot.png" id="1_yxn2l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eckxu"]
+size = Vector2(14.5584755, 68)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eckxu"]
+radius = 8.0
+
+[node name="Slingshot" type="Node2D" unique_id=1086058136]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1296644581]
+position = Vector2(-9.126747, -8.5)
+rotation = -0.05235988
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("1_yxn2l")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=324002389]
+collision_layer = 1024
+collision_mask = 0
+script = ExtResource("1_pgwqk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=401412396]
+position = Vector2(-8.33559, -9.59285)
+rotation = 0.5497787
+shape = SubResource("RectangleShape2D_eckxu")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1674796449]
+collision_layer = 1024
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=1187211439]
+position = Vector2(-227.12674, -495.5)
+polygon = PackedVector2Array(244.12674, 457.5, 244.12674, 503.5, 243.12674, 508.5, 241.12674, 510.5, 201.12674, 523.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1941659500]
+position = Vector2(-27, 20)
+shape = SubResource("CircleShape2D_eckxu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2096092490]
+position = Vector2(9, -38)
+shape = SubResource("CircleShape2D_eckxu")
