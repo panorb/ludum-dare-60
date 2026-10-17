@@ -2,5 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bwn4gpbmkmriy" path="res://world.gd" id="1_f3sb7"]
 
-[node name="World" type="Node" unique_id=1890837714]
+[node name="World" type="Node2D" unique_id=1435911334]
 script = ExtResource("1_f3sb7")
+
+[node name="IntroCanvasLayer" type="CanvasLayer" parent="." unique_id=465895844]
+unique_name_in_owner = true
+follow_viewport_enabled = true

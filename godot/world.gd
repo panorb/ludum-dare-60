@@ -17,7 +17,7 @@ var current_scene : Resource:
 				var intro_canvas_layer := %IntroCanvasLayer
 				var intro_scene := INTRO_SCENE.instantiate();
 				intro_scene.finisched.connect(_on_intro_finisched);
-				self.add_child(intro_scene);
+				intro_canvas_layer.add_child(intro_scene);
 				next_scene_node = intro_scene;
 			GAME_SCENE:
 				var game_scene := GAME_SCENE.instantiate();
