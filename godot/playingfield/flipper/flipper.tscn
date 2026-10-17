@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://mcnthxnjw2ba"]
 
 [ext_resource type="Script" uid="uid://bm2mndo4ok3mc" path="res://playingfield/flipper/flipper.gd" id="1_lo8m8"]
+[ext_resource type="Texture2D" uid="uid://c2josx4si4d5c" path="res://playingfield/flipper/flipper.png" id="2_7aryu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g7q6k"]
-radius = 23.021729
+radius = 21.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qmqmj"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eckxu"]
+radius = 3.5464325
+height = 22.0
 
 [node name="Flipper" type="Node2D" unique_id=279437291]
 script = ExtResource("1_lo8m8")
@@ -15,11 +18,17 @@ collision_layer = 1024
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Flipper" unique_id=522642593]
-polygon = PackedVector2Array(-4, -23, -91, -10, -91, 9, 0, 23, 1, -1)
+polygon = PackedVector2Array(-2, -21, -103, -5, -116, 7, -105, 11, -95, 12, -39, 19, 2, 21, 1, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flipper" unique_id=53643525]
 shape = SubResource("CircleShape2D_g7q6k")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Flipper" unique_id=501003338]
-position = Vector2(-91, 0)
-shape = SubResource("CircleShape2D_qmqmj")
+position = Vector2(-109, 1.0000042)
+rotation = 1.1641346
+shape = SubResource("CapsuleShape2D_eckxu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Flipper" unique_id=1877841139]
+position = Vector2(-49, 0)
+scale = Vector2(0.40816337, 0.40816337)
+texture = ExtResource("2_7aryu")

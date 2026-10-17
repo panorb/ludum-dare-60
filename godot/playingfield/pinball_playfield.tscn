@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bmixhhgd11c4j" path="res://playingfield/pinball_playfield.gd" id="1_4760t"]
 [ext_resource type="PackedScene" uid="uid://mcnthxnjw2ba" path="res://playingfield/flipper/flipper.tscn" id="2_w774u"]
 [ext_resource type="PackedScene" uid="uid://btkofrqrrj4wb" path="res://playingfield/elements/bumper/bumper.tscn" id="3_w774u"]
+[ext_resource type="PackedScene" uid="uid://c22aytwo0gmxi" path="res://playingfield/elements/saucer/saucer.tscn" id="4_ibvbf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eckxu"]
 size = Vector2(177, 12)
@@ -35,12 +36,12 @@ polygon = PackedVector2Array(245, 546, 266, 531, 265, 476, 272, 470, 280, 476, 2
 polygon = PackedVector2Array(39, 132, 53, 186, 38, 174)
 
 [node name="FlipperRight" parent="." unique_id=1685017784 instance=ExtResource("2_w774u")]
-position = Vector2(245.99997, 560)
+position = Vector2(248, 557.99994)
 rotation = -0.49741885
 scale = Vector2(0.5, 0.5)
 
 [node name="FlipperLeft" parent="." unique_id=527346712 instance=ExtResource("2_w774u")]
-position = Vector2(124.99997, 560.00006)
+position = Vector2(124.999985, 559)
 rotation = 0.49741885
 scale = Vector2(-0.5, -0.5)
 maximum = -1.0
@@ -55,13 +56,21 @@ position = Vector2(189, 657)
 shape = SubResource("RectangleShape2D_eckxu")
 
 [node name="Bumper" parent="." unique_id=615657735 instance=ExtResource("3_w774u")]
-position = Vector2(136, 249)
+position = Vector2(73, 282)
 
 [node name="Bumper2" parent="." unique_id=1490087611 instance=ExtResource("3_w774u")]
-position = Vector2(203, 248)
+position = Vector2(276, 257)
 
 [node name="Bumper3" parent="." unique_id=58277578 instance=ExtResource("3_w774u")]
-position = Vector2(236, 316)
+position = Vector2(284, 362)
 
 [node name="Bumper4" parent="." unique_id=28127012 instance=ExtResource("3_w774u")]
-position = Vector2(157, 334)
+position = Vector2(73, 373)
+
+[node name="Saucer" parent="." unique_id=280133016 instance=ExtResource("4_ibvbf")]
+position = Vector2(122.00001, 302)
+rotation = 1.3962634
+
+[node name="Saucer2" parent="." unique_id=1159201337 instance=ExtResource("4_ibvbf")]
+position = Vector2(204, 191)
+rotation = 0.34906584
