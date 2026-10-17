@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://mcnthxnjw2ba"]
+
+[ext_resource type="Script" uid="uid://bm2mndo4ok3mc" path="res://flipper.gd" id="1_qmqmj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g7q6k"]
+radius = 23.021729
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qmqmj"]
+
+[node name="Flipper" type="Node2D" unique_id=279437291]
+script = ExtResource("1_qmqmj")
+
+[node name="Flipper" type="CharacterBody2D" parent="." unique_id=1685488620]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Flipper" unique_id=522642593]
+polygon = PackedVector2Array(-4, -23, -91, -10, -91, 9, 0, 23, 1, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flipper" unique_id=53643525]
+shape = SubResource("CircleShape2D_g7q6k")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Flipper" unique_id=501003338]
+position = Vector2(-91, 0)
+shape = SubResource("CircleShape2D_qmqmj")
