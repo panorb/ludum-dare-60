@@ -43,8 +43,8 @@ func start() -> void:
 func plunge_ball() -> void:
 	var ball = BALL_SCENE.instantiate()
 	add_child(ball)
-	ball.global_position = Vector2(345, 590)
-	ball.linear_velocity = Vector2(0, -1500)
+	ball.position = %BallSpawn.position
+	ball.linear_velocity = Vector2(0, -2200)
 	active_balls += 1
 
 func flip_left_press() -> void:

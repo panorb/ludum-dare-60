@@ -2,111 +2,125 @@
 
 [ext_resource type="Script" uid="uid://bmixhhgd11c4j" path="res://playingfield/pinball_playfield.gd" id="1_4760t"]
 [ext_resource type="PackedScene" uid="uid://mcnthxnjw2ba" path="res://playingfield/flipper/flipper.tscn" id="2_w774u"]
+[ext_resource type="Script" uid="uid://dvexvufvg77dk" path="res://playingfield/wall.gd" id="3_8oa5j"]
 [ext_resource type="PackedScene" uid="uid://btkofrqrrj4wb" path="res://playingfield/elements/bumper/bumper.tscn" id="3_w774u"]
 [ext_resource type="PackedScene" uid="uid://c22aytwo0gmxi" path="res://playingfield/elements/saucer/saucer.tscn" id="4_ibvbf"]
 [ext_resource type="PackedScene" uid="uid://b1wvg1mgpdkib" path="res://playingfield/elements/slingshot/slingshot.tscn" id="5_ll1gr"]
 [ext_resource type="PackedScene" uid="uid://bl3sbf8mnoajy" path="res://playingfield/elements/accelerator/accelerator.tscn" id="6_phrn3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eckxu"]
-size = Vector2(177, 12)
+size = Vector2(204, 12)
 
 [node name="PinballPlayfield" type="Node2D" unique_id=1837038421]
 script = ExtResource("1_4760t")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1889091335]
+[node name="Node2D" type="Node2D" parent="." unique_id=331455950]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D" unique_id=2007025267]
 collision_layer = 1024
 collision_mask = 0
 
-[node name="BottomShell" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2019186984]
-polygon = PackedVector2Array(362, 608, 356, 143, 420, 149, 426, 682, 17, 675, 17, 139, 39, 136, 46, 573, 146, 620, 132, 658, 229, 660, 213, 622, 311, 579, 315, 144, 320, 140, 325, 144, 330, 607)
-one_way_collision_direction = Vector2(0, -1)
+[node name="RightInsideWall" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=1070086409]
+position = Vector2(18, 0)
+polygon = PackedVector2Array(333, 724, 464, 624, 465, 350, 419, 324, 419, 293, 463, 265, 458, 106, 453, 101, 448, 98, 441.3655, 93.73494, 434, 89, 418, 83, 401, 78, 370, 77, 322, 110, 322, 99, 368, 68, 402, 68, 414, 71, 424, 74, 433, 77, 441, 81, 449, 85, 457, 90, 463, 94, 468, 100, 472, 105, 474, 109, 476, 114, 476, 119, 477, 723)
+script = ExtResource("3_8oa5j")
 
-[node name="TopShell" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=67524889]
-polygon = PackedVector2Array(363, 197, 355, 146, 349, 102, 332, 71, 307, 44, 269, 29, 221, 22, 186, 22, 154, 26, 124, 35, 91, 47, 69, 66, 55, 82, 40, 108, 40, 146, 13, 149, 15, 8, 397, 12, 408, 148, 404, 171, 388, 187, 395, 208)
-one_way_collision_direction = Vector2(0, -1)
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/RightInsideWall" unique_id=742849904]
+color = Color(1, 0.6605682, 0.985004, 1)
+polygon = PackedVector2Array(333, 724, 464, 624, 465, 350, 419, 324, 419, 293, 463, 265, 458, 106, 453, 101, 448, 98, 441.3655, 93.73494, 434, 89, 418, 83, 401, 78, 370, 77, 322, 110, 322, 99, 368, 68, 402, 68, 414, 71, 424, 74, 433, 77, 441, 81, 449, 85, 457, 90, 463, 94, 468, 100, 472, 105, 474, 109, 476, 114, 476, 119, 477, 723)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2016192929]
-position = Vector2(346, 1)
-rotation = 3.1415927
-scale = Vector2(1, -1)
-polygon = PackedVector2Array(234.99995, 553, 266, 531, 265, 476, 272.99997, 471.00003, 280, 476, 281, 547, 245.99994, 572, 247.99995, 563, 244.99995, 557, 241.99995, 554)
+[node name="RightOutsideWall" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=273552117]
+position = Vector2(23, -1)
+polygon = PackedVector2Array(496, 724, 495, 120, 493, 104, 487, 88, 478, 76, 467, 66, 456, 56, 442, 48, 424, 40, 414, 36, 405, 34, 399, 33, 389, 33, 327, 33, 327, -1, 512, 0, 512, 724)
+script = ExtResource("3_8oa5j")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1954404513]
-position = Vector2(11, 3)
-polygon = PackedVector2Array(239, 547, 266, 531, 265, 476, 272, 470, 280, 476, 281, 547, 248, 568, 252, 560, 250, 554, 246, 549)
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/RightOutsideWall" unique_id=2081257450]
+position = Vector2(0, 1)
+color = Color(1, 0.6605682, 0.985004, 1)
+polygon = PackedVector2Array(496, 724, 495, 120, 493, 104, 487, 88, 478, 76, 467, 66, 456, 56, 442, 48, 424, 40, 414, 36, 405, 34, 399, 33, 389, 33, 327, 33, 327, -1, 512, 0, 512, 724)
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2127967225]
-polygon = PackedVector2Array(39, 132, 53, 186, 38, 174)
+[node name="LeftWall" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=1129709691]
+polygon = PackedVector2Array(164, 726, 19, 625, 22, 283, 61, 251, 61, 236, 20, 163, 20, 124, 24, 110, 31, 97, 39, 85, 50, 74, 61, 65, 73, 57, 88, 48, 102, 42, 114, 38, 126, 34, 126, 0, 0, 0, 0, 725)
+script = ExtResource("3_8oa5j")
+
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/LeftWall" unique_id=1968061931]
+polygon = PackedVector2Array(164, 726, 19, 625, 22, 283, 61, 251, 61, 236, 20, 163, 20, 124, 24, 110, 31, 97, 39, 85, 50, 74, 61, 65, 73, 57, 88, 48, 102, 42, 114, 37, 126, 33, 126, 0, 0, 0, 0, 725)
+
+[node name="TopWall" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=1757978884]
+position = Vector2(0, -1)
+polygon = PackedVector2Array(112, -1, 364, 0, 364, 34, 111, 34)
+script = ExtResource("3_8oa5j")
+
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/TopWall" unique_id=1358876380]
+polygon = PackedVector2Array(112, -1, 364, 0, 364, 34, 111, 34)
 
 [node name="FlipperRight" parent="." unique_id=1685017784 instance=ExtResource("2_w774u")]
-position = Vector2(248, 563)
+position = Vector2(334, 652)
 rotation = -0.49741885
 scale = Vector2(0.5, 0.5)
 
 [node name="FlipperLeft" parent="." unique_id=527346712 instance=ExtResource("2_w774u")]
-position = Vector2(110.999985, 567)
+position = Vector2(151.99998, 652)
 rotation = 0.49741885
 scale = Vector2(-0.5, -0.5)
 maximum = -1.0
 
 [node name="DropOut" type="Area2D" parent="." unique_id=1153074580]
+position = Vector2(70, 73)
 collision_layer = 0
 collision_mask = 512
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropOut" unique_id=1577510140]
-position = Vector2(189, 657)
+position = Vector2(188, 657)
 shape = SubResource("RectangleShape2D_eckxu")
 
 [node name="Bumper" parent="." unique_id=615657735 instance=ExtResource("3_w774u")]
-position = Vector2(73, 282)
+position = Vector2(163, 249)
 
 [node name="Bumper2" parent="." unique_id=1490087611 instance=ExtResource("3_w774u")]
-position = Vector2(276, 257)
+position = Vector2(319, 247)
 
 [node name="Bumper3" parent="." unique_id=58277578 instance=ExtResource("3_w774u")]
-position = Vector2(284, 362)
+position = Vector2(274, 345)
 
 [node name="Bumper4" parent="." unique_id=28127012 instance=ExtResource("3_w774u")]
-position = Vector2(73, 373)
+position = Vector2(108, 342)
 
 [node name="Saucer" parent="." unique_id=280133016 instance=ExtResource("4_ibvbf")]
-position = Vector2(122.00001, 302)
+position = Vector2(424.00003, 176.99997)
 rotation = 1.3962634
 
-[node name="Saucer2" parent="." unique_id=1159201337 instance=ExtResource("4_ibvbf")]
-position = Vector2(204, 191)
-rotation = 0.34906584
-
 [node name="Slingshot" parent="." unique_id=1796760020 instance=ExtResource("5_ll1gr")]
-position = Vector2(248, 509)
+position = Vector2(358, 550)
 
 [node name="Slingshot2" parent="." unique_id=1086058136 instance=ExtResource("5_ll1gr")]
-position = Vector2(112, 507)
+position = Vector2(123, 550)
 scale = Vector2(-1, 1)
 
 [node name="Accelerator" parent="." unique_id=817390848 instance=ExtResource("6_phrn3")]
-position = Vector2(340, 167)
-force = 50.0
-
-[node name="Accelerator3" parent="." unique_id=273104452 instance=ExtResource("6_phrn3")]
-position = Vector2(340, 222)
+position = Vector2(505, 177)
 force = 50.0
 
 [node name="Accelerator4" parent="." unique_id=1957399058 instance=ExtResource("6_phrn3")]
-position = Vector2(340, 276)
+position = Vector2(506, 279)
 force = 50.0
 
 [node name="Accelerator5" parent="." unique_id=997384910 instance=ExtResource("6_phrn3")]
-position = Vector2(341, 330)
+position = Vector2(398, 50)
+rotation = -1.5707964
 force = 50.0
 
 [node name="Accelerator2" parent="." unique_id=196176113 instance=ExtResource("6_phrn3")]
-position = Vector2(227, 599)
+position = Vector2(348, 687.99994)
 rotation = 4.3057275
 force = 100.0
 
 [node name="Accelerator6" parent="." unique_id=817241685 instance=ExtResource("6_phrn3")]
-position = Vector2(128, 597)
+position = Vector2(146, 686)
 rotation = 2.0961404
 force = 100.0
+
+[node name="BallSpawn" type="Marker2D" parent="." unique_id=778188897]
+unique_name_in_owner = true
+position = Vector2(505, 530)
