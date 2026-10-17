@@ -1,7 +1,5 @@
 extends Element
 
-@onready var bump_shape = $StaticBody2D
-
 func on_bump(body: Node2D) -> void:
 	if not active:
 		return
