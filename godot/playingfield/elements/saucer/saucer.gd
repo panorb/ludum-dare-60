@@ -1,4 +1,4 @@
-extends Node2D
+extends Element
 
 @onready var pull_area = $OuterArea2D
 @onready var hold_area = $InnerArea2D
@@ -22,6 +22,8 @@ func _on_hold_timeout() -> void:
 	ball.global_position = global_position
 	ball.apply_central_impulse(Vector2.from_angle(rotation) * ball.mass * out_force)
 	ball = null
+	trigger.emit(id)
+	score.emit(id, points)
 
 func _on_reset_timeout() -> void:
 	open = true
@@ -29,7 +31,7 @@ func _on_reset_timeout() -> void:
 	print("reset")
 
 func _physics_process(_delta: float) -> void:
-	if not open:
+	if not active or not open:
 		return
 	for body in hold_area.get_overlapping_bodies():
 		if body is RigidBody2D:

@@ -1,4 +1,4 @@
-extends Node2D
+extends Element
 
 @export var maximum := 1.0
 
@@ -23,7 +23,7 @@ func _init():
 	pass
 
 func _physics_process(_delta: float) -> void:
-	if pressed:
+	if pressed and active:
 		target_rot = maximum
 	else:
 		target_rot = 0.0

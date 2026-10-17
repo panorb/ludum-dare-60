@@ -1,6 +1,9 @@
-extends Node2D
+extends Element
 
 func on_bump(body: Node2D) -> void:
-	print("bump!")
+	if not active:
+		return
 	var direction := (body.global_position - global_position).normalized()
 	body.apply_central_impulse(direction * body.mass * 500.0)
+	trigger.emit(id)
+	score.emit(id, points)
