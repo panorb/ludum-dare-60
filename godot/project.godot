@@ -24,11 +24,13 @@ window/stretch/aspect="expand"
 
 [layer_names]
 
-2d_physics/layer_10="pinball"
+2d_physics/layer_10="Pinball"
+2d_physics/layer_11="Walls"
 
 [physics]
 
 3d/physics_engine="Jolt Physics"
+2d/default_gravity_vector=Vector2(0, 0.5)
 
 [rendering]
 

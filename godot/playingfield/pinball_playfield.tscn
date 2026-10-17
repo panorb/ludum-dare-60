@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://ba4u6apn3j0ke"]
+
+[ext_resource type="Script" uid="uid://bmixhhgd11c4j" path="res://playingfield/pinball_playfield.gd" id="1_4760t"]
+[ext_resource type="PackedScene" uid="uid://mcnthxnjw2ba" path="res://playingfield/flipper/flipper.tscn" id="2_w774u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eckxu"]
+size = Vector2(177, 12)
+
+[node name="PinballPlayfield" type="Node2D" unique_id=1837038421]
+script = ExtResource("1_4760t")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1889091335]
+collision_layer = 1024
+collision_mask = 0
+
+[node name="BottomShell" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2019186984]
+polygon = PackedVector2Array(362, 608, 356, 143, 420, 149, 426, 682, 17, 675, 17, 139, 39, 136, 46, 573, 155, 620, 137, 657, 229, 660, 213, 622, 311, 579, 315, 144, 320, 140, 325, 144, 330, 607)
+one_way_collision_direction = Vector2(0, -1)
+
+[node name="TopShell" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=67524889]
+polygon = PackedVector2Array(363, 197, 355, 146, 349, 102, 332, 71, 307, 44, 269, 29, 221, 22, 186, 22, 154, 26, 124, 35, 91, 47, 69, 66, 55, 82, 40, 108, 40, 146, 13, 149, 15, 8, 397, 12, 408, 148, 404, 171, 388, 187, 395, 208)
+one_way_collision_direction = Vector2(0, -1)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2016192929]
+position = Vector2(371, 1)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+polygon = PackedVector2Array(245, 546, 266, 531, 265, 476, 272.99997, 471.00003, 280, 476, 281, 547, 260, 564, 261, 556, 257, 549, 250, 546)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1954404513]
+polygon = PackedVector2Array(245, 546, 266, 531, 265, 476, 272, 470, 280, 476, 281, 547, 260, 564, 261, 556, 257, 549, 250, 546)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2127967225]
+polygon = PackedVector2Array(39, 132, 53, 186, 38, 174)
+
+[node name="FlipperRight" parent="." unique_id=1685017784 instance=ExtResource("2_w774u")]
+position = Vector2(245.99997, 560)
+rotation = -0.49741885
+scale = Vector2(0.5, 0.5)
+
+[node name="FlipperLeft" parent="." unique_id=527346712 instance=ExtResource("2_w774u")]
+position = Vector2(124.99997, 560.00006)
+rotation = 0.49741885
+scale = Vector2(-0.5, -0.5)
+maximum = -1.0
+
+[node name="DropOut" type="Area2D" parent="." unique_id=1153074580]
+collision_layer = 0
+collision_mask = 512
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DropOut" unique_id=1577510140]
+position = Vector2(189, 657)
+shape = SubResource("RectangleShape2D_eckxu")

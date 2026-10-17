@@ -5,8 +5,20 @@ signal score_changed(score: int)
 
 @onready var flipper_right := $FlipperRight
 @onready var flipper_left := $FlipperLeft
+@onready var drop_out := $DropOut
 
-const BALL_SCENE = preload("res://ball.tscn")
+var score := 0
+
+func _ready() -> void:
+	drop_out.body_entered.connect(_on_drop_out)
+
+func _on_drop_out(body: Node2D) -> void:
+	body.queue_free()
+	game_over.emit(score)
+	score = 0
+	running = false
+
+const BALL_SCENE = preload("res://playingfield/ball.tscn")
 
 var sim_speed_factor := 1.0
 func set_sim_speed(factor: float) -> void:

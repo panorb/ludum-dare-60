@@ -1,13 +1,18 @@
 [gd_scene format=3 uid="uid://cvxwk8nmkb0rn"]
 
-[ext_resource type="Texture2D" uid="uid://biyu0bcpw1ns4" path="res://icon.svg" id="1_x8fbi"]
+[ext_resource type="Texture2D" uid="uid://biyu0bcpw1ns4" path="res://icon.svg" id="1_utqia"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sj7qs"]
+rough = true
+bounce = 0.2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eckxu"]
 radius = 8.0
 
 [node name="Ball" type="RigidBody2D" unique_id=1044726390]
 collision_layer = 512
-collision_mask = 512
+collision_mask = 1536
+physics_material_override = SubResource("PhysicsMaterial_sj7qs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1381241290]
 rotation = 3.1415927
@@ -16,4 +21,4 @@ shape = SubResource("CircleShape2D_eckxu")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1477525361]
 visible = false
 scale = Vector2(0.1796875, 0.1796875)
-texture = ExtResource("1_x8fbi")
+texture = ExtResource("1_utqia")
