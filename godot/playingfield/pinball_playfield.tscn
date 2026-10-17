@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bmixhhgd11c4j" path="res://playingfield/pinball_playfield.gd" id="1_4760t"]
 [ext_resource type="PackedScene" uid="uid://mcnthxnjw2ba" path="res://playingfield/flipper/flipper.tscn" id="2_w774u"]
+[ext_resource type="PackedScene" uid="uid://btkofrqrrj4wb" path="res://playingfield/elements/bumper/bumper.tscn" id="3_w774u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eckxu"]
 size = Vector2(177, 12)
@@ -52,3 +53,15 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropOut" unique_id=1577510140]
 position = Vector2(189, 657)
 shape = SubResource("RectangleShape2D_eckxu")
+
+[node name="Bumper" parent="." unique_id=615657735 instance=ExtResource("3_w774u")]
+position = Vector2(136, 249)
+
+[node name="Bumper2" parent="." unique_id=1490087611 instance=ExtResource("3_w774u")]
+position = Vector2(203, 248)
+
+[node name="Bumper3" parent="." unique_id=58277578 instance=ExtResource("3_w774u")]
+position = Vector2(236, 316)
+
+[node name="Bumper4" parent="." unique_id=28127012 instance=ExtResource("3_w774u")]
+position = Vector2(157, 334)

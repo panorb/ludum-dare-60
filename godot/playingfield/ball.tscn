@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cvxwk8nmkb0rn"]
 
-[ext_resource type="Texture2D" uid="uid://biyu0bcpw1ns4" path="res://icon.svg" id="1_utqia"]
+[ext_resource type="Script" uid="uid://8kcsknm5nlyp" path="res://playingfield/ball.gd" id="1_ipx12"]
+[ext_resource type="Texture2D" uid="uid://xfeytqsog0kt" path="res://playingfield/ball.png" id="2_ipx12"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sj7qs"]
 rough = true
@@ -13,12 +14,12 @@ radius = 8.0
 collision_layer = 512
 collision_mask = 1536
 physics_material_override = SubResource("PhysicsMaterial_sj7qs")
+script = ExtResource("1_ipx12")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1381241290]
 rotation = 3.1415927
 shape = SubResource("CircleShape2D_eckxu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1477525361]
-visible = false
 scale = Vector2(0.1796875, 0.1796875)
-texture = ExtResource("1_utqia")
+texture = ExtResource("2_ipx12")

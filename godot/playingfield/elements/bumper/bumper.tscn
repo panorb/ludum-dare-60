@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://btkofrqrrj4wb"]
+
+[ext_resource type="Script" uid="uid://csobngfrgr368" path="res://playingfield/elements/bumper/bumper.gd" id="1_csbte"]
+[ext_resource type="Texture2D" uid="uid://gf65uuf4b61g" path="res://playingfield/elements/bumper/bumper1.png" id="1_mx6od"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eckxu"]
+radius = 19.104973
+
+[node name="Bumper" type="StaticBody2D" unique_id=58277578]
+collision_layer = 1024
+collision_mask = 0
+script = ExtResource("1_csbte")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1284131192]
+shape = SubResource("CircleShape2D_eckxu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=500048759]
+position = Vector2(-4.7683716e-07, -4.7683716e-07)
+scale = Vector2(0.19438072, 0.19438072)
+texture = ExtResource("1_mx6od")
