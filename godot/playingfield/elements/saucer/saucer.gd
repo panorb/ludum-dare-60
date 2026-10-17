@@ -48,4 +48,4 @@ func _physics_process(_delta: float) -> void:
 		if body is RigidBody2D:
 			print("pulling!")
 			var direction := ((body as Node2D).global_position - global_position)
-			body.apply_central_force(-200000.0/direction.length()*direction.normalized())
+			body.apply_central_force(-20.0/direction.length()*direction.normalized())

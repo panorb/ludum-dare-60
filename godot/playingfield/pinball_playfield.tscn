@@ -14,6 +14,10 @@ size = Vector2(204, 12)
 [node name="PinballPlayfield" type="Node2D" unique_id=1837038421]
 script = ExtResource("1_4760t")
 
+[node name="BackgroundColor" type="Polygon2D" parent="." unique_id=684571928]
+color = Color(0.3372549, 0.41568628, 0.5372549, 1)
+polygon = PackedVector2Array(0, 0, 535, 0, 535, 724, 0, 725)
+
 [node name="Node2D" type="Node2D" parent="." unique_id=331455950]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Node2D" unique_id=2007025267]
@@ -26,7 +30,7 @@ polygon = PackedVector2Array(333, 724, 464, 624, 465, 350, 419, 324, 419, 293, 4
 script = ExtResource("3_8oa5j")
 
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/RightInsideWall" unique_id=742849904]
-color = Color(1, 0.6605682, 0.985004, 1)
+color = Color(0.21960784, 0, 0.17254902, 1)
 polygon = PackedVector2Array(333, 724, 464, 624, 465, 350, 419, 324, 419, 293, 463, 265, 458, 106, 453, 101, 448, 98, 441.3655, 93.73494, 434, 89, 418, 83, 401, 78, 370, 77, 322, 110, 322, 99, 368, 68, 402, 68, 414, 71, 424, 74, 433, 77, 441, 81, 449, 85, 457, 90, 463, 94, 468, 100, 472, 105, 474, 109, 476, 114, 476, 119, 477, 723)
 
 [node name="RightOutsideWall" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=273552117]
@@ -36,7 +40,7 @@ script = ExtResource("3_8oa5j")
 
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/RightOutsideWall" unique_id=2081257450]
 position = Vector2(0, 1)
-color = Color(1, 0.6605682, 0.985004, 1)
+color = Color(0.21960784, 0, 0.17254902, 1)
 polygon = PackedVector2Array(496, 724, 495, 120, 493, 104, 487, 88, 478, 76, 467, 66, 456, 56, 442, 48, 424, 40, 414, 36, 405, 34, 399, 33, 389, 33, 327, 33, 327, -1, 512, 0, 512, 724)
 
 [node name="LeftWall" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=1129709691]
@@ -44,6 +48,7 @@ polygon = PackedVector2Array(164, 726, 19, 625, 22, 283, 61, 251, 61, 236, 20, 1
 script = ExtResource("3_8oa5j")
 
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/LeftWall" unique_id=1968061931]
+color = Color(0.21960784, 0, 0.17254902, 1)
 polygon = PackedVector2Array(164, 726, 19, 625, 22, 283, 61, 251, 61, 236, 20, 163, 20, 124, 24, 110, 31, 97, 39, 85, 50, 74, 61, 65, 73, 57, 88, 48, 102, 42, 114, 37, 126, 33, 126, 0, 0, 0, 0, 725)
 
 [node name="TopWall" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=1757978884]
@@ -52,6 +57,7 @@ polygon = PackedVector2Array(112, -1, 364, 0, 364, 34, 111, 34)
 script = ExtResource("3_8oa5j")
 
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/TopWall" unique_id=1358876380]
+color = Color(0.21960784, 0, 0.17254902, 1)
 polygon = PackedVector2Array(112, -1, 364, 0, 364, 34, 111, 34)
 
 [node name="FlipperRight" parent="." unique_id=1685017784 instance=ExtResource("2_w774u")]
@@ -88,7 +94,7 @@ position = Vector2(274, 345)
 position = Vector2(108, 342)
 
 [node name="Saucer" parent="." unique_id=280133016 instance=ExtResource("4_ibvbf")]
-position = Vector2(424.00003, 176.99997)
+position = Vector2(410, 221.99997)
 rotation = 1.3962634
 
 [node name="Slingshot" parent="." unique_id=1796760020 instance=ExtResource("5_ll1gr")]
