@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://mcnthxnjw2ba" path="res://playingfield/flipper/flipper.tscn" id="2_w774u"]
 [ext_resource type="PackedScene" uid="uid://btkofrqrrj4wb" path="res://playingfield/elements/bumper/bumper.tscn" id="3_w774u"]
 [ext_resource type="PackedScene" uid="uid://c22aytwo0gmxi" path="res://playingfield/elements/saucer/saucer.tscn" id="4_ibvbf"]
+[ext_resource type="PackedScene" uid="uid://b1wvg1mgpdkib" path="res://playingfield/elements/slingshot/slingshot.tscn" id="5_ll1gr"]
+[ext_resource type="PackedScene" uid="uid://bl3sbf8mnoajy" path="res://playingfield/elements/accelerator/accelerator.tscn" id="6_phrn3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eckxu"]
 size = Vector2(177, 12)
@@ -16,7 +18,7 @@ collision_layer = 1024
 collision_mask = 0
 
 [node name="BottomShell" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2019186984]
-polygon = PackedVector2Array(362, 608, 356, 143, 420, 149, 426, 682, 17, 675, 17, 139, 39, 136, 46, 573, 155, 620, 137, 657, 229, 660, 213, 622, 311, 579, 315, 144, 320, 140, 325, 144, 330, 607)
+polygon = PackedVector2Array(362, 608, 356, 143, 420, 149, 426, 682, 17, 675, 17, 139, 39, 136, 46, 573, 146, 620, 132, 658, 229, 660, 213, 622, 311, 579, 315, 144, 320, 140, 325, 144, 330, 607)
 one_way_collision_direction = Vector2(0, -1)
 
 [node name="TopShell" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=67524889]
@@ -24,24 +26,25 @@ polygon = PackedVector2Array(363, 197, 355, 146, 349, 102, 332, 71, 307, 44, 269
 one_way_collision_direction = Vector2(0, -1)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2016192929]
-position = Vector2(371, 1)
+position = Vector2(346, 1)
 rotation = 3.1415927
 scale = Vector2(1, -1)
-polygon = PackedVector2Array(245, 546, 266, 531, 265, 476, 272.99997, 471.00003, 280, 476, 281, 547, 260, 564, 261, 556, 257, 549, 250, 546)
+polygon = PackedVector2Array(234.99995, 553, 266, 531, 265, 476, 272.99997, 471.00003, 280, 476, 281, 547, 245.99994, 572, 247.99995, 563, 244.99995, 557, 241.99995, 554)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1954404513]
-polygon = PackedVector2Array(245, 546, 266, 531, 265, 476, 272, 470, 280, 476, 281, 547, 260, 564, 261, 556, 257, 549, 250, 546)
+position = Vector2(11, 3)
+polygon = PackedVector2Array(239, 547, 266, 531, 265, 476, 272, 470, 280, 476, 281, 547, 248, 568, 252, 560, 250, 554, 246, 549)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2127967225]
 polygon = PackedVector2Array(39, 132, 53, 186, 38, 174)
 
 [node name="FlipperRight" parent="." unique_id=1685017784 instance=ExtResource("2_w774u")]
-position = Vector2(248, 557.99994)
+position = Vector2(248, 563)
 rotation = -0.49741885
 scale = Vector2(0.5, 0.5)
 
 [node name="FlipperLeft" parent="." unique_id=527346712 instance=ExtResource("2_w774u")]
-position = Vector2(124.999985, 559)
+position = Vector2(110.999985, 567)
 rotation = 0.49741885
 scale = Vector2(-0.5, -0.5)
 maximum = -1.0
@@ -74,3 +77,36 @@ rotation = 1.3962634
 [node name="Saucer2" parent="." unique_id=1159201337 instance=ExtResource("4_ibvbf")]
 position = Vector2(204, 191)
 rotation = 0.34906584
+
+[node name="Slingshot" parent="." unique_id=1796760020 instance=ExtResource("5_ll1gr")]
+position = Vector2(248, 509)
+
+[node name="Slingshot2" parent="." unique_id=1086058136 instance=ExtResource("5_ll1gr")]
+position = Vector2(112, 507)
+scale = Vector2(-1, 1)
+
+[node name="Accelerator" parent="." unique_id=817390848 instance=ExtResource("6_phrn3")]
+position = Vector2(340, 167)
+force = 50.0
+
+[node name="Accelerator3" parent="." unique_id=273104452 instance=ExtResource("6_phrn3")]
+position = Vector2(340, 222)
+force = 50.0
+
+[node name="Accelerator4" parent="." unique_id=1957399058 instance=ExtResource("6_phrn3")]
+position = Vector2(340, 276)
+force = 50.0
+
+[node name="Accelerator5" parent="." unique_id=997384910 instance=ExtResource("6_phrn3")]
+position = Vector2(341, 330)
+force = 50.0
+
+[node name="Accelerator2" parent="." unique_id=196176113 instance=ExtResource("6_phrn3")]
+position = Vector2(227, 599)
+rotation = 4.3057275
+force = 100.0
+
+[node name="Accelerator6" parent="." unique_id=817241685 instance=ExtResource("6_phrn3")]
+position = Vector2(128, 597)
+rotation = 2.0961404
+force = 100.0

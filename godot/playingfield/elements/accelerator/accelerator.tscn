@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bl3sbf8mnoajy"]
+
+[ext_resource type="Script" uid="uid://cgdpgr0qj7e2u" path="res://playingfield/elements/accelerator/accelerator.gd" id="1_lgof1"]
+[ext_resource type="Texture2D" uid="uid://bql21xfyl0goy" path="res://playingfield/elements/accelerator/accelerator.png" id="2_ku5xa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i6ibw"]
+radius = 13.0
+height = 50.0
+
+[node name="Accelerator" type="Node2D" unique_id=817390848]
+script = ExtResource("1_lgof1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=941290577]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_ku5xa")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=486583838]
+collision_layer = 0
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2045986576]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_i6ibw")
