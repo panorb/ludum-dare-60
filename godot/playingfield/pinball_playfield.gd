@@ -8,15 +8,18 @@ signal score_changed(score: int)
 @onready var drop_out := $DropOut
 
 var score := 0
+var active_balls := 0
 
 func _ready() -> void:
 	drop_out.body_entered.connect(_on_drop_out)
 
 func _on_drop_out(body: Node2D) -> void:
 	body.queue_free()
-	game_over.emit(score)
-	score = 0
-	running = false
+	active_balls -= 1
+	if active_balls <= 0:
+		game_over.emit(score)
+		score = 0
+		running = false
 
 const BALL_SCENE = preload("res://playingfield/ball.tscn")
 
@@ -32,8 +35,8 @@ func initialize_field() -> void:
 	pass
 
 func start() -> void:
-	if running:
-		return
+	#if running:
+	#	return
 	running = true
 	plunge_ball()
 
@@ -42,6 +45,7 @@ func plunge_ball() -> void:
 	add_child(ball)
 	ball.global_position = Vector2(345, 590)
 	ball.linear_velocity = Vector2(0, -1500)
+	active_balls += 1
 
 func flip_left_press() -> void:
 	flipper_left.press()
