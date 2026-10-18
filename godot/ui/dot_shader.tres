@@ -1,9 +1,0 @@
-[gd_resource type="ShaderMaterial" format=3 uid="uid://cvbba2t5evapd"]
-
-[ext_resource type="Shader" uid="uid://de4ko84n27xr2" path="res://editor/sections/shop/coin_display.gdshader" id="1_ogjsf"]
-
-[resource]
-shader = ExtResource("1_ogjsf")
-shader_parameter/cell = 10.0
-shader_parameter/hole = 4.0
-shader_parameter/grille_color = Color(0, 0, 0, 0.75)
