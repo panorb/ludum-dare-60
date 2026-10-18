@@ -6,6 +6,7 @@ signal score_changed(score: int)
 @onready var flipper_right := $FlipperRight
 @onready var flipper_left := $FlipperLeft
 @onready var drop_out := $DropOut
+@onready var plunger := $Plunger
 
 var score := 0
 var active_balls := 0
@@ -56,3 +57,8 @@ func flip_right_press() -> void:
 	flipper_right.press()
 func flip_right_release() -> void:
 	flipper_right.release()
+
+func plunger_charge() -> void:
+	plunger.press()
+func plunger_release() -> void:
+	plunger.release()

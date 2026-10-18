@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c22aytwo0gmxi" path="res://pinball_machine/elements/saucer/saucer.tscn" id="4_ibvbf"]
 [ext_resource type="PackedScene" uid="uid://b1wvg1mgpdkib" path="res://pinball_machine/elements/slingshot/slingshot.tscn" id="5_ll1gr"]
 [ext_resource type="PackedScene" uid="uid://bl3sbf8mnoajy" path="res://pinball_machine/elements/accelerator/accelerator.tscn" id="6_phrn3"]
+[ext_resource type="PackedScene" uid="uid://crorht01w3pxm" path="res://pinball_machine/elements/plunger/plunger.tscn" id="8_uef51"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eckxu"]
 size = Vector2(204, 12)
@@ -39,7 +40,7 @@ script = ExtResource("3_8oa5j")
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/RightOutsideWall" unique_id=2081257450]
 position = Vector2(0, 1)
 color = Color(0.21960784, 0, 0.17254902, 1)
-polygon = PackedVector2Array(496, 708, 495, 104, 493, 88, 487, 72, 478, 59, 465, 46, 453, 37, 437, 28, 421, 21, 408, 17, 396, 16, 392, 15.999999, 328, 16, 328, 0, 512, 0, 512, 708)
+polygon = PackedVector2Array(496, 708, 496, 104, 493, 88, 487, 72, 478, 59, 465, 46, 453, 37, 437, 28, 421, 21, 408, 17, 396, 16, 392, 15.999999, 328, 16, 328, 0, 512, 0, 512, 708)
 
 [node name="LeftWall" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=1129709691]
 script = ExtResource("3_8oa5j")
@@ -126,8 +127,12 @@ force = 50.0
 position = Vector2(471.99997, 653)
 rotation = 0.9302605
 force = 3000.0
+active = false
 
 [node name="BallSpawn" type="Marker2D" parent="." unique_id=778188897]
 unique_name_in_owner = true
 position = Vector2(457, 664)
 rotation = 0.9302605
+
+[node name="Plunger" parent="." unique_id=578970161 instance=ExtResource("8_uef51")]
+position = Vector2(507, 655)
