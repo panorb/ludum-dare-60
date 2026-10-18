@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b3jr80263t7hi"]
+
+[ext_resource type="Script" uid="uid://b26sfo7otc5te" path="res://shared/random_sound_player.gd" id="1_ooxem"]
+[ext_resource type="AudioStream" uid="uid://dppsnaddtcah3" path="res://pinball_machine/elements/bumper/bump1.wav" id="2_12dxs"]
+[ext_resource type="AudioStream" uid="uid://dwi0n3nb2vyid" path="res://pinball_machine/elements/bumper/bump2.wav" id="3_s3qti"]
+[ext_resource type="AudioStream" uid="uid://d23r8tcthbhbh" path="res://pinball_machine/elements/bumper/bump3.wav" id="4_d83lb"]
+[ext_resource type="AudioStream" uid="uid://bv4ot1rehiky5" path="res://pinball_machine/elements/bumper/bump4.wav" id="5_fuq7v"]
+[ext_resource type="AudioStream" uid="uid://bdhjyje0g4cur" path="res://pinball_machine/elements/bumper/bump5.wav" id="6_1gxew"]
+
+[node name="BumperSounds" type="Node" unique_id=832256421]
+script = ExtResource("1_ooxem")
+
+[node name="Bump1" type="AudioStreamPlayer" parent="." unique_id=1463002388]
+stream = ExtResource("2_12dxs")
+
+[node name="Bump2" type="AudioStreamPlayer" parent="." unique_id=373887840]
+stream = ExtResource("3_s3qti")
+
+[node name="Bump3" type="AudioStreamPlayer" parent="." unique_id=926315007]
+stream = ExtResource("4_d83lb")
+
+[node name="Bump4" type="AudioStreamPlayer" parent="." unique_id=918379895]
+stream = ExtResource("5_fuq7v")
+
+[node name="Bump5" type="AudioStreamPlayer" parent="." unique_id=1768275762]
+stream = ExtResource("6_1gxew")

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://csobngfrgr368" path="res://pinball_machine/elements/bumper/bumper.gd" id="1_csbte"]
 [ext_resource type="Texture2D" uid="uid://gf65uuf4b61g" path="res://pinball_machine/elements/bumper/bumper1.png" id="1_mx6od"]
 [ext_resource type="FontFile" uid="uid://7pxojp6ogpwc" path="res://ui/orbitron.ttf" id="3_ecln4"]
+[ext_resource type="Texture2D" uid="uid://ceg6w4sc4qwvm" path="res://pinball_machine/elements/bumper/bumper3_cushion.png" id="4_v0qbg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eckxu"]
 radius = 19.104973
@@ -14,6 +15,31 @@ script = ExtResource("1_csbte")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1284131192]
 shape = SubResource("CircleShape2D_eckxu")
+
+[node name="Cushions" type="Node2D" parent="." unique_id=1915212172]
+unique_name_in_owner = true
+position = Vector2(-2.842171e-14, -2.842171e-14)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Cushion1" type="Sprite2D" parent="Cushions" unique_id=48464394]
+position = Vector2(2.3283064e-10, 0)
+rotation = 2.0943952
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_v0qbg")
+offset = Vector2(2.8447118, -65.150925)
+
+[node name="Cushion2" type="Sprite2D" parent="Cushions" unique_id=885658557]
+position = Vector2(-2.0954758e-09, 4.656613e-10)
+rotation = -2.0943952
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_v0qbg")
+offset = Vector2(3.9463534, -66.91339)
+
+[node name="Cushion3" type="Sprite2D" parent="Cushions" unique_id=695969397]
+position = Vector2(0, -1.4210855e-14)
+scale = Vector2(0.099999994, 0.099999994)
+texture = ExtResource("4_v0qbg")
+offset = Vector2(2.2737368e-12, -65)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=500048759]
 position = Vector2(-4.7683716e-07, -4.7683716e-07)

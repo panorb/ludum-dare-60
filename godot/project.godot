@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 buses/default_bus_layout="uid://dlhdv2fgslbxb"
 
+[autoload]
+
+BumperSounds="*uid://b3jr80263t7hi"
+
 [display]
 
 window/size/viewport_width=1280
