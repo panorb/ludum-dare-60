@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://d1mdtqx335w1g"]
 
 [ext_resource type="Theme" uid="uid://d1bm57laym1gy" path="res://ui/theme.tres" id="1_lggly"]
-[ext_resource type="PackedScene" uid="uid://b1hi4ao200pvr" path="res://editor/sections/shop/marquee.tscn" id="1_vd38c"]
-[ext_resource type="PackedScene" uid="uid://2jgkv3gqyhup" path="res://editor/sections/shop/coin_display.tscn" id="2_10cy8"]
-[ext_resource type="PackedScene" uid="uid://clnw3uuxs4hjd" path="res://editor/sections/shop/item/shop_item.tscn" id="4_ugfr8"]
+[ext_resource type="PackedScene" uid="uid://b1hi4ao200pvr" path="res://shop/marquee.tscn" id="1_vd38c"]
+[ext_resource type="PackedScene" uid="uid://2jgkv3gqyhup" path="res://shop/coin_display.tscn" id="2_10cy8"]
+[ext_resource type="Script" uid="uid://5nayvcjmy70a" path="res://shop/shop.gd" id="2_gy7ao"]
+[ext_resource type="Script" uid="uid://cxrqn5fa81q5u" path="res://shop/shop_entry.gd" id="3_q4g17"]
+[ext_resource type="Resource" uid="uid://flgy3f00pwsp" path="res://shop/entries/bumper_times_three.tres" id="4_2wf2a"]
+[ext_resource type="Resource" uid="uid://bm07t8x06w7pw" path="res://shop/entries/saucer.tres" id="5_2wf2a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j82do"]
 content_margin_left = 24.0
@@ -24,25 +27,26 @@ shadow_offset = Vector2(0, 14)
 custom_minimum_size = Vector2(420, 0)
 theme = ExtResource("1_lggly")
 theme_override_styles/panel = SubResource("StyleBoxFlat_j82do")
+script = ExtResource("2_gy7ao")
+shop_entries = Array[ExtResource("3_q4g17")]([ExtResource("4_2wf2a"), ExtResource("5_2wf2a")])
 
 [node name="ShopLayout" type="VBoxContainer" parent="." unique_id=1579627575]
 layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="Marquee" parent="ShopLayout" unique_id=2083558016 instance=ExtResource("1_vd38c")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="CoinDisplay" parent="ShopLayout" unique_id=1650333735 instance=ExtResource("2_10cy8")]
 layout_mode = 2
 
 [node name="Items" type="GridContainer" parent="ShopLayout" unique_id=622775746]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/h_separation = 14
 theme_override_constants/v_separation = 14
 columns = 2
-
-[node name="ShopItem" parent="ShopLayout/Items" unique_id=2129420058 instance=ExtResource("4_ugfr8")]
-layout_mode = 2
 
 [node name="Spacer" type="Control" parent="ShopLayout" unique_id=473228259]
 layout_mode = 2

@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://clnw3uuxs4hjd"]
+
+[ext_resource type="StyleBox" uid="uid://dhoiouwwwmw6f" path="res://ui/black_style_box.tres" id="1_v5v6m"]
+[ext_resource type="Texture2D" uid="uid://dve7xw0b21bl4" path="res://shop/icons/bumper_times_three.png" id="2_mrrg1"]
+[ext_resource type="Script" uid="uid://b7702qy01qt6g" path="res://shop/item/shop_item.gd" id="2_vsid4"]
+[ext_resource type="StyleBox" uid="uid://dt24fakm6b3k1" path="res://ui/red_style_box.tres" id="3_4c2at"]
+[ext_resource type="FontFile" uid="uid://7pxojp6ogpwc" path="res://ui/orbitron.ttf" id="3_mrrg1"]
+[ext_resource type="FontFile" uid="uid://bbrpa4t0wtrn6" path="res://ui/doto.ttf" id="4_tb531"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a21m7"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.3372549, 0.41568628, 0.5372549, 1)
+
+[node name="ShopItem" type="PanelContainer" unique_id=2129420058]
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("1_v5v6m")
+script = ExtResource("2_vsid4")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=933943496]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 1
+
+[node name="Content" type="VBoxContainer" parent="MarginContainer" unique_id=822115805]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Art" type="PanelContainer" parent="MarginContainer/Content" unique_id=53136560]
+custom_minimum_size = Vector2(0, 112)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a21m7")
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/Content/Art" unique_id=926056011]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_mrrg1")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="SetSticker" type="Label" parent="MarginContainer/Content/Art" unique_id=295171554]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "SET"
+
+[node name="Footer" type="HBoxContainer" parent="MarginContainer/Content" unique_id=265669392]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="NameTag" type="Label" parent="MarginContainer/Content/Footer" unique_id=748209804]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_mrrg1")
+theme_override_styles/normal = ExtResource("3_4c2at")
+text = "Pop Bumper"
+
+[node name="Spacer" type="Control" parent="MarginContainer/Content/Footer" unique_id=1685057848]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Price" type="Label" parent="MarginContainer/Content/Footer" unique_id=514828199]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("4_tb531")
+theme_override_font_sizes/font_size = 18
+text = "120"

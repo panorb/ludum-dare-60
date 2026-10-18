@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ShopEntry" format=3 uid="uid://flgy3f00pwsp"]
+
+[ext_resource type="PackedScene" uid="uid://dxi3xdtlvwxj7" path="res://pinball_machine/sets/three_bumpers.tscn" id="1_4axhf"]
+[ext_resource type="Script" uid="uid://cxrqn5fa81q5u" path="res://shop/shop_entry.gd" id="1_84tt3"]
+[ext_resource type="Texture2D" uid="uid://dve7xw0b21bl4" path="res://shop/icons/bumper_times_three.png" id="1_ddk87"]
+
+[resource]
+script = ExtResource("1_84tt3")
+title = "Bumper x3"
+price = 160
+icon = ExtResource("1_ddk87")
+scene = ExtResource("1_4axhf")
+metadata/_custom_type_script = "uid://cxrqn5fa81q5u"

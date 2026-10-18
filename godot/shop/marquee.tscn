@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b1hi4ao200pvr"]
 
-[ext_resource type="Shader" uid="uid://b4r047y0b24qy" path="res://editor/sections/shop/bulbs.gdshader" id="1_335pt"]
+[ext_resource type="Shader" uid="uid://b4r047y0b24qy" path="res://shop/bulbs.gdshader" id="1_335pt"]
 [ext_resource type="StyleBox" uid="uid://dhoiouwwwmw6f" path="res://ui/black_style_box.tres" id="1_d7lgn"]
-[ext_resource type="Script" uid="uid://l04oin7gfdt7" path="res://editor/sections/shop/marquee.gd" id="2_apm8d"]
-[ext_resource type="Script" uid="uid://c1ifmju07qpn3" path="res://editor/sections/shop/bulbs.gd" id="2_d7lgn"]
+[ext_resource type="Script" uid="uid://l04oin7gfdt7" path="res://shop/marquee.gd" id="2_apm8d"]
+[ext_resource type="Script" uid="uid://c1ifmju07qpn3" path="res://shop/bulbs.gd" id="2_d7lgn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_er7c6"]
 shader = ExtResource("1_335pt")

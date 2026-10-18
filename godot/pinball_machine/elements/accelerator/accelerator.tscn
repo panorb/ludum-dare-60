@@ -7,7 +7,7 @@
 radius = 13.0
 height = 50.0
 
-[node name="Accelerator" type="Node2D" unique_id=817390848]
+[node name="Accelerator" type="Node2D" unique_id=817390848 groups=["part"]]
 script = ExtResource("1_lgof1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=941290577]

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dxi3xdtlvwxj7"]
+
+[ext_resource type="PackedScene" uid="uid://btkofrqrrj4wb" path="res://pinball_machine/elements/bumper/bumper.tscn" id="1_dx5uw"]
+
+[node name="ThreeBumpers" type="Node2D" unique_id=1963514747]
+
+[node name="Bumper1" parent="." unique_id=58277578 instance=ExtResource("1_dx5uw")]
+
+[node name="Bumper2" parent="." unique_id=704044506 instance=ExtResource("1_dx5uw")]
+
+[node name="Bumper3" parent="." unique_id=2000440836 instance=ExtResource("1_dx5uw")]

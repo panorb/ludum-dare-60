@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopEntry" format=3 uid="uid://bm07t8x06w7pw"]
+
+[ext_resource type="Texture2D" uid="uid://dm4twypraptsl" path="res://pinball_machine/elements/saucer/saucer.png" id="1_hix3q"]
+[ext_resource type="Script" uid="uid://cxrqn5fa81q5u" path="res://shop/shop_entry.gd" id="1_od03n"]
+[ext_resource type="PackedScene" uid="uid://c22aytwo0gmxi" path="res://pinball_machine/elements/saucer/saucer.tscn" id="2_sfcm3"]
+
+[resource]
+script = ExtResource("1_od03n")
+title = "Saucer"
+price = 110
+icon = ExtResource("1_hix3q")
+scene = ExtResource("2_sfcm3")
+is_set = false
+metadata/_custom_type_script = "uid://cxrqn5fa81q5u"
