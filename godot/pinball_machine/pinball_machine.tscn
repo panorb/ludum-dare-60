@@ -36,6 +36,12 @@ collision_mask = 0
 position = Vector2(18, 0)
 script = ExtResource("3_8oa5j")
 
+[node name="ExclusionZone" type="Area2D" parent="Node2D/StaticBody2D/RightInsideWall" unique_id=450729107]
+collision_layer = 65536
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/StaticBody2D/RightInsideWall/ExclusionZone" unique_id=528556820]
+
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/RightInsideWall" unique_id=742849904]
 color = Color(0.21960784, 0, 0.17254902, 1)
 polygon = PackedVector2Array(333, 708, 464, 608, 465, 334, 419, 308, 419, 277, 463, 249, 459, 137, 456, 116, 449, 97, 435, 80, 418, 67, 400, 60, 370, 61.000004, 322, 96, 322, 86, 338, 64, 357, 50, 404, 42, 428, 52, 441, 62, 448, 67, 457, 79, 464, 88, 474, 111, 477, 132, 477, 622, 426, 662, 438, 677, 477, 647, 477, 707)
@@ -43,6 +49,12 @@ polygon = PackedVector2Array(333, 708, 464, 608, 465, 334, 419, 308, 419, 277, 4
 [node name="RightOutsideWall" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=273552117]
 position = Vector2(23, -1)
 script = ExtResource("3_8oa5j")
+
+[node name="ExclusionZone" type="Area2D" parent="Node2D/StaticBody2D/RightOutsideWall" unique_id=1488251041]
+collision_layer = 65536
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/StaticBody2D/RightOutsideWall/ExclusionZone" unique_id=1350294048]
 
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/RightOutsideWall" unique_id=2081257450]
 position = Vector2(0, 1)
@@ -52,12 +64,24 @@ polygon = PackedVector2Array(496, 708, 496, 138, 495, 122, 492, 106, 487, 90, 48
 [node name="LeftWall" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=1129709691]
 script = ExtResource("3_8oa5j")
 
+[node name="ExclusionZone" type="Area2D" parent="Node2D/StaticBody2D/LeftWall" unique_id=1576439934]
+collision_layer = 65536
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/StaticBody2D/LeftWall/ExclusionZone" unique_id=53694736]
+
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/LeftWall" unique_id=1968061931]
 color = Color(0.21960784, 0, 0.17254902, 1)
 polygon = PackedVector2Array(164.31046, 707.0619, 19.310461, 606.0619, 22.310461, 264.0619, 61.31046, 232.0619, 61, 214, 32, 177, 23, 154, 20.310461, 144.0619, 20, 136, 24, 104, 36, 76, 56, 50, 81, 31, 110, 19, 140, 15, 139, 0, 0, 0, 0.31046063, 706.0619)
 
 [node name="TopWall" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=1757978884]
 script = ExtResource("3_8oa5j")
+
+[node name="ExclusionZone" type="Area2D" parent="Node2D/StaticBody2D/TopWall" unique_id=1623189575]
+collision_layer = 65536
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/StaticBody2D/TopWall/ExclusionZone" unique_id=544131990]
 
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/TopWall" unique_id=1358876380]
 color = Color(0.21960784, 0, 0.17254902, 1)
@@ -66,6 +90,12 @@ polygon = PackedVector2Array(112, 0, 368, 0, 368, 15, 112, 15)
 [node name="LaneSeparatorLeft" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=2092755203]
 script = ExtResource("3_8oa5j")
 
+[node name="ExclusionZone" type="Area2D" parent="Node2D/StaticBody2D/LaneSeparatorLeft" unique_id=239354393]
+collision_layer = 65536
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/StaticBody2D/LaneSeparatorLeft/ExclusionZone" unique_id=1150253266]
+
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/LaneSeparatorLeft" unique_id=1500410086]
 position = Vector2(1, 0)
 color = Color(0.21960784, 0, 0.17254902, 1)
@@ -73,6 +103,12 @@ polygon = PackedVector2Array(43, 495, 60, 504, 60, 565, 145, 612, 134, 615, 129,
 
 [node name="LaneSeparatorRight" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=2065388223]
 script = ExtResource("3_8oa5j")
+
+[node name="ExclusionZone" type="Area2D" parent="Node2D/StaticBody2D/LaneSeparatorRight" unique_id=56884816]
+collision_layer = 65536
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/StaticBody2D/LaneSeparatorRight/ExclusionZone" unique_id=1293035685]
 
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/LaneSeparatorRight" unique_id=1439611084]
 position = Vector2(1, 0)

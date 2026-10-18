@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dve7xw0b21bl4" path="res://shop/icons/bumper_times_three.png" id="2_mrrg1"]
 [ext_resource type="Script" uid="uid://b7702qy01qt6g" path="res://shop/item/shop_item.gd" id="2_vsid4"]
 [ext_resource type="StyleBox" uid="uid://dt24fakm6b3k1" path="res://ui/red_style_box.tres" id="3_4c2at"]
-[ext_resource type="FontFile" uid="uid://7pxojp6ogpwc" path="res://ui/orbitron.ttf" id="3_mrrg1"]
+[ext_resource type="FontVariation" uid="uid://djiaci5xrhm4m" path="res://ui/orbitron_700.tres" id="4_7eny6"]
 [ext_resource type="FontFile" uid="uid://bbrpa4t0wtrn6" path="res://ui/doto.ttf" id="4_tb531"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a21m7"]
@@ -12,7 +12,18 @@ content_margin_top = 4.0
 content_margin_bottom = 4.0
 bg_color = Color(0.3372549, 0.41568628, 0.5372549, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsid4"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(1, 0.5803922, 0.7019608, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [node name="ShopItem" type="PanelContainer" unique_id=2129420058]
+offset_right = 143.0
+offset_bottom = 189.0
 size_flags_horizontal = 3
 theme_override_styles/panel = ExtResource("1_v5v6m")
 script = ExtResource("2_vsid4")
@@ -47,27 +58,38 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(4, 0)
+offset_transform_rotation = -0.05235988
+theme_override_colors/font_color = Color(0.21960784, 0, 0.17254902, 1)
+theme_override_fonts/font = ExtResource("4_7eny6")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_vsid4")
 text = "SET"
 
 [node name="Footer" type="HBoxContainer" parent="MarginContainer/Content" unique_id=265669392]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="NameTag" type="Label" parent="MarginContainer/Content/Footer" unique_id=748209804]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_mrrg1")
-theme_override_styles/normal = ExtResource("3_4c2at")
-text = "Pop Bumper"
-
-[node name="Spacer" type="Control" parent="MarginContainer/Content/Footer" unique_id=1685057848]
-layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_7eny6")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("3_4c2at")
+text = "Pop Bumpers"
+horizontal_alignment = 1
+autowrap_mode = 1
 
 [node name="Price" type="Label" parent="MarginContainer/Content/Footer" unique_id=514828199]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
+size_flags_horizontal = 8
 theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
 theme_override_fonts/font = ExtResource("4_tb531")
 theme_override_font_sizes/font_size = 18
 text = "120"
+horizontal_alignment = 2

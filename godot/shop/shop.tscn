@@ -47,14 +47,17 @@ layout_mode = 2
 [node name="ItemsScroll" type="ScrollContainer" parent="ShopLayout" unique_id=387604732]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/scrollbar_h_separation = 4
+theme_override_constants/scrollbar_v_separation = 4
 horizontal_scroll_mode = 0
 
 [node name="Items" type="GridContainer" parent="ShopLayout/ItemsScroll" unique_id=622775746]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/h_separation = 14
-theme_override_constants/v_separation = 14
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
 columns = 2
 
 [node name="Button" type="Button" parent="ShopLayout" unique_id=652744626]

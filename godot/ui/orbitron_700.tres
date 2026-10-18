@@ -1,0 +1,9 @@
+[gd_resource type="FontVariation" format=3 uid="uid://djiaci5xrhm4m"]
+
+[ext_resource type="FontFile" uid="uid://7pxojp6ogpwc" path="res://ui/orbitron.ttf" id="1_p4pkt"]
+
+[resource]
+base_font = ExtResource("1_p4pkt")
+variation_opentype = {
+2003265652: 700
+}

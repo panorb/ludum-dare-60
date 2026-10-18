@@ -2,8 +2,10 @@
 
 [ext_resource type="Shader" uid="uid://b4r047y0b24qy" path="res://shop/bulbs.gdshader" id="1_335pt"]
 [ext_resource type="StyleBox" uid="uid://dhoiouwwwmw6f" path="res://ui/black_style_box.tres" id="1_d7lgn"]
+[ext_resource type="Theme" uid="uid://d1bm57laym1gy" path="res://ui/theme.tres" id="1_fjmi1"]
 [ext_resource type="Script" uid="uid://l04oin7gfdt7" path="res://shop/marquee.gd" id="2_apm8d"]
 [ext_resource type="Script" uid="uid://c1ifmju07qpn3" path="res://shop/bulbs.gd" id="2_d7lgn"]
+[ext_resource type="FontFile" uid="uid://7pxojp6ogpwc" path="res://ui/orbitron.ttf" id="6_wkvfi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_er7c6"]
 shader = ExtResource("1_335pt")
@@ -16,8 +18,15 @@ shader_parameter/flash = false
 shader_parameter/on_color = Color(1, 0.965, 0.682, 1)
 shader_parameter/off_color = Color(0.408, 0.235, 0.204, 1)
 
+[sub_resource type="FontVariation" id="FontVariation_fjmi1"]
+base_font = ExtResource("6_wkvfi")
+variation_opentype = {
+2003265652: 900
+}
+
 [node name="Marquee" type="PanelContainer" unique_id=2083558016]
 custom_minimum_size = Vector2(0, 96)
+theme = ExtResource("1_fjmi1")
 theme_override_styles/panel = ExtResource("1_d7lgn")
 script = ExtResource("2_apm8d")
 
@@ -30,6 +39,7 @@ script = ExtResource("2_d7lgn")
 [node name="Title" type="Label" parent="." unique_id=566075414]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.5803922, 0.7019608, 1)
+theme_override_fonts/font = SubResource("FontVariation_fjmi1")
 theme_override_font_sizes/font_size = 32
 text = "PARTS SHOP"
 horizontal_alignment = 1
