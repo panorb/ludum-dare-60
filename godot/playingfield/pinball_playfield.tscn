@@ -48,6 +48,7 @@ polygon = PackedVector2Array(164, 726, 19, 625, 22, 283, 61, 251, 61, 236, 20, 1
 script = ExtResource("3_8oa5j")
 
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/LeftWall" unique_id=1968061931]
+position = Vector2(0, 2)
 color = Color(0.21960784, 0, 0.17254902, 1)
 polygon = PackedVector2Array(164, 726, 19, 625, 22, 283, 61, 251, 61, 236, 20, 163, 20, 124, 24, 110, 31, 97, 39, 85, 50, 74, 61, 65, 73, 57, 88, 48, 102, 42, 114, 37, 126, 33, 126, 0, 0, 0, 0, 725)
 
@@ -61,14 +62,14 @@ color = Color(0.21960784, 0, 0.17254902, 1)
 polygon = PackedVector2Array(112, -1, 364, 0, 364, 34, 111, 34)
 
 [node name="FlipperRight" parent="." unique_id=1685017784 instance=ExtResource("2_w774u")]
-position = Vector2(334, 652)
+position = Vector2(354, 640)
 rotation = -0.49741885
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.7, 0.7)
 
 [node name="FlipperLeft" parent="." unique_id=527346712 instance=ExtResource("2_w774u")]
-position = Vector2(151.99998, 652)
+position = Vector2(143.99998, 640)
 rotation = 0.49741885
-scale = Vector2(-0.5, -0.5)
+scale = Vector2(-0.7, -0.7)
 maximum = -1.0
 
 [node name="DropOut" type="Area2D" parent="." unique_id=1153074580]

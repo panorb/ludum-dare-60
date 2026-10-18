@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dlsji3qfjsivu"]
 
 [ext_resource type="Script" uid="uid://j2c3yxgrsrx4" path="res://intro/intro.gd" id="1_fpmxm"]
-[ext_resource type="FontFile" uid="uid://7pxojp6ogpwc" path="res://Orbitron-VariableFont_wght.ttf" id="2_jkt4n"]
+[ext_resource type="FontFile" uid="uid://7pxojp6ogpwc" path="res://ui/orbitron.ttf" id="2_jkt4n"]
 
 [sub_resource type="Theme" id="Theme_becuj"]
 Label/fonts/font = ExtResource("2_jkt4n")
