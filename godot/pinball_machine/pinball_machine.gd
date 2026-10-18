@@ -2,6 +2,7 @@ extends Node2D
 
 signal game_over(score: int, is_highscore: bool)
 signal score_changed(score: int)
+signal excitement(value: int)
 
 @onready var flipper_right := $FlipperRight
 @onready var flipper_left := $FlipperLeft
@@ -17,6 +18,7 @@ func _ready() -> void:
 	for child in get_children():
 		if child is Element:
 			child.score.connect(_score)
+			child.excite.connect(_excite)
 
 func _score(id, points):
 	if not points:
@@ -24,6 +26,10 @@ func _score(id, points):
 	score += points
 	print(score)
 	score_changed.emit(points)
+	excitement.emit(points)
+
+func _excite(value) -> void:
+	excitement.emit(value)
 
 func _on_drop_out(body: Node2D) -> void:
 	body.queue_free()
@@ -49,6 +55,9 @@ func set_sim_speed(factor: float) -> void:
 var running := false
 
 func initialize_field() -> void:
+	pass
+
+func reset() -> void:
 	pass
 
 func start() -> void:

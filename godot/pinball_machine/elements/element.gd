@@ -3,6 +3,7 @@ extends Node2D
 
 signal trigger(id)
 signal score(id, amount)
+signal excite(value)
 
 @export var active = true:
 	set = set_active
