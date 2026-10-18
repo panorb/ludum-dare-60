@@ -2,6 +2,7 @@ extends Node2D
 
 signal game_over(score: int, is_highscore: bool)
 signal score_changed(score: int)
+signal excitement(value: int)
 
 @onready var flipper_right := $FlipperRight
 @onready var flipper_left := $FlipperLeft
@@ -16,14 +17,19 @@ func _ready() -> void:
 	drop_out.body_entered.connect(_on_drop_out)
 	for child in get_children():
 		if child is Element:
-			child.score.connect(_score)
+			child.score.connect(on_score)
+			child.excite.connect(on_excite)
 
-func _score(id, points):
+func on_score(id, points):
 	if not points:
 		return
 	score += points
 	print(score)
 	score_changed.emit(points)
+	excitement.emit(points)
+
+func on_excite(value) -> void:
+	excitement.emit(value)
 
 func _on_drop_out(body: Node2D) -> void:
 	body.queue_free()
@@ -50,6 +56,9 @@ var running := false
 
 func initialize_field() -> void:
 	pass
+
+func reset() -> void:
+	pass #TODO this should reset the game, i.e., reset all game elements, such as drop targets
 
 func start() -> void:
 	if running:
