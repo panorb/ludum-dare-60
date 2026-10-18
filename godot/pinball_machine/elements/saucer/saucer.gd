@@ -35,8 +35,9 @@ func _physics_process(_delta: float) -> void:
 	if not active or not open:
 		return
 	for body in hold_area.get_overlapping_bodies():
-		if body is RigidBody2D:
+		if body is Ball:
 			if not body.freeze:
+				%SoucerInSoundPlayer.play();
 				print("holding!")
 				ball = body
 				ball.global_position = global_position
