@@ -21,6 +21,11 @@ func _physics_process(delta: float) -> void:
 
 	_accumulated_angle += angle_change
 
+	# If change es greater than a threschold play spinn sound
+	if abs(angle_change) > PI/15.0:
+		if not %RandomSoundPlayer.playing:
+			%RandomSoundPlayer.play()
+
 	while _accumulated_angle >= TAU:
 		_accumulated_angle -= TAU
 		# todo score
@@ -28,3 +33,8 @@ func _physics_process(delta: float) -> void:
 	while _accumulated_angle <= -TAU:
 		_accumulated_angle += TAU
 		# todo score
+
+func _on_body_entered(body: Node):
+	if body is Ball:
+		%RandomSoundPlayer.play()
+		
