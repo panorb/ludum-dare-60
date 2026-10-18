@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://dlsji3qfjsivu"]
 
 [ext_resource type="Script" uid="uid://j2c3yxgrsrx4" path="res://intro/intro.gd" id="1_fpmxm"]
-[ext_resource type="FontFile" uid="uid://7pxojp6ogpwc" path="res://ui/orbitron.ttf" id="2_jkt4n"]
+[ext_resource type="Theme" uid="uid://d1bm57laym1gy" path="res://ui/theme.tres" id="2_jkt4n"]
 
-[sub_resource type="Theme" id="Theme_becuj"]
-Label/fonts/font = ExtResource("2_jkt4n")
+[sub_resource type="Theme" id="Theme_jkt4n"]
+
+[sub_resource type="Theme" id="Theme_pxqmo"]
+
+[sub_resource type="Theme" id="Theme_vyos2"]
 
 [node name="Panel" type="Panel" unique_id=1541300657]
 anchors_preset = 15
@@ -12,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_jkt4n")
 script = ExtResource("1_fpmxm")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=970735885]
@@ -23,14 +27,16 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
+theme = SubResource("Theme_pxqmo")
 
 [node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer" unique_id=1611738746]
 layout_mode = 2
+theme = SubResource("Theme_vyos2")
 
 [node name="TextLabel" type="Label" parent="AspectRatioContainer/MarginContainer" unique_id=1028028766]
 unique_name_in_owner = true
 layout_mode = 2
-theme = SubResource("Theme_becuj")
+theme = ExtResource("2_jkt4n")
 text = "Your Grandpa died and Left you with his biggest Dream.
 Building the most lucrative Pinball machine in the world. The NOVA BLASTERZ. You got the place in a Arcade, you got the ground structure of the Pinball machine.....
 But you have no money Left for content. ↪"
