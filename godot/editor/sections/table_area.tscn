@@ -34,4 +34,4 @@ handle_input_locally = false
 size = Vector2i(536, 690)
 render_target_update_mode = 4
 
-[node name="Game" parent="Cabinet/SubViewportContainer/SubViewport" unique_id=996228279 instance=ExtResource("1_gcuu0")]
+[node name="PlayableMachine" parent="Cabinet/SubViewportContainer/SubViewport" unique_id=996228279 instance=ExtResource("1_gcuu0")]

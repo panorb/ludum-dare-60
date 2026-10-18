@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ba4u6apn3j0ke" path="res://pinball_machine/pinball_machine.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://dpba7ivxpmek3" path="res://pinball_machine/playable_machine.gd" id="1_e2o6t"]
 
-[node name="Game" type="Node2D" unique_id=996228279]
+[node name="PlayableMachine" type="Node2D" unique_id=996228279]
 script = ExtResource("1_e2o6t")
 
-[node name="PinballPlayfield" parent="." unique_id=1837038421 instance=ExtResource("1_80nbo")]
+[node name="PinballMachine" parent="." unique_id=1837038421 instance=ExtResource("1_80nbo")]
