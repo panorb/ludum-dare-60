@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://xfeytqsog0kt" path="res://pinball_machine/ball.png" id="2_ipx12"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sj7qs"]
+friction = 0.0
 rough = true
 bounce = 0.2
 

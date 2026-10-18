@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://bsyg0a02urs2e" path="res://pinball_machine/elements/plunger/plunger.gd" id="1_11uqe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i6ibw"]
-size = Vector2(20, 3)
+size = Vector2(20, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eckxu"]
+size = Vector2(20, 72)
 
 [node name="Plunger" type="Node2D" unique_id=578970161]
 script = ExtResource("1_11uqe")
@@ -12,11 +15,21 @@ metadata/_custom_type_script = "uid://c55dcj4rrkgmt"
 [node name="PlungerPart" type="CharacterBody2D" parent="." unique_id=1172563524]
 collision_layer = 1024
 collision_mask = 0
+platform_on_leave = 2
+platform_floor_layers = 4294965504
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlungerPart" unique_id=154399390]
-position = Vector2(0, 0.5)
+position = Vector2(0, 12.5)
 shape = SubResource("RectangleShape2D_i6ibw")
 
 [node name="Polygon2D" type="Polygon2D" parent="PlungerPart" unique_id=283644442]
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-10, -1, 10, -1, 10, 2, -10, 2)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=639156924]
+collision_layer = 0
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=690322877]
+position = Vector2(0, 26)
+shape = SubResource("RectangleShape2D_eckxu")
