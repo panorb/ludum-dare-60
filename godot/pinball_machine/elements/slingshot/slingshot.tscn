@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bmsvy7u0v7yk" path="res://pinball_machine/elements/slingshot/slingshot.png" id="1_yxn2l"]
 [ext_resource type="AudioStream" uid="uid://dnpsnc3wu1o27" path="res://pinball_machine/elements/slingshot/push_back.wav" id="3_ge388"]
 [ext_resource type="Script" uid="uid://ikblyv5lv8fw" path="res://pinball_machine/elements/slingshot/slingshot.gd" id="3_pvr2h"]
-[ext_resource type="Script" uid="uid://k5e563d3qnx5" path="res://pinball_machine/elements/slingshot/push_back_static_body_2d.gd" id="3_s1bho"]
+[ext_resource type="Script" uid="uid://gcvnqtsc06ep" path="res://pinball_machine/elements/slingshot/push_back_static_body_2d.gd" id="3_s1bho"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eckxu"]
 size = Vector2(14.5584755, 68)

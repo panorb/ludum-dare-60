@@ -16,7 +16,7 @@ enum BUMPER_VARIANT {
 @export var strength := 500.0;
 
 func set_points(_points) -> void:
-	%ScoreLabel.text = str(points)
+	%ScoreLabel.text = str(_points)
 	points = _points
 
 signal body_entered
