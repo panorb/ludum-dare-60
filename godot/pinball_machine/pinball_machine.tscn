@@ -40,7 +40,7 @@ script = ExtResource("3_8oa5j")
 
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/RightInsideWall" unique_id=742849904]
 color = Color(0.21960784, 0, 0.17254902, 1)
-polygon = PackedVector2Array(333, 708, 464, 608, 465, 334, 419, 308, 419, 277, 463, 249, 458, 90, 453, 85, 448, 82, 441.3655, 77.73494, 434, 73, 418, 67, 401, 62.000004, 370, 61.000004, 322, 94, 322, 83, 368, 52.000004, 411, 51, 423, 54, 435, 58, 447, 64, 459, 72, 468, 81, 472, 89, 475, 96, 477, 108, 477, 132, 477, 622, 426, 662, 438, 677, 477, 647, 477, 707)
+polygon = PackedVector2Array(333, 708, 464, 608, 465, 334, 419, 308, 419, 277, 463, 249, 458, 90, 453, 85, 448, 82, 441.3655, 77.73494, 434, 73, 418, 67, 401, 62.000004, 370, 61.000004, 322, 94, 322, 83, 368, 53, 411, 51, 423, 54, 435, 58, 447, 64, 459, 72, 468, 81, 472, 89, 475, 96, 477, 108, 477, 132, 477, 622, 426, 662, 438, 677, 477, 647, 477, 707)
 
 [node name="RightOutsideWall" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=273552117]
 position = Vector2(23, -1)
@@ -64,6 +64,22 @@ script = ExtResource("3_8oa5j")
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/TopWall" unique_id=1358876380]
 color = Color(0.21960784, 0, 0.17254902, 1)
 polygon = PackedVector2Array(112, 0, 368, 0, 368, 16, 112, 16)
+
+[node name="LaneSeparatorLeft" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=2092755203]
+script = ExtResource("3_8oa5j")
+
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/LaneSeparatorLeft" unique_id=1500410086]
+position = Vector2(1, 0)
+color = Color(0.21960784, 0, 0.17254902, 1)
+polygon = PackedVector2Array(43, 495, 60, 504, 60, 565, 145, 612, 134, 615, 129, 623, 131, 635, 43, 582)
+
+[node name="LaneSeparatorRight" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=2065388223]
+script = ExtResource("3_8oa5j")
+
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/LaneSeparatorRight" unique_id=1439611084]
+position = Vector2(1, 0)
+color = Color(0.21960784, 0, 0.17254902, 1)
+polygon = PackedVector2Array(460, 495, 443, 504, 443, 565, 358, 612, 369, 615, 374, 623, 372, 635, 460, 582)
 
 [node name="FlipperRight" parent="." unique_id=1685017784 instance=ExtResource("2_w774u")]
 position = Vector2(356, 628.99994)
