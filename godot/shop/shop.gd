@@ -8,6 +8,11 @@ const SHOP_ITEM := preload("res://shop/item/shop_item.tscn")
 @onready var items: GridContainer = %Items
 
 signal item_pressed(entry: ShopEntry)
+var display_balance = 0:
+	set(value):
+		%CoinsValue.text = str(value)
+		display_balance = value
+var coin_display_tween : Tween = null
 
 
 func _ready() -> void:
@@ -22,6 +27,16 @@ func _ready() -> void:
 
 func update_available_balance(balance: int):
 	_update_item_purchasability(balance)
+	
+	if coin_display_tween:
+		coin_display_tween.kill()
+	coin_display_tween = get_tree().create_tween()
+	
+	var time_for_transition : float = abs(balance - display_balance) * 0.01
+	time_for_transition = min(time_for_transition, 3.0)
+	coin_display_tween.tween_property(self, "display_balance", balance, time_for_transition) \
+		.set_trans(Tween.TRANS_CUBIC) \
+		.set_ease(Tween.EASE_OUT)
 
 func _update_item_purchasability(balance: int):
 	for i in len(shop_entries):

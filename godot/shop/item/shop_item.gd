@@ -43,7 +43,19 @@ func _on_hover_changed(hovered: bool) -> void:
 func _update_state():
 	if not is_active:
 		%Bulbs.set_lights(Bulbs.LightMode.DISABLED)
-	elif is_hovered:
-		%Bulbs.set_lights(Bulbs.LightMode.ON)
+		%SetSticker.add_theme_stylebox_override("normal", load("res://shop/set_sticker_disabled.tres"))
+		%SetSticker.add_theme_color_override("font_color", Color.BLACK)
+		%NameTag.add_theme_stylebox_override("normal", load("res://shop/name_tag_disabled.tres"))
+		%Price.add_theme_color_override("font_color", Color("#ec614a"))
+		%Art.add_theme_stylebox_override("normal", load("res://shop/art_disabled.tres"))
 	else:
-		%Bulbs.set_lights(Bulbs.LightMode.OFF)
+		%SetSticker.add_theme_stylebox_override("normal", load("res://shop/set_sticker_enabled.tres"))
+		%SetSticker.add_theme_color_override("font_color", Color("#38002c"))
+		%NameTag.add_theme_stylebox_override("normal", load("res://shop/name_tag_enabled.tres"))
+		%Price.add_theme_color_override("font_color", Color("#fff6ae"))
+		%Art.add_theme_stylebox_override("normal", load("res://shop/art_enabled.tres"))
+		
+		if is_hovered:
+			%Bulbs.set_lights(Bulbs.LightMode.ON)
+		else:
+			%Bulbs.set_lights(Bulbs.LightMode.OFF)
