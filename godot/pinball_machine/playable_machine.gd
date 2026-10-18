@@ -1,6 +1,6 @@
 extends Node
 
-@onready var playfield = $PinballPlayfield
+@onready var playfield = $PinballMachine
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("flipper_charge"):
