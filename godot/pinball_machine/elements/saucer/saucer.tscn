@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://btys4x7het3s4" path="res://pinball_machine/elements/saucer/saucer.gd" id="1_4ee05"]
 [ext_resource type="Texture2D" uid="uid://dm4twypraptsl" path="res://pinball_machine/elements/saucer/saucer.png" id="1_131qa"]
+[ext_resource type="Script" uid="uid://b26sfo7otc5te" path="res://shared/random_sound_player.gd" id="3_1s0aw"]
+[ext_resource type="AudioStream" uid="uid://dj2t1ccy7rh41" path="res://pinball_machine/elements/saucer/saucer_in2.wav" id="4_yjdwf"]
+[ext_resource type="AudioStream" uid="uid://bmbbx3mnu0p53" path="res://pinball_machine/elements/saucer/saucer_in1.wav" id="5_hw4et"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0khsq"]
 radius = 30.0
@@ -45,3 +48,16 @@ shape = SubResource("CircleShape2D_rhokp")
 
 [node name="ResetTimer" type="Timer" parent="." unique_id=1869236123]
 wait_time = 0.3
+
+[node name="SoucerInSoundPlayer" type="Node" parent="." unique_id=270194910]
+unique_name_in_owner = true
+script = ExtResource("3_1s0aw")
+metadata/_custom_type_script = "uid://b26sfo7otc5te"
+
+[node name="SaucerIn2" type="AudioStreamPlayer" parent="SoucerInSoundPlayer" unique_id=1388082114]
+stream = ExtResource("4_yjdwf")
+bus = &"SFX-System"
+
+[node name="SaucerIn1" type="AudioStreamPlayer" parent="SoucerInSoundPlayer" unique_id=72556465]
+stream = ExtResource("5_hw4et")
+bus = &"SFX-System"
