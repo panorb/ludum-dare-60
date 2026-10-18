@@ -40,7 +40,7 @@ script = ExtResource("3_8oa5j")
 
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/RightInsideWall" unique_id=742849904]
 color = Color(0.21960784, 0, 0.17254902, 1)
-polygon = PackedVector2Array(333, 708, 464, 608, 465, 334, 419, 308, 419, 277, 463, 249, 458, 90, 453, 85, 448, 82, 441.3655, 77.73494, 434, 73, 418, 67, 401, 62.000004, 370, 61.000004, 322, 94, 322, 83, 368, 53, 411, 51, 423, 54, 435, 58, 447, 64, 459, 72, 468, 81, 472, 89, 475, 96, 477, 108, 477, 132, 477, 622, 426, 662, 438, 677, 477, 647, 477, 707)
+polygon = PackedVector2Array(333, 708, 464, 608, 465, 334, 419, 308, 419, 277, 463, 249, 459, 137, 456, 116, 449, 97, 435, 80, 418, 67, 400, 60, 370, 61.000004, 322, 94, 322, 83, 338, 62, 356, 47, 388, 43, 404, 42, 428, 52, 441, 62, 448, 67, 457, 79, 464, 88, 474, 111, 477, 132, 477, 622, 426, 662, 438, 677, 477, 647, 477, 707)
 
 [node name="RightOutsideWall" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=273552117]
 position = Vector2(23, -1)
@@ -49,21 +49,21 @@ script = ExtResource("3_8oa5j")
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/RightOutsideWall" unique_id=2081257450]
 position = Vector2(0, 1)
 color = Color(0.21960784, 0, 0.17254902, 1)
-polygon = PackedVector2Array(496, 708, 496, 104, 493, 88, 487, 72, 478, 59, 465, 46, 453, 37, 437, 28, 421, 21, 408, 17, 396, 16, 392, 15.999999, 328, 16, 328, 0, 512, 0, 512, 708)
+polygon = PackedVector2Array(496, 708, 496, 138, 495, 122, 492, 106, 487, 90, 480, 76, 470, 62, 460, 50, 448, 40, 435, 31, 421, 24, 406, 19, 390, 16, 374, 15, 328, 15, 328, 0, 512, 0, 512, 708)
 
 [node name="LeftWall" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=1129709691]
 script = ExtResource("3_8oa5j")
 
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/LeftWall" unique_id=1968061931]
 color = Color(0.21960784, 0, 0.17254902, 1)
-polygon = PackedVector2Array(164.31046, 707.0619, 19.310461, 606.0619, 22.310461, 264.0619, 61.31046, 232.0619, 61.31046, 217.0619, 20.310461, 144.0619, 20.310461, 105.061905, 24.310461, 91.061905, 31.310461, 78.061905, 39.31046, 66.061905, 50.31046, 55.0619, 61.31046, 46.0619, 73.31046, 38.0619, 88.31046, 29.061901, 102.31046, 23.061901, 114.31046, 18.061901, 128, 16.000002, 128, 0, 0, 0, 0.31046063, 706.0619)
+polygon = PackedVector2Array(164.31046, 707.0619, 19.310461, 606.0619, 22.310461, 264.0619, 61.31046, 232.0619, 61, 214, 32, 177, 23, 154, 20.310461, 144.0619, 20, 136, 24, 104, 36, 76, 56, 50, 81, 31, 110, 19, 140, 15, 139, 0, 0, 0, 0.31046063, 706.0619)
 
 [node name="TopWall" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=1757978884]
 script = ExtResource("3_8oa5j")
 
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/TopWall" unique_id=1358876380]
 color = Color(0.21960784, 0, 0.17254902, 1)
-polygon = PackedVector2Array(112, 0, 368, 0, 368, 16, 112, 16)
+polygon = PackedVector2Array(112, 0, 368, 0, 368, 15, 112, 15)
 
 [node name="LaneSeparatorLeft" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=2092755203]
 script = ExtResource("3_8oa5j")
@@ -140,5 +140,5 @@ rotation = 0.9302605
 position = Vector2(507, 655)
 
 [node name="OneWayGate" parent="." unique_id=1446678896 instance=ExtResource("9_qjevt")]
-position = Vector2(430, 33)
+position = Vector2(423, 28)
 rotation = -1.5707964
