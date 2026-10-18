@@ -44,16 +44,18 @@ layout_mode = 2
 [node name="CoinDisplay" parent="ShopLayout" unique_id=1650333735 instance=ExtResource("2_10cy8")]
 layout_mode = 2
 
-[node name="Items" type="GridContainer" parent="ShopLayout" unique_id=622775746]
+[node name="ItemsScroll" type="ScrollContainer" parent="ShopLayout" unique_id=387604732]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Items" type="GridContainer" parent="ShopLayout/ItemsScroll" unique_id=622775746]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/h_separation = 14
 theme_override_constants/v_separation = 14
 columns = 2
-
-[node name="Spacer" type="Control" parent="ShopLayout" unique_id=473228259]
-layout_mode = 2
-size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="ShopLayout" unique_id=652744626]
 layout_mode = 2

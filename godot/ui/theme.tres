@@ -2,8 +2,30 @@
 
 [ext_resource type="FontFile" uid="uid://7pxojp6ogpwc" path="res://ui/orbitron.ttf" id="1_rqugq"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmyc1"]
+bg_color = Color(1, 0.85490197, 0.4392157, 1)
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqugq"]
+bg_color = Color(1, 0.9647059, 0.68235296, 1)
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jf26r"]
+bg_color = Color(0.95686275, 0.6901961, 0.23529412, 1)
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bv5vx"]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color(0, 0, 0, 1)
+corner_detail = 6
+
 [resource]
 Button/font_sizes/font_size = 15
 Button/fonts/font = ExtResource("1_rqugq")
 Label/font_sizes/font_size = 15
 Label/fonts/font = ExtResource("1_rqugq")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_mmyc1")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_rqugq")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_jf26r")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_bv5vx")

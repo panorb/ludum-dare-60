@@ -20,19 +20,11 @@ shader_parameter/spacing = 32.0
 shader_parameter/radius = 3.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_er7c6"]
-content_margin_left = 18.0
-content_margin_top = 18.0
-content_margin_right = 18.0
-content_margin_bottom = 34.0
-bg_color = Color(0.54509807, 0.67058825, 0.7490196, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0.3372549, 0.41568628, 0.5372549, 1)
-corner_detail = 16
-shadow_size = 1
-shadow_offset = Vector2(0, 14)
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.9254902, 0.38039216, 0.2901961, 1)
 
 [node name="Editor" type="Control" unique_id=1403797738]
 layout_mode = 3
@@ -82,13 +74,13 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_er7c6")
 
 [node name="TableView" type="SubViewportContainer" parent="Margin/HBoxContainer/TableArea/Cabinet" unique_id=830299144]
-custom_minimum_size = Vector2(536, 690)
+custom_minimum_size = Vector2(535, 705)
 layout_mode = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="Margin/HBoxContainer/TableArea/Cabinet/TableView" unique_id=1902216977]
 handle_input_locally = false
-size = Vector2i(536, 690)
+size = Vector2i(535, 705)
 render_target_update_mode = 4
 
 [node name="PlayableMachine" parent="Margin/HBoxContainer/TableArea/Cabinet/TableView/SubViewport" unique_id=996228279 instance=ExtResource("3_6j37k")]
