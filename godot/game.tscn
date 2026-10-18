@@ -1,9 +1,23 @@
 [gd_scene format=3 uid="uid://dcpgsb0oxtw02"]
 
 [ext_resource type="PackedScene" uid="uid://d31fplisqhh6s" path="res://editor/editor.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://ds5rf5wstqn67" path="res://game.gd" id="1_e2o6t"]
+[ext_resource type="AudioStream" uid="uid://cw7jwxlr5qkwt" path="res://bgm-start.wav" id="3_fc0e3"]
+[ext_resource type="AudioStream" uid="uid://c2gs468vdinl8" path="res://bgm-loop.wav" id="4_7jktm"]
 
 [node name="Game" type="Node2D" unique_id=602533630]
+script = ExtResource("1_e2o6t")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1330613801]
 
 [node name="Editor" parent="CanvasLayer" unique_id=1403797738 instance=ExtResource("1_80nbo")]
+
+[node name="BackgroundMusicMainLoopAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=461219431]
+unique_name_in_owner = true
+stream = ExtResource("4_7jktm")
+bus = &"Music"
+
+[node name="BackgroundMusicStartAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1732057888]
+unique_name_in_owner = true
+stream = ExtResource("3_fc0e3")
+bus = &"Music"
