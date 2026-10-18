@@ -1,6 +1,15 @@
 [gd_scene format=3 uid="uid://dk56fc7iae3d7"]
 
 [ext_resource type="Script" uid="uid://b6yf3hwpjfera" path="res://pinball_machine/elements/spinner_target/spinner_target.gd" id="1_gsqnr"]
+[ext_resource type="Script" uid="uid://b26sfo7otc5te" path="res://shared/random_sound_player.gd" id="2_38deb"]
+[ext_resource type="Script" uid="uid://c55dcj4rrkgmt" path="res://pinball_machine/elements/element.gd" id="2_f4ti0"]
+[ext_resource type="AudioStream" uid="uid://ctmqig53bhk3" path="res://pinball_machine/elements/spinner_target/spinner1.wav" id="3_f4ti0"]
+[ext_resource type="AudioStream" uid="uid://bf25cwbun4khp" path="res://pinball_machine/elements/spinner_target/spinner2.wav" id="4_e10lh"]
+[ext_resource type="AudioStream" uid="uid://de61w3owlodak" path="res://pinball_machine/elements/spinner_target/spinner3.wav" id="5_ggmki"]
+[ext_resource type="AudioStream" uid="uid://df64xuow8gru6" path="res://pinball_machine/elements/spinner_target/spinner4.wav" id="6_g1jcy"]
+[ext_resource type="AudioStream" uid="uid://b6d3yss6hmqik" path="res://pinball_machine/elements/spinner_target/spinner5.wav" id="7_t3j4m"]
+[ext_resource type="AudioStream" uid="uid://c6rjgmlxdalnc" path="res://pinball_machine/elements/spinner_target/spinner6.wav" id="8_s7mq0"]
+[ext_resource type="AudioStream" uid="uid://dq3c608swowap" path="res://pinball_machine/elements/spinner_target/spinner7.wav" id="9_1s7im"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eckxu"]
 radius = 3.0
@@ -14,6 +23,7 @@ script = ExtResource("1_gsqnr")
 metadata/_custom_type_script = "uid://c55dcj4rrkgmt"
 
 [node name="Spinner" type="RigidBody2D" parent="." unique_id=803868374]
+unique_name_in_owner = true
 collision_layer = 1024
 collision_mask = 0
 linear_damp = 100.0
@@ -37,3 +47,30 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExclusionZone" unique_id=1946266419]
 shape = SubResource("CircleShape2D_o72lw")
 debug_color = Color(0.9991961, 0, 0.1340175, 0.41960785)
+script = ExtResource("2_f4ti0")
+
+[node name="RandomSoundPlayer" type="Node" parent="." unique_id=217921080]
+unique_name_in_owner = true
+script = ExtResource("2_38deb")
+metadata/_custom_type_script = "uid://b26sfo7otc5te"
+
+[node name="Spinner1" type="AudioStreamPlayer" parent="RandomSoundPlayer" unique_id=1733737914]
+stream = ExtResource("3_f4ti0")
+
+[node name="Spinner2" type="AudioStreamPlayer" parent="RandomSoundPlayer" unique_id=1683241171]
+stream = ExtResource("4_e10lh")
+
+[node name="Spinner3" type="AudioStreamPlayer" parent="RandomSoundPlayer" unique_id=491196671]
+stream = ExtResource("5_ggmki")
+
+[node name="Spinner4" type="AudioStreamPlayer" parent="RandomSoundPlayer" unique_id=873661073]
+stream = ExtResource("6_g1jcy")
+
+[node name="Spinner5" type="AudioStreamPlayer" parent="RandomSoundPlayer" unique_id=1834935509]
+stream = ExtResource("7_t3j4m")
+
+[node name="Spinner6" type="AudioStreamPlayer" parent="RandomSoundPlayer" unique_id=625179009]
+stream = ExtResource("8_s7mq0")
+
+[node name="Spinner7" type="AudioStreamPlayer" parent="RandomSoundPlayer" unique_id=624654419]
+stream = ExtResource("9_1s7im")
