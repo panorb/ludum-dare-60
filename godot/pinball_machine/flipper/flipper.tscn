@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bm2mndo4ok3mc" path="res://pinball_machine/flipper/flipper.gd" id="1_lo8m8"]
 [ext_resource type="Texture2D" uid="uid://c2josx4si4d5c" path="res://pinball_machine/flipper/flipper.png" id="2_7aryu"]
+[ext_resource type="Script" uid="uid://b26sfo7otc5te" path="res://shared/random_sound_player.gd" id="3_2odud"]
+[ext_resource type="AudioStream" uid="uid://42vmgtck66va" path="res://pinball_machine/flipper/flipper1.wav" id="4_jtitm"]
+[ext_resource type="AudioStream" uid="uid://yy2iqri0sn6d" path="res://pinball_machine/flipper/flipper2.wav" id="5_jtitm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eckxu"]
 size = Vector2(111, 16.323292)
@@ -33,3 +36,16 @@ shape = SubResource("RectangleShape2D_eckxu")
 position = Vector2(-65, 5.0000014)
 rotation = 0.08726646
 shape = SubResource("RectangleShape2D_eckxu")
+
+[node name="PressedRandomSoundPlayer" type="Node" parent="." unique_id=1470588927]
+unique_name_in_owner = true
+script = ExtResource("3_2odud")
+metadata/_custom_type_script = "uid://b26sfo7otc5te"
+
+[node name="Flipper1" type="AudioStreamPlayer" parent="PressedRandomSoundPlayer" unique_id=1736425679]
+stream = ExtResource("4_jtitm")
+bus = &"SFX-System"
+
+[node name="Flipper2" type="AudioStreamPlayer" parent="PressedRandomSoundPlayer" unique_id=1751361516]
+stream = ExtResource("5_jtitm")
+bus = &"SFX-System"
