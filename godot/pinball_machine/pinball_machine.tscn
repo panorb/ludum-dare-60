@@ -106,15 +106,23 @@ shape = SubResource("RectangleShape2D_eckxu")
 
 [node name="Bumper" parent="." unique_id=615657735 instance=ExtResource("3_w774u")]
 position = Vector2(163, 249)
+variant = null
+strength = null
 
 [node name="Bumper2" parent="." unique_id=1490087611 instance=ExtResource("3_w774u")]
 position = Vector2(319, 247)
+variant = null
+strength = null
 
 [node name="Bumper3" parent="." unique_id=58277578 instance=ExtResource("3_w774u")]
 position = Vector2(274, 345)
+variant = null
+strength = null
 
 [node name="Bumper4" parent="." unique_id=28127012 instance=ExtResource("3_w774u")]
 position = Vector2(108, 342)
+variant = null
+strength = null
 
 [node name="Saucer" parent="." unique_id=280133016 instance=ExtResource("4_ibvbf")]
 position = Vector2(410, 221.99997)

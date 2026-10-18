@@ -1,5 +1,22 @@
+@tool
 class_name Bumper
 extends Element
+
+enum BUMPER_VARIANT {
+	GREEN = 1,
+	RED,
+	YELLOW
+}
+
+@export var variant : BUMPER_VARIANT = BUMPER_VARIANT.GREEN:
+	set(value):
+		$Sprite2D.texture = load("res://pinball_machine/elements/bumper/bumper{0}.png".format([value]))
+		variant = value
+
+@export var score_value : int = 10:
+	set(value):
+		%ScoreLabel.text = str(value)
+		score_value = value
 
 @export var strength := 500.0;
 

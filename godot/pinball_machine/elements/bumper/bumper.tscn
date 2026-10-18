@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://csobngfrgr368" path="res://pinball_machine/elements/bumper/bumper.gd" id="1_csbte"]
 [ext_resource type="Texture2D" uid="uid://gf65uuf4b61g" path="res://pinball_machine/elements/bumper/bumper1.png" id="1_mx6od"]
+[ext_resource type="FontFile" uid="uid://7pxojp6ogpwc" path="res://ui/orbitron.ttf" id="3_ecln4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eckxu"]
 radius = 19.104973
@@ -10,8 +11,6 @@ radius = 19.104973
 collision_layer = 1024
 collision_mask = 0
 script = ExtResource("1_csbte")
-active = null
-points = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1284131192]
 shape = SubResource("CircleShape2D_eckxu")
@@ -20,3 +19,25 @@ shape = SubResource("CircleShape2D_eckxu")
 position = Vector2(-4.7683716e-07, -4.7683716e-07)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_mx6od")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=430241521]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.0
+offset_right = 20.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_position = Vector2(1, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_ecln4")
+theme_override_font_sizes/font_size = 12
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
