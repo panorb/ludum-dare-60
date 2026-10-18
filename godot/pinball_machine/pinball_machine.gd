@@ -17,10 +17,10 @@ func _ready() -> void:
 	drop_out.body_entered.connect(_on_drop_out)
 	for child in get_children():
 		if child is Element:
-			child.score.connect(_score)
-			child.excite.connect(_excite)
+			child.score.connect(on_score)
+			child.excite.connect(on_excite)
 
-func _score(id, points):
+func on_score(id, points):
 	if not points:
 		return
 	score += points
@@ -28,7 +28,7 @@ func _score(id, points):
 	score_changed.emit(points)
 	excitement.emit(points)
 
-func _excite(value) -> void:
+func on_excite(value) -> void:
 	excitement.emit(value)
 
 func _on_drop_out(body: Node2D) -> void:
@@ -58,7 +58,7 @@ func initialize_field() -> void:
 	pass
 
 func reset() -> void:
-	pass
+	pass #TODO this should reset the game, i.e., reset all game elements, such as drop targets
 
 func start() -> void:
 	if running:

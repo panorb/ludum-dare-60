@@ -5,11 +5,12 @@
 [node name="ThreeBumpers" type="Node2D" unique_id=1963514747]
 
 [node name="Bumper1" parent="." unique_id=58277578 instance=ExtResource("1_dx5uw")]
+points = 10
 
 [node name="Bumper2" parent="." unique_id=704044506 instance=ExtResource("1_dx5uw")]
 variant = 2
-score_value = 15
+points = 15
 
 [node name="Bumper3" parent="." unique_id=2000440836 instance=ExtResource("1_dx5uw")]
 variant = 3
-score_value = 20
+points = 20

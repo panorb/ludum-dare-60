@@ -27,7 +27,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			playfield.flip_right_press()
 		if event.is_action_released("flipper_right"):
 			playfield.flip_right_release()
-	if event.is_action_pressed("debug_ai_toggle"):
+	if event.is_action_pressed("debug_ai_toggle"): #TODO trigger this with the start day button instead!
 		if ai_controller.active:
 			ai_controller.active = false
 			Engine.time_scale = 1.0

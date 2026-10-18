@@ -26,9 +26,9 @@ func _ready() -> void:
 
 var _excitement := 5.0
 var _total_excitement := 0.0
-const _excitement_half_life := 20
-const _repetition_half_life := 50
-const _repetition_strength := 1.0
+const _excitement_half_life := 20 # how many seconds it takes for excitement to half
+const _repetition_half_life := 50 # how many seconds it takes for repeated excites to restore by half
+const _repetition_strength := 1.0 # how bad reperition is, multiplier
 
 var exposure:Dictionary[int, float]
 
@@ -53,7 +53,7 @@ func _on_restart():
 	playfield.start()
 	print("restarting")
 
-var total := 0.0
+var total := 0.0 # TODO remove this, it is just for printing every 2 seconds
 
 func _process(delta: float) -> void:
 	_excitement *= 2**(-delta/_excitement_half_life)
@@ -61,7 +61,7 @@ func _process(delta: float) -> void:
 	for category in exposure:
 		exposure[category] *= memory_decay
 	#print(_excitement)
-	total += delta
+	total += delta # TODO remove this, it is just for printing every 2 seconds
 	if total > 2.0:
 		total -= 2.0
 		print(_excitement, " ", _total_excitement)
@@ -69,10 +69,12 @@ func _process(delta: float) -> void:
 func start() -> void:
 	playfield.start()
 	sim_day.start()
+	# TODO display something about people playing the game over the day. Maybe have a clock that speeds through the day?
 
 func stop() -> void:
 	active = false
-	sim_end.emit(0)
+	sim_end.emit(0) # TODO calculate amount of coins from total excitement
+	# TODO reset total excitement
 
 func _flipper_right_press(body) -> void:
 		if not active:

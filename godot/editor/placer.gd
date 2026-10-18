@@ -11,6 +11,8 @@ signal placement_cancelled
 @onready var link_line: Line2D = $CursorLayer/LinkLine
 @onready var hint: Label = $CursorLayer/PlaceHint
 
+@onready var pinball_machine := %PinballMachine
+
 var _set: Node2D = null
 var _parts: Array[Node2D] = []
 var _index := 0
@@ -122,6 +124,11 @@ func _drop_current(screen_pos: Vector2) -> void:
 	var placed := _set
 	_reset()
 	#placed.process_mode = Node.PROCESS_MODE_INHERIT
+	
+	# TODO @panorb do this better if you can
+	part.score.connect(pinball_machine.on_score)
+	part.excite.connect(pinball_machine.on_excite)
+	
 	placement_finished.emit(placed)
 
 func _cancel() -> void:

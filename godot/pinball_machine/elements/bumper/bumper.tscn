@@ -67,7 +67,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_ecln4")
 theme_override_font_sizes/font_size = 12
-text = "10"
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
