@@ -17,13 +17,12 @@ const START := -1.0 / 6.0 * PI     # Grenze oben links (-150°)
 		$Sprite2D.texture = load("res://pinball_machine/elements/bumper/bumper{0}.png".format([value]))
 		variant = value
 
-@export var score_value : int = 10:
-	set(value):
-		%ScoreLabel.text = str(value)
-		score_value = value
-
 @export var strength := 500.0;
 var _cushion_tweens : Array[Tween] = [null, null, null]
+
+func set_points(_points) -> void:
+	%ScoreLabel.text = str(_points)
+	points = _points
 
 signal body_entered
 

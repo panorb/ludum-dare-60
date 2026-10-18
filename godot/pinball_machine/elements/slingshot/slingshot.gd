@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	# Is this body a ball?
-	if body is Ball:
+	if body is Ball and self.active:
 		var ball = body as Ball;
 		var direction := (body.global_position - global_position).normalized()
 		body.apply_central_impulse(direction * ball.mass * self.strength) 

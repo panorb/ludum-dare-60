@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://be0wportk2k1r"]
+
+[ext_resource type="Script" uid="uid://ctoepo0e3vu1o" path="res://pinball_machine/ai_controller.gd" id="1_dlv7d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eckxu"]
+radius = 34.132095
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhokp"]
+size = Vector2(20, 35)
+
+[node name="AIController" type="Node2D" unique_id=1763298502]
+script = ExtResource("1_dlv7d")
+
+[node name="RightFlipperTrigger" type="Area2D" parent="." unique_id=1570739345]
+collision_layer = 0
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightFlipperTrigger" unique_id=1679516431]
+position = Vector2(302, 646)
+shape = SubResource("CircleShape2D_eckxu")
+
+[node name="LeftFlipperTrigger" type="Area2D" parent="." unique_id=1911908240]
+collision_layer = 0
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftFlipperTrigger" unique_id=1980598372]
+position = Vector2(207, 645)
+shape = SubResource("CircleShape2D_eckxu")
+
+[node name="PlungerTrigger" type="Area2D" parent="." unique_id=2028876943]
+collision_layer = 0
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlungerTrigger" unique_id=1164783922]
+position = Vector2(506, 655.5)
+shape = SubResource("RectangleShape2D_rhokp")

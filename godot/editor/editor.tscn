@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://fkfmv77kd7cv" path="res://pinball_machine/playable_machine.tscn" id="3_6j37k"]
 [ext_resource type="PackedScene" uid="uid://d1mdtqx335w1g" path="res://shop/shop.tscn" id="4_6j37k"]
 [ext_resource type="Script" uid="uid://dhq2yc6bdnmhm" path="res://editor/placer.gd" id="5_6hpnh"]
+[ext_resource type="PackedScene" uid="uid://ba4u6apn3j0ke" path="res://pinball_machine/pinball_machine.tscn" id="5_yyul4"]
+[ext_resource type="PackedScene" uid="uid://be0wportk2k1r" path="res://pinball_machine/ai_controller.tscn" id="6_loxr8"]
 [ext_resource type="Texture2D" uid="uid://cybra0dvpae1x" path="res://ui/dotted.png" id="7_swf4p"]
 [ext_resource type="FontFile" uid="uid://bbrpa4t0wtrn6" path="res://ui/doto.ttf" id="8_3meo8"]
 [ext_resource type="StyleBox" uid="uid://dhoiouwwwmw6f" path="res://ui/black_style_box.tres" id="8_aws7q"]
@@ -93,6 +95,11 @@ render_target_update_mode = 4
 
 [node name="PlacedParts" type="Node2D" parent="Margin/HBoxContainer/TableArea/Cabinet/TableView/SubViewport" unique_id=1090045317]
 unique_name_in_owner = true
+
+[node name="PinballMachine" parent="Margin/HBoxContainer/TableArea/Cabinet/TableView/SubViewport" unique_id=1837038421 instance=ExtResource("5_yyul4")]
+unique_name_in_owner = true
+
+[node name="AIController" parent="Margin/HBoxContainer/TableArea/Cabinet/TableView/SubViewport" unique_id=1763298502 instance=ExtResource("6_loxr8")]
 
 [node name="Shop" parent="Margin/HBoxContainer" unique_id=568133794 instance=ExtResource("4_6j37k")]
 unique_name_in_owner = true

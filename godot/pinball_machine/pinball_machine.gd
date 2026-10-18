@@ -1,6 +1,6 @@
 extends Node2D
 
-signal game_over(highscore: int)
+signal game_over(score: int, is_highscore: bool)
 signal score_changed(score: int)
 
 @onready var flipper_right := $FlipperRight
@@ -9,17 +9,33 @@ signal score_changed(score: int)
 @onready var plunger := $Plunger
 
 var score := 0
+var highscore := 0
 var active_balls := 0
 
 func _ready() -> void:
 	drop_out.body_entered.connect(_on_drop_out)
+	for child in get_children():
+		if child is Element:
+			child.score.connect(_score)
+
+func _score(id, points):
+	if not points:
+		return
+	score += points
+	print(score)
+	score_changed.emit(points)
 
 func _on_drop_out(body: Node2D) -> void:
 	body.queue_free()
 	active_balls -= 1
 	if active_balls <= 0:
-		game_over.emit(score)
-		score = 0
+		print("highscore:", score)
+		var is_highscore = false
+		if score > highscore:
+			highscore = score
+			is_highscore = true
+		game_over.emit(score, is_highscore)
+		score = 0 
 		running = false
 
 const BALL_SCENE = preload("res://pinball_machine/ball.tscn")
@@ -36,8 +52,8 @@ func initialize_field() -> void:
 	pass
 
 func start() -> void:
-	#if running:
-	#	return
+	if running:
+		return
 	running = true
 	plunge_ball()
 
