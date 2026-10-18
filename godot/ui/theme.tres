@@ -3,5 +3,7 @@
 [ext_resource type="FontFile" uid="uid://7pxojp6ogpwc" path="res://ui/orbitron.ttf" id="1_rqugq"]
 
 [resource]
+Button/font_sizes/font_size = 15
+Button/fonts/font = ExtResource("1_rqugq")
 Label/font_sizes/font_size = 15
 Label/fonts/font = ExtResource("1_rqugq")

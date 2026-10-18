@@ -2,7 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://d1bm57laym1gy" path="res://ui/theme.tres" id="1_ycap1"]
 [ext_resource type="Shader" uid="uid://cycmvfxmkap4q" path="res://editor/editor_dots.gdshader" id="2_fjngd"]
-[ext_resource type="PackedScene" uid="uid://fkfmv77kd7cv" path="res://game.tscn" id="3_er7c6"]
+[ext_resource type="PackedScene" uid="uid://ddculh383bxl4" path="res://editor/sections/table_area.tscn" id="3_j82do"]
+[ext_resource type="PackedScene" uid="uid://d1mdtqx335w1g" path="res://editor/sections/shop/shop.tscn" id="4_6j37k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ycap1"]
 shader = ExtResource("2_fjngd")
@@ -10,36 +11,6 @@ shader_parameter/bg_color = Color(0.22, 0, 0.173, 1)
 shader_parameter/dot_color = Color(0, 0, 0, 1)
 shader_parameter/spacing = 32.0
 shader_parameter/radius = 3.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_er7c6"]
-content_margin_left = 18.0
-content_margin_top = 18.0
-content_margin_right = 18.0
-content_margin_bottom = 34.0
-bg_color = Color(0.54509807, 0.67058825, 0.7490196, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0.3372549, 0.41568628, 0.5372549, 1)
-corner_detail = 16
-shadow_size = 1
-shadow_offset = Vector2(0, 14)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j82do"]
-content_margin_left = 24.0
-content_margin_top = 24.0
-content_margin_right = 24.0
-content_margin_bottom = 24.0
-bg_color = Color(0.13333334, 0.16470589, 0.36078432, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0, 0, 0, 1)
-corner_detail = 20
-shadow_size = 1
-shadow_offset = Vector2(0, 14)
 
 [node name="Editor" type="Control" unique_id=1403797738]
 layout_mode = 3
@@ -79,28 +50,8 @@ theme_override_constants/margin_bottom = 24
 layout_mode = 2
 theme_override_constants/separation = 24
 
-[node name="TableArea" type="CenterContainer" parent="Margin/HBoxContainer" unique_id=2043001846]
+[node name="TableArea" parent="Margin/HBoxContainer" unique_id=1661601562 instance=ExtResource("3_j82do")]
 layout_mode = 2
-size_flags_horizontal = 3
 
-[node name="Cabinet" type="PanelContainer" parent="Margin/HBoxContainer/TableArea" unique_id=410510036]
+[node name="Shop" parent="Margin/HBoxContainer" unique_id=568133794 instance=ExtResource("4_6j37k")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_er7c6")
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Margin/HBoxContainer/TableArea/Cabinet" unique_id=188694301]
-custom_minimum_size = Vector2(536, 690)
-layout_mode = 2
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="Margin/HBoxContainer/TableArea/Cabinet/SubViewportContainer" unique_id=63212046]
-handle_input_locally = false
-size = Vector2i(536, 690)
-size_2d_override = Vector2i(2144, 2892)
-render_target_update_mode = 4
-
-[node name="Game" parent="Margin/HBoxContainer/TableArea/Cabinet/SubViewportContainer/SubViewport" unique_id=996228279 instance=ExtResource("3_er7c6")]
-
-[node name="PanelContainer" type="PanelContainer" parent="Margin/HBoxContainer" unique_id=155460248]
-custom_minimum_size = Vector2(420, 0)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_j82do")

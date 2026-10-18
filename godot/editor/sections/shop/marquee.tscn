@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b1hi4ao200pvr"]
+
+[ext_resource type="Shader" uid="uid://b4r047y0b24qy" path="res://editor/sections/shop/bulbs.gdshader" id="1_335pt"]
+[ext_resource type="StyleBox" uid="uid://dhoiouwwwmw6f" path="res://ui/black_style_box.tres" id="1_d7lgn"]
+[ext_resource type="Script" uid="uid://l04oin7gfdt7" path="res://editor/sections/shop/marquee.gd" id="2_apm8d"]
+[ext_resource type="Script" uid="uid://c1ifmju07qpn3" path="res://editor/sections/shop/bulbs.gd" id="2_d7lgn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_er7c6"]
+shader = ExtResource("1_335pt")
+shader_parameter/size = Vector2(512, 96)
+shader_parameter/inset = 5.0
+shader_parameter/spacing = 18.0
+shader_parameter/radius = 3.0
+shader_parameter/speed = 3.0
+shader_parameter/flash = false
+shader_parameter/on_color = Color(1, 0.965, 0.682, 1)
+shader_parameter/off_color = Color(0.408, 0.235, 0.204, 1)
+
+[node name="Marquee" type="PanelContainer" unique_id=2083558016]
+custom_minimum_size = Vector2(0, 96)
+theme_override_styles/panel = ExtResource("1_d7lgn")
+script = ExtResource("2_apm8d")
+
+[node name="Bulbs" type="ColorRect" parent="." unique_id=1193277753]
+material = SubResource("ShaderMaterial_er7c6")
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("2_d7lgn")
+
+[node name="Title" type="Label" parent="." unique_id=566075414]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.5803922, 0.7019608, 1)
+theme_override_font_sizes/font_size = 32
+text = "PARTS SHOP"
+horizontal_alignment = 1
+vertical_alignment = 1
