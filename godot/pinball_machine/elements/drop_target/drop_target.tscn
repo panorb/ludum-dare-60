@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://g7alaesfaxye"]
+
+[ext_resource type="Script" uid="uid://btnilrq3idw6k" path="res://pinball_machine/elements/drop_target/drop_target.gd" id="1_276rf"]
+[ext_resource type="Texture2D" uid="uid://c1boxnrt7yp4d" path="res://pinball_machine/elements/drop_target/fallen.png" id="2_x6gxg"]
+[ext_resource type="Texture2D" uid="uid://dmdtavnx5nrws" path="res://pinball_machine/elements/drop_target/standing.png" id="3_i1lxi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6ibw"]
+size = Vector2(28, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhokp"]
+size = Vector2(28, 45)
+
+[node name="DropTarget" type="Node2D" unique_id=416927007]
+script = ExtResource("1_276rf")
+metadata/_custom_type_script = "uid://c55dcj4rrkgmt"
+
+[node name="SpriteFallen" type="Sprite2D" parent="." unique_id=513954002]
+visible = false
+position = Vector2(0, -9)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_x6gxg")
+
+[node name="SpriteStanding" type="Sprite2D" parent="." unique_id=274671220]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_i1lxi")
+
+[node name="StaticBodyStanding" type="StaticBody2D" parent="." unique_id=251316295]
+collision_layer = 1024
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodyStanding" unique_id=1908875673]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_i6ibw")
+one_way_collision = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1287981748]
+collision_layer = 0
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1814556565]
+position = Vector2(0, -8.5)
+shape = SubResource("RectangleShape2D_rhokp")
