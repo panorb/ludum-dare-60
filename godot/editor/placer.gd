@@ -1,1 +1,135 @@
 extends Node
+
+signal placement_finished(placed: Node2D)
+signal placement_cancelled
+
+@export var table_view: SubViewportContainer
+@export var sub_viewport: SubViewport
+@export var placed_parts: Node2D
+
+@onready var cursor_layer: CanvasLayer = $CursorLayer
+@onready var link_line: Line2D = $CursorLayer/LinkLine
+@onready var hint: Label = $CursorLayer/PlaceHint
+
+var _set: Node2D = null
+var _parts: Array[Node2D] = []
+var _index := 0
+var _home: Node = null
+var _part_scale := Vector2.ONE
+
+
+func is_placing() -> bool:
+	return _set != null
+
+func start(scene: PackedScene) -> void:
+	_set = scene.instantiate()
+	_set.process_mode = Node.PROCESS_MODE_DISABLED
+	placed_parts.add_child(_set)
+
+	_parts.clear()
+	if _set.is_in_group("part"):
+		_parts.append(_set)
+	else:
+		for child in _set.get_children():
+			if child.is_in_group("part"):
+				_parts.append(child)
+				child.hide()
+
+	_index = 0
+	_pick_up_current()
+
+func _pick_up_current() -> void:
+	var part := _parts[_index]
+	_home = part.get_parent()
+	_part_scale = part.scale
+	part.reparent(cursor_layer, false)
+	part.process_mode = Node.PROCESS_MODE_DISABLED
+	part.scale = _part_scale * _table_scale()
+	part.modulate.a = 0.6
+	part.show()
+
+	hint.visible = _parts.size() > 1
+	hint.text = "PLACE %d OF %d" % [_index + 1, _parts.size()]
+	link_line.visible = _index > 0
+
+func _process(_delta: float) -> void:
+	if not is_placing():
+		return
+	var mouse := get_viewport().get_mouse_position()
+	_parts[_index].position = mouse
+	hint.position = mouse + Vector2(-hint.size.x / 2.0, -80.0)
+	var points = []
+	
+	if _index > 0:
+		for i in range(_index):
+			var previous := _world_to_screen(_parts[i].global_position)
+			points.append(previous)
+		
+		points.append(mouse)
+		
+		if _index == len(_parts) - 1:
+			print(_index)
+			var first := _world_to_screen(_parts[0].global_position)
+			points.append(first)
+		
+		link_line.points = points
+
+func _input(event: InputEvent) -> void:
+	if not is_placing():
+		return
+	if not (event is InputEventMouseButton and event.pressed):
+		return
+	if event.button_index == MOUSE_BUTTON_LEFT:
+		if table_view.get_global_rect().has_point(event.position):
+			_drop_current(event.position)
+	elif event.button_index == MOUSE_BUTTON_RIGHT:
+		_cancel()
+	get_viewport().set_input_as_handled()
+
+func _drop_current(screen_pos: Vector2) -> void:
+	var part := _parts[_index]
+	part.reparent(_home, false)
+	part.scale = _part_scale
+	part.global_position = _screen_to_world(screen_pos)
+	part.modulate.a = 1.0
+	part.process_mode = Node.PROCESS_MODE_INHERIT
+
+	_index += 1
+	if _index < _parts.size():
+		_pick_up_current()
+		return
+
+	var placed := _set
+	_reset()
+	placed.process_mode = Node.PROCESS_MODE_INHERIT
+	placement_finished.emit(placed)
+
+func _cancel() -> void:
+	var held := _parts[_index]
+	if held != _set:
+		held.queue_free()
+	_set.queue_free()
+	_reset()
+	placement_cancelled.emit()
+
+func _reset() -> void:
+	_set = null
+	_parts.clear()
+	_home = null
+	hint.hide()
+	link_line.hide()
+
+func _screen_to_world(screen_pos: Vector2) -> Vector2:
+	var local := table_view.get_global_transform_with_canvas().affine_inverse() * screen_pos
+	local /= float(table_view.stretch_shrink)
+	return sub_viewport.get_canvas_transform().affine_inverse() * local
+
+func _world_to_screen(world_pos: Vector2) -> Vector2:
+	var local := sub_viewport.get_canvas_transform() * world_pos
+	local *= float(table_view.stretch_shrink)
+	return table_view.get_global_transform_with_canvas() * local
+
+func _table_scale() -> Vector2:
+	return sub_viewport.get_canvas_transform().get_scale() \
+		* table_view.get_global_transform_with_canvas().get_scale() \
+		* float(table_view.stretch_shrink)

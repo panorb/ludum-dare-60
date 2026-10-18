@@ -7,6 +7,8 @@ const SHOP_ITEM := preload("res://shop/item/shop_item.tscn")
 
 @onready var items: GridContainer = %Items
 
+signal item_pressed(entry: ShopEntry)
+
 
 func _ready() -> void:
 	# placer.placement_cancelled.connect(_on_placement_cancelled)
@@ -18,3 +20,4 @@ func _ready() -> void:
 
 func _on_item_pressed(entry: ShopEntry):
 	%Marquee.celebrate_purchase()
+	item_pressed.emit(entry)
