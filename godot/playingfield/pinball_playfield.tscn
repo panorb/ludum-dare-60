@@ -30,7 +30,7 @@ script = ExtResource("3_8oa5j")
 
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/RightInsideWall" unique_id=742849904]
 color = Color(0.21960784, 0, 0.17254902, 1)
-polygon = PackedVector2Array(333, 708, 464, 608, 465, 334, 419, 308, 419, 277, 463, 249, 458, 90, 453, 85, 448, 82, 441.3655, 77.73494, 434, 73, 418, 67, 401, 62.000004, 370, 61.000004, 322, 94, 322, 83, 368, 52.000004, 402, 52.000004, 414, 55.000004, 424, 58.000004, 433, 61.000004, 441, 65, 449, 69, 457, 74, 463, 78, 468, 84, 472, 89, 474, 93, 476, 98, 476, 103, 477, 707)
+polygon = PackedVector2Array(333, 708, 464, 608, 465, 334, 419, 308, 419, 277, 463, 249, 458, 90, 453, 85, 448, 82, 441.3655, 77.73494, 434, 73, 418, 67, 401, 62.000004, 370, 61.000004, 322, 94, 322, 83, 368, 52.000004, 413, 52, 423, 54, 435, 58, 447, 64, 459, 72, 468, 81, 472, 89, 475, 96, 477, 108, 477, 132, 477, 622, 426, 662, 438, 677, 477, 647, 477, 707)
 
 [node name="RightOutsideWall" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=273552117]
 position = Vector2(23, -1)
@@ -39,7 +39,7 @@ script = ExtResource("3_8oa5j")
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/RightOutsideWall" unique_id=2081257450]
 position = Vector2(0, 1)
 color = Color(0.21960784, 0, 0.17254902, 1)
-polygon = PackedVector2Array(496, 708, 495, 104, 493, 88, 487, 72, 478, 60, 467, 50, 456, 40, 442, 31.999998, 424, 23.999998, 414, 19.999998, 405, 17.999998, 392, 15.999999, 328, 16, 328, 0, 512, 0, 512, 708)
+polygon = PackedVector2Array(496, 708, 495, 104, 493, 88, 487, 72, 478, 59, 465, 46, 453, 37, 437, 28, 421, 21, 408, 17, 396, 16, 392, 15.999999, 328, 16, 328, 0, 512, 0, 512, 708)
 
 [node name="LeftWall" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=1129709691]
 script = ExtResource("3_8oa5j")
@@ -100,11 +100,21 @@ position = Vector2(123, 550)
 scale = Vector2(-1, 1)
 
 [node name="Accelerator" parent="." unique_id=817390848 instance=ExtResource("6_phrn3")]
-position = Vector2(505, 177)
+position = Vector2(507, 132)
+force = 50.0
+
+[node name="Accelerator2" parent="." unique_id=727591773 instance=ExtResource("6_phrn3")]
+position = Vector2(497.00003, 80)
+rotation = -0.4660029
+force = 50.0
+
+[node name="Accelerator3" parent="." unique_id=585686943 instance=ExtResource("6_phrn3")]
+position = Vector2(452.99997, 43.999996)
+rotation = -1.1641346
 force = 50.0
 
 [node name="Accelerator4" parent="." unique_id=1957399058 instance=ExtResource("6_phrn3")]
-position = Vector2(506, 279)
+position = Vector2(507, 183)
 force = 50.0
 
 [node name="Accelerator5" parent="." unique_id=997384910 instance=ExtResource("6_phrn3")]
@@ -112,6 +122,12 @@ position = Vector2(398, 34)
 rotation = -1.5707964
 force = 50.0
 
+[node name="Accelerator6" parent="." unique_id=2044316184 instance=ExtResource("6_phrn3")]
+position = Vector2(471.99997, 653)
+rotation = 0.9302605
+force = 3000.0
+
 [node name="BallSpawn" type="Marker2D" parent="." unique_id=778188897]
 unique_name_in_owner = true
-position = Vector2(505, 530)
+position = Vector2(457, 664)
+rotation = 0.9302605

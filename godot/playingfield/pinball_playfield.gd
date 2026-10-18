@@ -44,7 +44,8 @@ func plunge_ball() -> void:
 	var ball = BALL_SCENE.instantiate()
 	add_child(ball)
 	ball.position = %BallSpawn.position
-	ball.linear_velocity = Vector2(0, -2200)
+	#ball.linear_velocity = Vector2(0, -2200)
+	ball.apply_central_impulse(Vector2.from_angle(%BallSpawn.rotation-PI/2) * 200)
 	active_balls += 1
 
 func flip_left_press() -> void:
