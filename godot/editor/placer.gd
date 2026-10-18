@@ -23,7 +23,7 @@ func is_placing() -> bool:
 
 func start(scene: PackedScene) -> void:
 	_set = scene.instantiate()
-	_set.process_mode = Node.PROCESS_MODE_DISABLED
+	#_set.process_mode = Node.PROCESS_MODE_DISABLED
 	placed_parts.add_child(_set)
 
 	_parts.clear()
@@ -43,7 +43,7 @@ func _pick_up_current() -> void:
 	_home = part.get_parent()
 	_part_scale = part.scale
 	part.reparent(cursor_layer, false)
-	part.process_mode = Node.PROCESS_MODE_DISABLED
+	#part.process_mode = Node.PROCESS_MODE_DISABLED
 	part.scale = _part_scale * _table_scale()
 	part.modulate.a = 0.6
 	part.show()
@@ -92,7 +92,7 @@ func _drop_current(screen_pos: Vector2) -> void:
 	part.scale = _part_scale
 	part.global_position = _screen_to_world(screen_pos)
 	part.modulate.a = 1.0
-	part.process_mode = Node.PROCESS_MODE_INHERIT
+	#part.process_mode = Node.PROCESS_MODE_INHERIT
 
 	_index += 1
 	if _index < _parts.size():
@@ -101,7 +101,7 @@ func _drop_current(screen_pos: Vector2) -> void:
 
 	var placed := _set
 	_reset()
-	placed.process_mode = Node.PROCESS_MODE_INHERIT
+	#placed.process_mode = Node.PROCESS_MODE_INHERIT
 	placement_finished.emit(placed)
 
 func _cancel() -> void:
