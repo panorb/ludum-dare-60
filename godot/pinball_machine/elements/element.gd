@@ -12,6 +12,7 @@ signal score(id, amount)
 
 var id := 0
 
+
 func set_active(_active=true) -> void:
 	active = _active
 

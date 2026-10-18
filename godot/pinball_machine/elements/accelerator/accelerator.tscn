@@ -3,12 +3,22 @@
 [ext_resource type="Script" uid="uid://cgdpgr0qj7e2u" path="res://pinball_machine/elements/accelerator/accelerator.gd" id="1_lgof1"]
 [ext_resource type="Texture2D" uid="uid://bql21xfyl0goy" path="res://pinball_machine/elements/accelerator/accelerator.png" id="2_ku5xa"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o72lw"]
+radius = 16.0
+height = 60.0
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i6ibw"]
 radius = 13.0
 height = 50.0
 
 [node name="Accelerator" type="Node2D" unique_id=817390848 groups=["part"]]
 script = ExtResource("1_lgof1")
+
+[node name="DisallowPlacementZone" type="Area2D" parent="." unique_id=1846749379 groups=["disallow_placement"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DisallowPlacementZone" unique_id=1133921782]
+shape = SubResource("CapsuleShape2D_o72lw")
+debug_color = Color(1, 0, 0.13333334, 0.41960785)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=941290577]
 scale = Vector2(0.7, 0.7)

@@ -8,7 +8,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_eckxu"]
 radius = 19.104973
 
-[node name="Bumper" type="StaticBody2D" unique_id=58277578 groups=["part"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_v0qbg"]
+radius = 48.09366
+
+[node name="Bumper" type="StaticBody2D" unique_id=58277578 groups=["no_rotate", "part"]]
 collision_layer = 1024
 collision_mask = 0
 script = ExtResource("1_csbte")
@@ -67,3 +70,9 @@ theme_override_font_sizes/font_size = 12
 text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="DisallowPlacementZone" type="Area2D" parent="." unique_id=203528560 groups=["disallow_placement"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DisallowPlacementZone" unique_id=880538305]
+shape = SubResource("CircleShape2D_v0qbg")
+debug_color = Color(0.9991961, 0, 0.1340175, 0.41960785)

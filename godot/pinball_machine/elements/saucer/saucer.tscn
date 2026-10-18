@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://btys4x7het3s4" path="res://pinball_machine/elements/saucer/saucer.gd" id="1_4ee05"]
 [ext_resource type="Texture2D" uid="uid://dm4twypraptsl" path="res://pinball_machine/elements/saucer/saucer.png" id="1_131qa"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0khsq"]
+radius = 36.221542
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_eckxu"]
 radius = 28.071337
 
@@ -11,10 +14,17 @@ radius = 1.0
 
 [node name="Saucer" type="Node2D" unique_id=280133016 groups=["part"]]
 script = ExtResource("1_4ee05")
+rotatable = false
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1209170175]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_131qa")
+
+[node name="DisallowPlacementZone" type="Area2D" parent="." unique_id=1997979668 groups=["disallow_placement"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DisallowPlacementZone" unique_id=1411097672]
+shape = SubResource("CircleShape2D_0khsq")
+debug_color = Color(0.9991961, 0, 0.1340175, 0.41960785)
 
 [node name="OuterArea2D" type="Area2D" parent="." unique_id=1775597179]
 collision_layer = 0

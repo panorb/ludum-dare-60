@@ -6,6 +6,9 @@
 radius = 3.0
 height = 62.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_o72lw"]
+radius = 36.67424
+
 [node name="SpinnerTarget" type="Node2D" unique_id=57856292 groups=["part"]]
 script = ExtResource("1_gsqnr")
 metadata/_custom_type_script = "uid://c55dcj4rrkgmt"
@@ -26,3 +29,9 @@ polygon = PackedVector2Array(-3, -28, 0, -31, 3, -28, 3, 28, 0, 31, -3, 28)
 [node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=748897606]
 node_a = NodePath("../Anchor")
 node_b = NodePath("../Spinner")
+
+[node name="DisallowPlacementZone" type="Area2D" parent="." unique_id=193624508 groups=["disallow_placement"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DisallowPlacementZone" unique_id=1946266419]
+shape = SubResource("CircleShape2D_o72lw")
+debug_color = Color(0.9991961, 0, 0.1340175, 0.41960785)

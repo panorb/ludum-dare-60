@@ -3,13 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://bmsvy7u0v7yk" path="res://pinball_machine/elements/slingshot/slingshot.png" id="1_yxn2l"]
 [ext_resource type="AudioStream" uid="uid://dnpsnc3wu1o27" path="res://pinball_machine/elements/slingshot/push_back.wav" id="3_ge388"]
 [ext_resource type="Script" uid="uid://ikblyv5lv8fw" path="res://pinball_machine/elements/slingshot/slingshot.gd" id="3_pvr2h"]
-[ext_resource type="Script" uid="uid://gcvnqtsc06ep" path="res://pinball_machine/elements/slingshot/push_back_static_body_2d.gd" id="3_s1bho"]
+[ext_resource type="Script" uid="uid://k5e563d3qnx5" path="res://pinball_machine/elements/slingshot/push_back_static_body_2d.gd" id="3_s1bho"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eckxu"]
 size = Vector2(14.5584755, 68)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eckxu"]
 radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pvr2h"]
+radius = 54.230988
 
 [node name="Slingshot" type="Node2D" unique_id=1086058136]
 script = ExtResource("3_pvr2h")
@@ -52,3 +55,10 @@ shape = SubResource("CircleShape2D_eckxu")
 unique_name_in_owner = true
 stream = ExtResource("3_ge388")
 bus = &"SFX-System"
+
+[node name="DisallowPlacementZone" type="Area2D" parent="." unique_id=1458928992 groups=["disallow_placement"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DisallowPlacementZone" unique_id=2139600848]
+position = Vector2(-4, -3)
+shape = SubResource("CircleShape2D_pvr2h")
+debug_color = Color(0.9991961, 0, 0.1340175, 0.41960785)

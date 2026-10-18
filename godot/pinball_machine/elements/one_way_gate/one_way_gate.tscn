@@ -6,6 +6,9 @@
 a = Vector2(19, 0)
 b = Vector2(-19, 0)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_iybwm"]
+radius = 28.071337
+
 [node name="OneWayGate" type="Node2D" unique_id=1446678896]
 script = ExtResource("1_iybwm")
 metadata/_custom_type_script = "uid://c55dcj4rrkgmt"
@@ -20,3 +23,9 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=910261506]
 shape = SubResource("SegmentShape2D_eckxu")
 one_way_collision = true
+
+[node name="DisallowPlacementZone" type="Area2D" parent="." unique_id=1903876414 groups=["disallow_placement"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DisallowPlacementZone" unique_id=1925374917]
+shape = SubResource("CircleShape2D_iybwm")
+debug_color = Color(0.9991961, 0, 0.1340175, 0.41960785)

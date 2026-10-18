@@ -17,6 +17,8 @@ var _index := 0
 var _home: Node = null
 var _part_scale := Vector2.ONE
 
+const ROTATE_STEP := deg_to_rad(15.0)
+
 
 func is_placing() -> bool:
 	return _set != null
@@ -77,14 +79,32 @@ func _process(_delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if not is_placing():
 		return
+
+	if event.is_action_pressed("rotate_left", true):
+		_rotate_held(-ROTATE_STEP)
+		get_viewport().set_input_as_handled()
+		return
+	if event.is_action_pressed("rotate_right", true):
+		_rotate_held(ROTATE_STEP)
+		get_viewport().set_input_as_handled()
+		return
+	
 	if not (event is InputEventMouseButton and event.pressed):
 		return
 	if event.button_index == MOUSE_BUTTON_LEFT:
 		if table_view.get_global_rect().has_point(event.position):
 			_drop_current(event.position)
+	
 	elif event.button_index == MOUSE_BUTTON_RIGHT:
 		_cancel()
 	get_viewport().set_input_as_handled()
+
+func _rotate_held(angle: float) -> void:
+	var part := _parts[_index]
+	if part.is_in_group("no_rotate"):
+		return
+	
+	part.rotation = wrapf(part.rotation + angle, -PI, PI)
 
 func _drop_current(screen_pos: Vector2) -> void:
 	var part := _parts[_index]

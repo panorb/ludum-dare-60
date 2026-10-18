@@ -4,14 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://36fupcggl3jm" path="res://pinball_machine/decals/logo.png" id="2_qjevt"]
 [ext_resource type="PackedScene" uid="uid://mcnthxnjw2ba" path="res://pinball_machine/flipper/flipper.tscn" id="2_w774u"]
 [ext_resource type="Script" uid="uid://dvexvufvg77dk" path="res://pinball_machine/wall.gd" id="3_8oa5j"]
-[ext_resource type="PackedScene" uid="uid://btkofrqrrj4wb" path="res://pinball_machine/elements/bumper/bumper.tscn" id="3_w774u"]
-[ext_resource type="PackedScene" uid="uid://c22aytwo0gmxi" path="res://pinball_machine/elements/saucer/saucer.tscn" id="4_ibvbf"]
 [ext_resource type="PackedScene" uid="uid://b1wvg1mgpdkib" path="res://pinball_machine/elements/slingshot/slingshot.tscn" id="5_ll1gr"]
 [ext_resource type="PackedScene" uid="uid://bl3sbf8mnoajy" path="res://pinball_machine/elements/accelerator/accelerator.tscn" id="6_phrn3"]
 [ext_resource type="PackedScene" uid="uid://crorht01w3pxm" path="res://pinball_machine/elements/plunger/plunger.tscn" id="8_uef51"]
 [ext_resource type="PackedScene" uid="uid://mxp8t6twdaok" path="res://pinball_machine/elements/one_way_gate/one_way_gate.tscn" id="9_qjevt"]
-[ext_resource type="PackedScene" uid="uid://g7alaesfaxye" path="res://pinball_machine/elements/drop_target/drop_target.tscn" id="11_r0mf8"]
-[ext_resource type="PackedScene" uid="uid://dk56fc7iae3d7" path="res://pinball_machine/elements/spinner_target/spinner_target.tscn" id="12_s7pbf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eckxu"]
 size = Vector2(204, 12)
@@ -42,7 +38,7 @@ script = ExtResource("3_8oa5j")
 
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/RightInsideWall" unique_id=742849904]
 color = Color(0.21960784, 0, 0.17254902, 1)
-polygon = PackedVector2Array(333, 708, 464, 608, 465, 334, 419, 308, 419, 277, 463, 249, 459, 137, 456, 116, 449, 97, 435, 80, 418, 67, 400, 60, 370, 61.000004, 322, 94, 322, 83, 338, 62, 356, 47, 388, 43, 404, 42, 428, 52, 441, 62, 448, 67, 457, 79, 464, 88, 474, 111, 477, 132, 477, 622, 426, 662, 438, 677, 477, 647, 477, 707)
+polygon = PackedVector2Array(333, 708, 464, 608, 465, 334, 419, 308, 419, 277, 463, 249, 459, 137, 456, 116, 449, 97, 435, 80, 418, 67, 400, 60, 370, 61.000004, 322, 96, 322, 86, 338, 64, 357, 50, 404, 42, 428, 52, 441, 62, 448, 67, 457, 79, 464, 88, 474, 111, 477, 132, 477, 622, 426, 662, 438, 677, 477, 647, 477, 707)
 
 [node name="RightOutsideWall" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=273552117]
 position = Vector2(23, -1)
@@ -104,26 +100,6 @@ monitorable = false
 position = Vector2(188, 657)
 shape = SubResource("RectangleShape2D_eckxu")
 
-[node name="Bumper" parent="." unique_id=615657735 instance=ExtResource("3_w774u")]
-position = Vector2(163, 249)
-points = 10
-
-[node name="Bumper2" parent="." unique_id=1490087611 instance=ExtResource("3_w774u")]
-position = Vector2(319, 247)
-points = 10
-
-[node name="Bumper3" parent="." unique_id=58277578 instance=ExtResource("3_w774u")]
-position = Vector2(274, 345)
-points = 10
-
-[node name="Bumper4" parent="." unique_id=28127012 instance=ExtResource("3_w774u")]
-position = Vector2(108, 342)
-points = 10
-
-[node name="Saucer" parent="." unique_id=280133016 instance=ExtResource("4_ibvbf")]
-position = Vector2(410, 221.99997)
-rotation = 1.3962634
-
 [node name="Slingshot" parent="." unique_id=1796760020 instance=ExtResource("5_ll1gr")]
 position = Vector2(358, 550)
 
@@ -148,10 +124,3 @@ position = Vector2(507, 655)
 [node name="OneWayGate" parent="." unique_id=1446678896 instance=ExtResource("9_qjevt")]
 position = Vector2(423, 28)
 rotation = -1.5707964
-
-[node name="DropTarget" parent="." unique_id=416927007 instance=ExtResource("11_r0mf8")]
-position = Vector2(323, 89)
-rotation = 3.1415927
-
-[node name="SpinnerTarget" parent="." unique_id=57856292 instance=ExtResource("12_s7pbf")]
-position = Vector2(256, 436)

@@ -93,13 +93,13 @@ render_target_update_mode = 4
 
 [node name="PlayableMachine" parent="Margin/HBoxContainer/TableArea/Cabinet/TableView/SubViewport" unique_id=996228279 instance=ExtResource("3_6j37k")]
 
-[node name="PlacedParts" type="Node2D" parent="Margin/HBoxContainer/TableArea/Cabinet/TableView/SubViewport" unique_id=1090045317]
-unique_name_in_owner = true
+[node name="AIController" parent="Margin/HBoxContainer/TableArea/Cabinet/TableView/SubViewport" unique_id=1763298502 instance=ExtResource("6_loxr8")]
 
 [node name="PinballMachine" parent="Margin/HBoxContainer/TableArea/Cabinet/TableView/SubViewport" unique_id=1837038421 instance=ExtResource("5_yyul4")]
 unique_name_in_owner = true
 
-[node name="AIController" parent="Margin/HBoxContainer/TableArea/Cabinet/TableView/SubViewport" unique_id=1763298502 instance=ExtResource("6_loxr8")]
+[node name="PlacedParts" type="Node2D" parent="Margin/HBoxContainer/TableArea/Cabinet/TableView/SubViewport" unique_id=1090045317]
+unique_name_in_owner = true
 
 [node name="Shop" parent="Margin/HBoxContainer" unique_id=568133794 instance=ExtResource("4_6j37k")]
 unique_name_in_owner = true
