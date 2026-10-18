@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ba4u6apn3j0ke"]
 
 [ext_resource type="Script" uid="uid://bmixhhgd11c4j" path="res://pinball_machine/pinball_machine.gd" id="1_4760t"]
+[ext_resource type="Texture2D" uid="uid://36fupcggl3jm" path="res://pinball_machine/decals/logo.png" id="2_qjevt"]
 [ext_resource type="PackedScene" uid="uid://mcnthxnjw2ba" path="res://pinball_machine/flipper/flipper.tscn" id="2_w774u"]
 [ext_resource type="Script" uid="uid://dvexvufvg77dk" path="res://pinball_machine/wall.gd" id="3_8oa5j"]
 [ext_resource type="PackedScene" uid="uid://btkofrqrrj4wb" path="res://pinball_machine/elements/bumper/bumper.tscn" id="3_w774u"]
@@ -18,6 +19,13 @@ script = ExtResource("1_4760t")
 [node name="BackgroundColor" type="Polygon2D" parent="." unique_id=684571928]
 color = Color(0.3372549, 0.41568628, 0.5372549, 1)
 polygon = PackedVector2Array(0, 0, 535, 0, 536, 704.00006, 0, 703.99994)
+
+[node name="Decals" type="Node2D" parent="." unique_id=1872188272]
+
+[node name="Logo" type="Sprite2D" parent="Decals" unique_id=704579108]
+position = Vector2(248, 495)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_qjevt")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=331455950]
 
