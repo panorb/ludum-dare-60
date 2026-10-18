@@ -1,6 +1,8 @@
 class_name Bumper
 extends Element
 
+@export var strength := 500.0;
+
 signal body_entered
 
 func _ready() -> void:
@@ -14,7 +16,7 @@ func _on_body_entered(body: Node2D) -> void:
 		# Calculate direction
 		var direction := (body.global_position - global_position).normalized()
 		# Give ball new force
-		body.apply_central_impulse(direction * body.mass * 500.0)
+		body.apply_central_impulse(direction * ball.mass * self.strength)
 		# ??? 
 		self.trigger.emit(id)
 		self.score.emit(id, points)
