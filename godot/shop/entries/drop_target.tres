@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopEntry" format=3 uid="uid://cb042a6iks26j"]
+
+[ext_resource type="Script" uid="uid://cxrqn5fa81q5u" path="res://shop/shop_entry.gd" id="1_2wj2r"]
+[ext_resource type="Texture2D" uid="uid://c1boxnrt7yp4d" path="res://pinball_machine/elements/drop_target/fallen.png" id="1_nb5gp"]
+[ext_resource type="PackedScene" uid="uid://g7alaesfaxye" path="res://pinball_machine/elements/drop_target/drop_target.tscn" id="2_jbkxt"]
+
+[resource]
+script = ExtResource("1_2wj2r")
+title = "Drop Target"
+price = 0
+icon = ExtResource("1_nb5gp")
+scene = ExtResource("2_jbkxt")
+is_set = false
+metadata/_custom_type_script = "uid://cxrqn5fa81q5u"

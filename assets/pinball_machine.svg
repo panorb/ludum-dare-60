@@ -24,9 +24,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="4.2835116"
-     inkscape:cx="73.070889"
-     inkscape:cy="115.32594"
+     inkscape:zoom="3.0289001"
+     inkscape:cx="103.83307"
+     inkscape:cy="369.11089"
      inkscape:window-width="2048"
      inkscape:window-height="1052"
      inkscape:window-x="-8"
@@ -706,7 +706,13 @@
            id="circle32-2"
            cx="249.42552"
            cy="19.19379"
-           r="3.68381" /></g></g></g><g
+           r="3.68381" /></g></g><rect
+       style="fill:#ec614a;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:round"
+       id="rect1"
+       width="20.527941"
+       height="19.829117"
+       x="15.723529"
+       y="81.06353" /></g><g
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="Ebene 2"><path

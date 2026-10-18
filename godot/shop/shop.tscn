@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://cxrqn5fa81q5u" path="res://shop/shop_entry.gd" id="3_q4g17"]
 [ext_resource type="Resource" uid="uid://flgy3f00pwsp" path="res://shop/entries/bumper_times_three.tres" id="4_2wf2a"]
 [ext_resource type="Resource" uid="uid://bm07t8x06w7pw" path="res://shop/entries/saucer.tres" id="5_2wf2a"]
+[ext_resource type="Resource" uid="uid://cb042a6iks26j" path="res://shop/entries/drop_target.tres" id="6_xad5q"]
+[ext_resource type="Resource" uid="uid://cq6pmkt3byc2j" path="res://shop/entries/accelerator.tres" id="7_ljlg5"]
+[ext_resource type="Resource" uid="uid://c5vatop2f4l2m" path="res://shop/entries/spinner_target.tres" id="8_bv5vx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j82do"]
 content_margin_left = 24.0
@@ -28,7 +31,7 @@ custom_minimum_size = Vector2(420, 0)
 theme = ExtResource("1_lggly")
 theme_override_styles/panel = SubResource("StyleBoxFlat_j82do")
 script = ExtResource("2_gy7ao")
-shop_entries = Array[ExtResource("3_q4g17")]([ExtResource("4_2wf2a"), ExtResource("5_2wf2a")])
+shop_entries = Array[ExtResource("3_q4g17")]([ExtResource("4_2wf2a"), ExtResource("5_2wf2a"), ExtResource("6_xad5q"), ExtResource("7_ljlg5"), ExtResource("8_bv5vx")])
 
 [node name="ShopLayout" type="VBoxContainer" parent="." unique_id=1579627575]
 layout_mode = 2

@@ -10,7 +10,7 @@ size = Vector2(28, 6)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rhokp"]
 size = Vector2(28, 45)
 
-[node name="DropTarget" type="Node2D" unique_id=416927007]
+[node name="DropTarget" type="Node2D" unique_id=416927007 groups=["part"]]
 script = ExtResource("1_276rf")
 metadata/_custom_type_script = "uid://c55dcj4rrkgmt"
 

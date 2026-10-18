@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopEntry" format=3 uid="uid://cq6pmkt3byc2j"]
+
+[ext_resource type="Texture2D" uid="uid://bql21xfyl0goy" path="res://pinball_machine/elements/accelerator/accelerator.png" id="1_0g62g"]
+[ext_resource type="Script" uid="uid://cxrqn5fa81q5u" path="res://shop/shop_entry.gd" id="1_aiata"]
+[ext_resource type="PackedScene" uid="uid://bl3sbf8mnoajy" path="res://pinball_machine/elements/accelerator/accelerator.tscn" id="2_pb4py"]
+
+[resource]
+script = ExtResource("1_aiata")
+title = "Accelerator"
+price = 0
+icon = ExtResource("1_0g62g")
+scene = ExtResource("2_pb4py")
+is_set = false
+metadata/_custom_type_script = "uid://cxrqn5fa81q5u"
