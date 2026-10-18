@@ -1,8 +1,10 @@
+class_name Flipper
 extends Element
+
+@onready var flipper = $Flipper
 
 @export var maximum := 1.0
 
-@onready var flipper = $Flipper
 
 var target_rot := 0.0
 const UP_SPEED := 15.0
@@ -15,6 +17,9 @@ func set_sim_speed(factor: float) -> void:
 	sim_speed_factor = factor
 
 func press() -> void:
+	# Play sound if pressed start
+	if not self.pressed:
+		%PressedRandomSoundPlayer.play()
 	pressed = true
 func release() -> void:
 	pressed = false

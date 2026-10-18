@@ -56,21 +56,28 @@ metadata/_custom_type_script = "uid://b26sfo7otc5te"
 
 [node name="Spinner1" type="AudioStreamPlayer" parent="RandomSoundPlayer" unique_id=1733737914]
 stream = ExtResource("3_f4ti0")
+bus = &"SFX-System"
 
 [node name="Spinner2" type="AudioStreamPlayer" parent="RandomSoundPlayer" unique_id=1683241171]
 stream = ExtResource("4_e10lh")
+bus = &"SFX-System"
 
 [node name="Spinner3" type="AudioStreamPlayer" parent="RandomSoundPlayer" unique_id=491196671]
 stream = ExtResource("5_ggmki")
+bus = &"SFX-System"
 
 [node name="Spinner4" type="AudioStreamPlayer" parent="RandomSoundPlayer" unique_id=873661073]
 stream = ExtResource("6_g1jcy")
+bus = &"SFX-System"
 
 [node name="Spinner5" type="AudioStreamPlayer" parent="RandomSoundPlayer" unique_id=1834935509]
 stream = ExtResource("7_t3j4m")
+bus = &"SFX-System"
 
 [node name="Spinner6" type="AudioStreamPlayer" parent="RandomSoundPlayer" unique_id=625179009]
 stream = ExtResource("8_s7mq0")
+bus = &"SFX-System"
 
 [node name="Spinner7" type="AudioStreamPlayer" parent="RandomSoundPlayer" unique_id=624654419]
 stream = ExtResource("9_1s7im")
+bus = &"SFX-System"
