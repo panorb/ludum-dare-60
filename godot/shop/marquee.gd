@@ -7,9 +7,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func celebrate_purchase() -> void:
-	var mat: ShaderMaterial = $Bulbs.material
-	mat.set_shader_parameter("flash", true)
-	mat.set_shader_parameter("speed", 8.0)
+	$Bulbs.set_lights(Bulbs.LightMode.FLASH)
+	$Bulbs.set_speed(8.0)
 	await get_tree().create_timer(1.0).timeout
-	mat.set_shader_parameter("flash", false)
-	mat.set_shader_parameter("speed", 3.0)
+	$Bulbs.set_lights(Bulbs.LightMode.BLINK)
+	$Bulbs.set_speed(3.0)

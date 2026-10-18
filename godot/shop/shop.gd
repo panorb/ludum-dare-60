@@ -20,6 +20,15 @@ func _ready() -> void:
 		tile.setup(entry, i % 2 == 1)
 		tile.pressed.connect(_on_item_pressed)
 
+func update_available_balance(balance: int):
+	_update_item_purchasability(balance)
+
+func _update_item_purchasability(balance: int):
+	for i in len(shop_entries):
+		var entry = shop_entries[i]
+		var item = items.get_child(i)
+		item.is_active = entry.price <= balance
+
 func _on_item_pressed(entry: ShopEntry):
 	%Marquee.celebrate_purchase()
 	item_pressed.emit(entry)
