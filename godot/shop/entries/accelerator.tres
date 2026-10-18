@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_aiata")
-title = "Accelerator"
+title = "Speed-Up"
 price = 0
 icon = ExtResource("1_0g62g")
 scene = ExtResource("2_pb4py")

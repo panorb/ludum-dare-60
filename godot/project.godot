@@ -75,6 +75,7 @@ rotate_right={
 
 2d_physics/layer_10="Pinball"
 2d_physics/layer_11="Walls"
+2d_physics/layer_17="Placement"
 
 [physics]
 

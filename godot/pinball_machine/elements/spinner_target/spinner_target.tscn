@@ -30,8 +30,10 @@ polygon = PackedVector2Array(-3, -28, 0, -31, 3, -28, 3, 28, 0, 31, -3, 28)
 node_a = NodePath("../Anchor")
 node_b = NodePath("../Spinner")
 
-[node name="DisallowPlacementZone" type="Area2D" parent="." unique_id=193624508 groups=["disallow_placement"]]
+[node name="ExclusionZone" type="Area2D" parent="." unique_id=193624508 groups=["disallow_placement"]]
+collision_layer = 65536
+collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DisallowPlacementZone" unique_id=1946266419]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExclusionZone" unique_id=1946266419]
 shape = SubResource("CircleShape2D_o72lw")
 debug_color = Color(0.9991961, 0, 0.1340175, 0.41960785)

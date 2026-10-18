@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dmdtavnx5nrws" path="res://pinball_machine/elements/drop_target/standing.png" id="3_i1lxi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_276rf"]
-radius = 17.0
+radius = 15.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i6ibw"]
 size = Vector2(28, 6)
@@ -17,9 +17,11 @@ size = Vector2(28, 45)
 script = ExtResource("1_276rf")
 metadata/_custom_type_script = "uid://c55dcj4rrkgmt"
 
-[node name="DisallowPlacementZone" type="Area2D" parent="." unique_id=1640070826 groups=["disallow_placement"]]
+[node name="ExclusionZone" type="Area2D" parent="." unique_id=1640070826 groups=["disallow_placement"]]
+collision_layer = 65536
+collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DisallowPlacementZone" unique_id=1870982423]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExclusionZone" unique_id=1870982423]
 shape = SubResource("CircleShape2D_276rf")
 debug_color = Color(0.9991961, 0, 0.1340175, 0.41960785)
 

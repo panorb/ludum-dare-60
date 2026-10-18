@@ -8,8 +8,6 @@
 
 [node name="Bumper2" parent="." unique_id=704044506 instance=ExtResource("1_dx5uw")]
 variant = 2
-score_value = 15
 
 [node name="Bumper3" parent="." unique_id=2000440836 instance=ExtResource("1_dx5uw")]
 variant = 3
-score_value = 20

@@ -18,7 +18,14 @@ var _home: Node = null
 var _part_scale := Vector2.ONE
 
 const ROTATE_STEP := deg_to_rad(15.0)
+const PLACEMENT_LAYER := 1 << 16
+const COLOR_OK := Color(1.0, 1.0, 1.0, 0.6)
+const COLOR_BLOCKED := Color(0.925, 0.380, 0.290, 0.75)
 
+const HINT_COLOR := Color("ffa468")
+const HINT_COLOR_BLOCKED := Color("ec614a")
+
+var _blocked := false
 
 func is_placing() -> bool:
 	return _set != null
@@ -50,9 +57,19 @@ func _pick_up_current() -> void:
 	part.modulate.a = 0.6
 	part.show()
 
-	hint.visible = _parts.size() > 1
-	hint.text = "PLACE %d OF %d" % [_index + 1, _parts.size()]
+	_blocked = false
+	hint.show()
+	_update_hint()
 	link_line.visible = _index > 0
+
+func _update_hint() -> void:
+	if _blocked:
+		hint.text = "TOO CLOSE..."
+	elif _parts.size() > 1:
+		hint.text = "PLACE %d OF %d" % [_index + 1, _parts.size()]
+	else:
+		hint.text = "PLACE THINGY"
+	hint.add_theme_color_override("font_color", HINT_COLOR_BLOCKED if _blocked else HINT_COLOR)
 
 func _process(_delta: float) -> void:
 	if not is_placing():
@@ -93,7 +110,8 @@ func _input(event: InputEvent) -> void:
 		return
 	if event.button_index == MOUSE_BUTTON_LEFT:
 		if table_view.get_global_rect().has_point(event.position):
-			_drop_current(event.position)
+			if not _blocked:
+				_drop_current(event.position)
 	
 	elif event.button_index == MOUSE_BUTTON_RIGHT:
 		_cancel()
@@ -153,3 +171,35 @@ func _table_scale() -> Vector2:
 	return sub_viewport.get_canvas_transform().get_scale() \
 		* table_view.get_global_transform_with_canvas().get_scale() \
 		* float(table_view.stretch_shrink)
+
+func _physics_process(_delta: float) -> void:
+	if not is_placing():
+		return
+	var mouse := get_viewport().get_mouse_position()
+	var over_table := table_view.get_global_rect().has_point(mouse)
+	var part := _parts[_index]
+	_blocked = over_table and not _is_free(part, _screen_to_world(mouse))
+	part.modulate = COLOR_BLOCKED if _blocked else COLOR_OK
+	_update_hint()
+
+
+func _is_free(part: Node2D, world_pos: Vector2) -> bool:
+	var zone := part.get_node_or_null("ExclusionZone") as Area2D
+	if zone == null:
+		return true
+	var space := sub_viewport.world_2d.direct_space_state
+	# Where the part would be on the table: mouse position, current rotation, normal scale.
+	var part_xform := Transform2D(part.rotation, _part_scale, 0.0, world_pos)
+	for child in zone.get_children():
+		var shape_node := child as CollisionShape2D
+		if shape_node == null or shape_node.shape == null:
+			continue
+		var params := PhysicsShapeQueryParameters2D.new()
+		params.shape = shape_node.shape
+		params.transform = part_xform * zone.transform * shape_node.transform
+		params.collision_mask = PLACEMENT_LAYER
+		params.collide_with_areas = true
+		params.collide_with_bodies = false
+		if not space.intersect_shape(params, 1).is_empty():
+			return false
+	return true
