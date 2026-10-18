@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dcpgsb0oxtw02"]
+
+[ext_resource type="PackedScene" uid="uid://d31fplisqhh6s" path="res://editor/editor.tscn" id="1_80nbo"]
+
+[node name="Game" type="Node2D" unique_id=602533630]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1330613801]
+
+[node name="Editor" parent="CanvasLayer" unique_id=1403797738 instance=ExtResource("1_80nbo")]

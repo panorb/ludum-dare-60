@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bl3sbf8mnoajy"]
 
-[ext_resource type="Script" uid="uid://cgdpgr0qj7e2u" path="res://playingfield/elements/accelerator/accelerator.gd" id="1_lgof1"]
-[ext_resource type="Texture2D" uid="uid://bql21xfyl0goy" path="res://playingfield/elements/accelerator/accelerator.png" id="2_ku5xa"]
+[ext_resource type="Script" uid="uid://cgdpgr0qj7e2u" path="res://pinball_machine/elements/accelerator/accelerator.gd" id="1_lgof1"]
+[ext_resource type="Texture2D" uid="uid://bql21xfyl0goy" path="res://pinball_machine/elements/accelerator/accelerator.png" id="2_ku5xa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i6ibw"]
 radius = 13.0

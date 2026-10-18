@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c22aytwo0gmxi"]
 
-[ext_resource type="Script" uid="uid://btys4x7het3s4" path="res://playingfield/elements/saucer/saucer.gd" id="1_4ee05"]
-[ext_resource type="Texture2D" uid="uid://dm4twypraptsl" path="res://playingfield/elements/saucer/saucer.png" id="1_131qa"]
+[ext_resource type="Script" uid="uid://btys4x7het3s4" path="res://pinball_machine/elements/saucer/saucer.gd" id="1_4ee05"]
+[ext_resource type="Texture2D" uid="uid://dm4twypraptsl" path="res://pinball_machine/elements/saucer/saucer.png" id="1_131qa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eckxu"]
 radius = 4.0

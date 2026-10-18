@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cvxwk8nmkb0rn"]
 
-[ext_resource type="Script" uid="uid://8kcsknm5nlyp" path="res://playingfield/ball.gd" id="1_ipx12"]
-[ext_resource type="Texture2D" uid="uid://xfeytqsog0kt" path="res://playingfield/ball.png" id="2_ipx12"]
+[ext_resource type="Script" uid="uid://8kcsknm5nlyp" path="res://pinball_machine/ball.gd" id="1_ipx12"]
+[ext_resource type="Texture2D" uid="uid://xfeytqsog0kt" path="res://pinball_machine/ball.png" id="2_ipx12"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sj7qs"]
 rough = true

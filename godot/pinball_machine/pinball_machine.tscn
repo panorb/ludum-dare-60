@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://ba4u6apn3j0ke"]
 
-[ext_resource type="Script" uid="uid://bmixhhgd11c4j" path="res://playingfield/pinball_playfield.gd" id="1_4760t"]
-[ext_resource type="PackedScene" uid="uid://mcnthxnjw2ba" path="res://playingfield/flipper/flipper.tscn" id="2_w774u"]
-[ext_resource type="Script" uid="uid://dvexvufvg77dk" path="res://playingfield/wall.gd" id="3_8oa5j"]
-[ext_resource type="PackedScene" uid="uid://btkofrqrrj4wb" path="res://playingfield/elements/bumper/bumper.tscn" id="3_w774u"]
-[ext_resource type="PackedScene" uid="uid://c22aytwo0gmxi" path="res://playingfield/elements/saucer/saucer.tscn" id="4_ibvbf"]
-[ext_resource type="PackedScene" uid="uid://b1wvg1mgpdkib" path="res://playingfield/elements/slingshot/slingshot.tscn" id="5_ll1gr"]
-[ext_resource type="PackedScene" uid="uid://bl3sbf8mnoajy" path="res://playingfield/elements/accelerator/accelerator.tscn" id="6_phrn3"]
+[ext_resource type="Script" uid="uid://bmixhhgd11c4j" path="res://pinball_machine/pinball_machine.gd" id="1_4760t"]
+[ext_resource type="PackedScene" uid="uid://mcnthxnjw2ba" path="res://pinball_machine/flipper/flipper.tscn" id="2_w774u"]
+[ext_resource type="Script" uid="uid://dvexvufvg77dk" path="res://pinball_machine/wall.gd" id="3_8oa5j"]
+[ext_resource type="PackedScene" uid="uid://btkofrqrrj4wb" path="res://pinball_machine/elements/bumper/bumper.tscn" id="3_w774u"]
+[ext_resource type="PackedScene" uid="uid://c22aytwo0gmxi" path="res://pinball_machine/elements/saucer/saucer.tscn" id="4_ibvbf"]
+[ext_resource type="PackedScene" uid="uid://b1wvg1mgpdkib" path="res://pinball_machine/elements/slingshot/slingshot.tscn" id="5_ll1gr"]
+[ext_resource type="PackedScene" uid="uid://bl3sbf8mnoajy" path="res://pinball_machine/elements/accelerator/accelerator.tscn" id="6_phrn3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eckxu"]
 size = Vector2(204, 12)
 
-[node name="PinballPlayfield" type="Node2D" unique_id=1837038421]
+[node name="PinballMachine" type="Node2D" unique_id=1837038421]
 script = ExtResource("1_4760t")
 
 [node name="BackgroundColor" type="Polygon2D" parent="." unique_id=684571928]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm4twypraptsl"
-path="res://.godot/imported/saucer.png-cb6f88e5afdf37907f15b4c9d8fa4ec0.ctex"
+uid="uid://bql21xfyl0goy"
+path="res://.godot/imported/accelerator.png-7a5270e563324ceb3ef327b515e8d0e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://playingfield/elements/saucer/saucer.png"
-dest_files=["res://.godot/imported/saucer.png-cb6f88e5afdf37907f15b4c9d8fa4ec0.ctex"]
+source_file="res://pinball_machine/elements/accelerator/accelerator.png"
+dest_files=["res://.godot/imported/accelerator.png-7a5270e563324ceb3ef327b515e8d0e2.ctex"]
 
 [params]
 

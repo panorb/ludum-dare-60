@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://btkofrqrrj4wb"]
 
-[ext_resource type="Script" uid="uid://csobngfrgr368" path="res://playingfield/elements/bumper/bumper.gd" id="1_csbte"]
-[ext_resource type="Texture2D" uid="uid://gf65uuf4b61g" path="res://playingfield/elements/bumper/bumper1.png" id="1_mx6od"]
+[ext_resource type="Script" uid="uid://csobngfrgr368" path="res://pinball_machine/elements/bumper/bumper.gd" id="1_csbte"]
+[ext_resource type="Texture2D" uid="uid://gf65uuf4b61g" path="res://pinball_machine/elements/bumper/bumper1.png" id="1_mx6od"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eckxu"]
 radius = 19.104973

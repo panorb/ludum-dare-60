@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct38s0jw2p5jc"
-path="res://.godot/imported/bumper2.png-cbceeb2aad37dc3a6f055e3db58d0cc2.ctex"
+uid="uid://c2josx4si4d5c"
+path="res://.godot/imported/flipper.png-b8ff58cf98df65f5789a31731c473042.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://playingfield/elements/bumper/bumper2.png"
-dest_files=["res://.godot/imported/bumper2.png-cbceeb2aad37dc3a6f055e3db58d0cc2.ctex"]
+source_file="res://pinball_machine/flipper/flipper.png"
+dest_files=["res://.godot/imported/flipper.png-b8ff58cf98df65f5789a31731c473042.ctex"]
 
 [params]
 

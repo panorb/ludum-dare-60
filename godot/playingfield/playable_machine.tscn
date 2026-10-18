@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://fkfmv77kd7cv"]
-
-[ext_resource type="PackedScene" uid="uid://ba4u6apn3j0ke" path="res://playingfield/pinball_playfield.tscn" id="1_80nbo"]
-[ext_resource type="Script" uid="uid://dpba7ivxpmek3" path="res://playingfield/playable_machine.gd" id="1_e2o6t"]
-
-[node name="Game" type="Node2D" unique_id=996228279]
-script = ExtResource("1_e2o6t")
-
-[node name="PinballPlayfield" parent="." unique_id=1837038421 instance=ExtResource("1_80nbo")]

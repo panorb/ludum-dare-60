@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gf65uuf4b61g"
-path="res://.godot/imported/bumper1.png-2682397a9e314019e3f4d8971be0b9a5.ctex"
+uid="uid://b5uopw0dvbiau"
+path="res://.godot/imported/bumper3.png-314a11ba99dfc36e6d2ad6ccf686706e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://playingfield/elements/bumper/bumper1.png"
-dest_files=["res://.godot/imported/bumper1.png-2682397a9e314019e3f4d8971be0b9a5.ctex"]
+source_file="res://pinball_machine/elements/bumper/bumper3.png"
+dest_files=["res://.godot/imported/bumper3.png-314a11ba99dfc36e6d2ad6ccf686706e.ctex"]
 
 [params]
 

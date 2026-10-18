@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://mcnthxnjw2ba"]
 
-[ext_resource type="Script" uid="uid://bm2mndo4ok3mc" path="res://playingfield/flipper/flipper.gd" id="1_lo8m8"]
-[ext_resource type="Texture2D" uid="uid://c2josx4si4d5c" path="res://playingfield/flipper/flipper.png" id="2_7aryu"]
+[ext_resource type="Script" uid="uid://bm2mndo4ok3mc" path="res://pinball_machine/flipper/flipper.gd" id="1_lo8m8"]
+[ext_resource type="Texture2D" uid="uid://c2josx4si4d5c" path="res://pinball_machine/flipper/flipper.png" id="2_7aryu"]
 
 [node name="Flipper" type="Node2D" unique_id=279437291]
 script = ExtResource("1_lo8m8")

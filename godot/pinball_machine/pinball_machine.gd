@@ -21,7 +21,7 @@ func _on_drop_out(body: Node2D) -> void:
 		score = 0
 		running = false
 
-const BALL_SCENE = preload("res://playingfield/ball.tscn")
+const BALL_SCENE = preload("res://pinball_machine/ball.tscn")
 
 var sim_speed_factor := 1.0
 func set_sim_speed(factor: float) -> void:

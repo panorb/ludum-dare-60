@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmsvy7u0v7yk"
-path="res://.godot/imported/slingshot.png-04ab49f8b23b0b225ab026f4821910cf.ctex"
+uid="uid://dm4twypraptsl"
+path="res://.godot/imported/saucer.png-a3d72748bba554552038fe42c49a5b79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://playingfield/elements/slingshot/slingshot.png"
-dest_files=["res://.godot/imported/slingshot.png-04ab49f8b23b0b225ab026f4821910cf.ctex"]
+source_file="res://pinball_machine/elements/saucer/saucer.png"
+dest_files=["res://.godot/imported/saucer.png-a3d72748bba554552038fe42c49a5b79.ctex"]
 
 [params]
 

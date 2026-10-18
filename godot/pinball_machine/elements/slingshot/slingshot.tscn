@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b1wvg1mgpdkib"]
 
-[ext_resource type="Script" uid="uid://k5e563d3qnx5" path="res://playingfield/elements/slingshot/slingshot.gd" id="1_pgwqk"]
-[ext_resource type="Texture2D" uid="uid://bmsvy7u0v7yk" path="res://playingfield/elements/slingshot/slingshot.png" id="1_yxn2l"]
+[ext_resource type="Script" uid="uid://k5e563d3qnx5" path="res://pinball_machine/elements/slingshot/slingshot.gd" id="1_pgwqk"]
+[ext_resource type="Texture2D" uid="uid://bmsvy7u0v7yk" path="res://pinball_machine/elements/slingshot/slingshot.png" id="1_yxn2l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eckxu"]
 size = Vector2(14.5584755, 68)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ddculh383bxl4"]
 
-[ext_resource type="PackedScene" uid="uid://fkfmv77kd7cv" path="res://playingfield/playable_machine.tscn" id="1_gcuu0"]
+[ext_resource type="PackedScene" uid="uid://fkfmv77kd7cv" path="res://pinball_machine/playable_machine.tscn" id="1_gcuu0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_er7c6"]
 content_margin_left = 18.0

@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://clnw3uuxs4hjd"]
 
 [ext_resource type="StyleBox" uid="uid://dhoiouwwwmw6f" path="res://ui/black_style_box.tres" id="1_v5v6m"]
-[ext_resource type="Texture2D" uid="uid://gf65uuf4b61g" path="res://playingfield/elements/bumper/bumper1.png" id="2_274ip"]
+[ext_resource type="Texture2D" uid="uid://gf65uuf4b61g" path="res://pinball_machine/elements/bumper/bumper1.png" id="2_274ip"]
 [ext_resource type="StyleBox" uid="uid://dt24fakm6b3k1" path="res://ui/red_style_box.tres" id="3_4c2at"]
 [ext_resource type="FontFile" uid="uid://bbrpa4t0wtrn6" path="res://ui/doto.ttf" id="4_tb531"]
 
