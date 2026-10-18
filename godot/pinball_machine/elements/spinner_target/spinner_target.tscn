@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dk56fc7iae3d7"]
+
+[ext_resource type="Script" uid="uid://b6yf3hwpjfera" path="res://pinball_machine/elements/spinner_target/spinner_target.gd" id="1_gsqnr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eckxu"]
+radius = 3.0
+height = 62.0
+
+[node name="SpinnerTarget" type="Node2D" unique_id=57856292]
+script = ExtResource("1_gsqnr")
+metadata/_custom_type_script = "uid://c55dcj4rrkgmt"
+
+[node name="Spinner" type="RigidBody2D" parent="." unique_id=803868374]
+collision_layer = 1024
+collision_mask = 0
+linear_damp = 100.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spinner" unique_id=455917234]
+shape = SubResource("CapsuleShape2D_eckxu")
+
+[node name="Polygon2D" type="Polygon2D" parent="Spinner" unique_id=297354626]
+polygon = PackedVector2Array(-3, -28, 0, -31, 3, -28, 3, 28, 0, 31, -3, 28)
+
+[node name="Anchor" type="StaticBody2D" parent="." unique_id=792538165]
+
+[node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=748897606]
+node_a = NodePath("../Anchor")
+node_b = NodePath("../Spinner")

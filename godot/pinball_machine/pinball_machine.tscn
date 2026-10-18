@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://crorht01w3pxm" path="res://pinball_machine/elements/plunger/plunger.tscn" id="8_uef51"]
 [ext_resource type="PackedScene" uid="uid://mxp8t6twdaok" path="res://pinball_machine/elements/one_way_gate/one_way_gate.tscn" id="9_qjevt"]
 [ext_resource type="PackedScene" uid="uid://g7alaesfaxye" path="res://pinball_machine/elements/drop_target/drop_target.tscn" id="11_r0mf8"]
+[ext_resource type="PackedScene" uid="uid://dk56fc7iae3d7" path="res://pinball_machine/elements/spinner_target/spinner_target.tscn" id="12_s7pbf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eckxu"]
 size = Vector2(204, 12)
@@ -147,3 +148,6 @@ rotation = -1.5707964
 [node name="DropTarget" parent="." unique_id=416927007 instance=ExtResource("11_r0mf8")]
 position = Vector2(323, 89)
 rotation = 3.1415927
+
+[node name="SpinnerTarget" parent="." unique_id=57856292 instance=ExtResource("12_s7pbf")]
+position = Vector2(256, 436)
