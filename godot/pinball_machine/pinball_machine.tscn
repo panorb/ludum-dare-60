@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b1wvg1mgpdkib" path="res://pinball_machine/elements/slingshot/slingshot.tscn" id="5_ll1gr"]
 [ext_resource type="PackedScene" uid="uid://bl3sbf8mnoajy" path="res://pinball_machine/elements/accelerator/accelerator.tscn" id="6_phrn3"]
 [ext_resource type="PackedScene" uid="uid://crorht01w3pxm" path="res://pinball_machine/elements/plunger/plunger.tscn" id="8_uef51"]
+[ext_resource type="PackedScene" uid="uid://mxp8t6twdaok" path="res://pinball_machine/elements/one_way_gate/one_way_gate.tscn" id="9_qjevt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eckxu"]
 size = Vector2(204, 12)
@@ -39,7 +40,7 @@ script = ExtResource("3_8oa5j")
 
 [node name="Polygon2D" type="Polygon2D" parent="Node2D/StaticBody2D/RightInsideWall" unique_id=742849904]
 color = Color(0.21960784, 0, 0.17254902, 1)
-polygon = PackedVector2Array(333, 708, 464, 608, 465, 334, 419, 308, 419, 277, 463, 249, 458, 90, 453, 85, 448, 82, 441.3655, 77.73494, 434, 73, 418, 67, 401, 62.000004, 370, 61.000004, 322, 94, 322, 83, 368, 52.000004, 413, 52, 423, 54, 435, 58, 447, 64, 459, 72, 468, 81, 472, 89, 475, 96, 477, 108, 477, 132, 477, 622, 426, 662, 438, 677, 477, 647, 477, 707)
+polygon = PackedVector2Array(333, 708, 464, 608, 465, 334, 419, 308, 419, 277, 463, 249, 458, 90, 453, 85, 448, 82, 441.3655, 77.73494, 434, 73, 418, 67, 401, 62.000004, 370, 61.000004, 322, 94, 322, 83, 368, 52.000004, 411, 51, 423, 54, 435, 58, 447, 64, 459, 72, 468, 81, 472, 89, 475, 96, 477, 108, 477, 132, 477, 622, 426, 662, 438, 677, 477, 647, 477, 707)
 
 [node name="RightOutsideWall" type="CollisionPolygon2D" parent="Node2D/StaticBody2D" unique_id=273552117]
 position = Vector2(23, -1)
@@ -108,29 +109,6 @@ position = Vector2(358, 550)
 position = Vector2(123, 550)
 scale = Vector2(-1, 1)
 
-[node name="Accelerator" parent="." unique_id=817390848 instance=ExtResource("6_phrn3")]
-position = Vector2(507, 132)
-force = 50.0
-
-[node name="Accelerator2" parent="." unique_id=727591773 instance=ExtResource("6_phrn3")]
-position = Vector2(497.00003, 80)
-rotation = -0.4660029
-force = 50.0
-
-[node name="Accelerator3" parent="." unique_id=585686943 instance=ExtResource("6_phrn3")]
-position = Vector2(452.99997, 43.999996)
-rotation = -1.1641346
-force = 50.0
-
-[node name="Accelerator4" parent="." unique_id=1957399058 instance=ExtResource("6_phrn3")]
-position = Vector2(507, 183)
-force = 50.0
-
-[node name="Accelerator5" parent="." unique_id=997384910 instance=ExtResource("6_phrn3")]
-position = Vector2(398, 34)
-rotation = -1.5707964
-force = 50.0
-
 [node name="Accelerator6" parent="." unique_id=2044316184 instance=ExtResource("6_phrn3")]
 position = Vector2(471.99997, 653)
 rotation = 0.9302605
@@ -144,3 +122,7 @@ rotation = 0.9302605
 
 [node name="Plunger" parent="." unique_id=578970161 instance=ExtResource("8_uef51")]
 position = Vector2(507, 655)
+
+[node name="OneWayGate" parent="." unique_id=1446678896 instance=ExtResource("9_qjevt")]
+position = Vector2(430, 33)
+rotation = -1.5707964
