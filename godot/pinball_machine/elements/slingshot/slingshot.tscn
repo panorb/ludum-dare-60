@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b1wvg1mgpdkib"]
 
-[ext_resource type="Script" uid="uid://ikblyv5lv8fw" path="res://pinball_machine/elements/slingshot/slingshot.gd" id="1_pgwqk"]
 [ext_resource type="Texture2D" uid="uid://bmsvy7u0v7yk" path="res://pinball_machine/elements/slingshot/slingshot.png" id="1_yxn2l"]
 [ext_resource type="AudioStream" uid="uid://dnpsnc3wu1o27" path="res://pinball_machine/elements/slingshot/push_back.wav" id="3_ge388"]
-[ext_resource type="Script" uid="uid://k5e563d3qnx5" path="res://pinball_machine/elements/slingshot/push_back_static_body_2d.gd" id="3_pvr2h"]
+[ext_resource type="Script" uid="uid://ikblyv5lv8fw" path="res://pinball_machine/elements/slingshot/slingshot.gd" id="3_pvr2h"]
+[ext_resource type="Script" uid="uid://gcvnqtsc06ep" path="res://pinball_machine/elements/slingshot/push_back_static_body_2d.gd" id="3_s1bho"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eckxu"]
 size = Vector2(14.5584755, 68)
@@ -12,7 +12,7 @@ size = Vector2(14.5584755, 68)
 radius = 8.0
 
 [node name="Slingshot" type="Node2D" unique_id=1086058136]
-script = ExtResource("1_pgwqk")
+script = ExtResource("3_pvr2h")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1296644581]
 position = Vector2(-9.126747, -8.5)
@@ -24,7 +24,7 @@ texture = ExtResource("1_yxn2l")
 unique_name_in_owner = true
 collision_layer = 1024
 collision_mask = 0
-script = ExtResource("3_pvr2h")
+script = ExtResource("3_s1bho")
 
 [node name="PushBackCollisionShape2D" type="CollisionShape2D" parent="PushBackStaticBody2D" unique_id=401412396]
 unique_name_in_owner = true
