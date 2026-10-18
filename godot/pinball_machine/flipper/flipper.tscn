@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://bm2mndo4ok3mc" path="res://pinball_machine/flipper/flipper.gd" id="1_lo8m8"]
 [ext_resource type="Texture2D" uid="uid://c2josx4si4d5c" path="res://pinball_machine/flipper/flipper.png" id="2_7aryu"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eckxu"]
+size = Vector2(111, 16.323292)
+
 [node name="Flipper" type="Node2D" unique_id=279437291]
 script = ExtResource("1_lo8m8")
 
@@ -10,13 +13,23 @@ script = ExtResource("1_lo8m8")
 collision_layer = 1024
 collision_mask = 0
 
+[node name="Sprite2D" type="Sprite2D" parent="Flipper" unique_id=1877841139]
+position = Vector2(-60.999996, -1)
+rotation = 0.017453292
+scale = Vector2(0.40816334, 0.40816334)
+texture = ExtResource("2_7aryu")
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Flipper" unique_id=522642593]
 position = Vector2(-11, 0)
-polygon = PackedVector2Array(14, -20, -102, -7, -115, -5, -124, -2, -129, 0, -132, 3, -132, 4, -129, 7, -124, 9, -116, 10, -102, 12, 14, 19, 29, 13, 33, 0, 27, -14)
+polygon = PackedVector2Array(11, -20, -110, -8, -117, -7, -124, -5, -129, -3, -131, -1, -131, 1, -129, 3, -124, 5, -117, 7, -110, 8, 11, 20, 16, 19, 21, 17, 25, 14, 28, 10, 30, 5, 31, 0, 30, -5, 28, -10, 25, -14, 21, -17, 16, -19)
 metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Flipper" unique_id=1877841139]
-position = Vector2(-60, 0)
-scale = Vector2(0.40816337, 0.40816337)
-texture = ExtResource("2_7aryu")
-metadata/_edit_lock_ = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flipper" unique_id=1120368624]
+position = Vector2(-64.835495, -5.119725)
+rotation = -0.087266445
+shape = SubResource("RectangleShape2D_eckxu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Flipper" unique_id=2071389154]
+position = Vector2(-65, 5.0000014)
+rotation = 0.08726646
+shape = SubResource("RectangleShape2D_eckxu")
