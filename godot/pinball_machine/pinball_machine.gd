@@ -49,6 +49,8 @@ func _on_drop_out(body: Node2D) -> void:
 				highscore = score
 				is_highscore = true
 			game_over.emit(score, is_highscore)
+		else:
+			game_over.emit(score, false)
 		score = 0 
 		running = false
 
