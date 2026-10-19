@@ -66,7 +66,7 @@ func _pick_up_current() -> void:
 	_home = part.get_parent()
 	_part_scale = part.scale
 	part.reparent(cursor_layer, false)
-	part.process_mode = Node.PROCESS_MODE_DISABLED
+	#part.process_mode = Node.PROCESS_MODE_DISABLED
 	part.scale = _part_scale * _table_scale()
 	part.modulate = COLOR_OK
 	part.show()
