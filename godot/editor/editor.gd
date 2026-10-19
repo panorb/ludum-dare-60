@@ -1,7 +1,7 @@
 class_name Editor
 extends Control
 
-const DURATION_OF_DAY: float = 10.0;
+const DURATION_OF_DAY: float = 50.0;
 const COIN_FACTOR := 50
 
 @onready var pinball_machine : PinballMachine = %PinballMachine;
