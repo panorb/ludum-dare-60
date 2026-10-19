@@ -7,6 +7,8 @@ const DURATION_OF_DAY: float = 10.0;
 @onready var ai_controller : AIController = %AIController;
 @onready var shop := %Shop
 @onready var placer: Placer = %Placer
+@onready var intermission: Intermission = %Intermission;
+
 var today : StoryDay
 
 var current_balance := 0:
@@ -34,7 +36,7 @@ func _ready() -> void:
 
 func _begin_new_day():
 	today = story_days.pop_front()
-	%Intermission.start(today.intro_text)
+	intermission.start(today.intro_text)
 
 func _on_intermission_finished():
 	%Shop.add_to_inventory(today.shop_restock)
@@ -61,7 +63,6 @@ func _on_intermission_finished():
 
 	# ??
 	%AIController.stop();
-	
 
 func _on_game_over(score, is_highscore) -> void:
 	_reset_placed_parts()
@@ -103,7 +104,26 @@ func _reset_placed_parts():
 			child.reset()
 
 func _on_end_day():
-	_begin_new_day()
+	# Activate user input disable AI
+	%AIController.active = false;
+	%PlayableMachine.active = true;
+
+	# Reset pinballmachine
+	%PinballMachine.reset();
+	_reset_placed_parts()
+
+	# Activate highscrore
+	%PinballMachine.is_highscore_active = false;
+
+	# Run engine normal
+	Engine.time_scale = 1.0
+
+	# ??
+	%AIController.stop();
+	
+	# After some seconds show next day
+	self.get_tree().create_timer(2.0) \
+		.timeout.connect(func():self._begin_new_day());
 
 func _on_shop_item_pressed(entry: ShopEntry) -> void:
 	if placer.is_placing() or current_balance < entry.price:

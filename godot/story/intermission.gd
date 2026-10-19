@@ -1,3 +1,4 @@
+class_name Intermission
 extends Control
 
 var _first_time = true
