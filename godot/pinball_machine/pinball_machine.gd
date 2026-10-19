@@ -38,7 +38,7 @@ func on_score(id, points):
 		return
 	score += points
 	print(score)
-	score_changed.emit(points)
+	score_changed.emit(score)
 	excitement.emit(points)
 
 func on_excite(value) -> void:

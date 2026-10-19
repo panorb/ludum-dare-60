@@ -166,3 +166,6 @@ func _on_excitement_change(score: int):
 	
 func _on_total_excitement_change(score: int):
 	pass
+
+func excitement_to_coins(excitement: float):
+	return excitement / 100;
