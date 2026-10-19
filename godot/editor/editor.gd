@@ -37,7 +37,6 @@ func _ready() -> void:
 func _begin_new_day():
 	today = story_days.pop_front()
 	intermission.start(today.intro_text)
-	intermission.finished.connect(switch_to_shop);
 
 func _on_intermission_finished():
 	%Shop.add_to_inventory(today.shop_restock)
@@ -63,7 +62,6 @@ func _on_intermission_finished():
 
 	# ??
 	%AIController.stop();
-	
 
 func _on_game_over(score, is_highscore) -> void:
 	_reset_placed_parts()
@@ -156,10 +154,6 @@ func _on_part_sold(entry: ShopEntry) -> void:
 	_refund_stock(entry)
 	
 	current_balance += int(entry.price / 2.0)
-
-func switch_to_shop():
-	%DayInfo.visible = false;
-	%Shop.visible = true;
 
 func _on_score_changed(score: int):
 	pass
