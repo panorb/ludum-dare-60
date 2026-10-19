@@ -44,3 +44,10 @@ func _on_trigger(id) -> void:
 
 func _on_second_ball():
 	trigger_ball.emit()
+
+func reset() -> void:
+	for child_pinball_maschine_part in self.child_pinball_maschine_parts:
+		child_pinball_maschine_part.reset();
+	for i in range(5):
+		bumpers[i].active = true
+		_bumper_activation[i] = false
