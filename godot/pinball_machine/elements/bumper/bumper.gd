@@ -33,7 +33,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	# Is this body a ball?
-	if body is Ball and self.active:
+	if body is Ball:
 		# Get ball
 		var ball = body as Ball;
 		# Calculate direction
@@ -61,8 +61,9 @@ func _on_body_entered(body: Node2D) -> void:
 			.set_trans(Tween.TRANS_CIRC) \
 			.set_delay(0.15)
 		
-		self.trigger.emit(id)
-		self.score.emit(id, points)
+		if  self.active:
+			self.trigger.emit(id)
+			self.score.emit(id, points)
 
 func on_bump(body: Node2D) -> void:
 	body_entered.emit(body)
