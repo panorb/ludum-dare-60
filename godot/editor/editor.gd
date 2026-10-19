@@ -28,6 +28,7 @@ func _on_start_day():
 	
 	# Reset pinballmachine
 	%PinballMachine.reset();
+	_reset_placed_parts()
 	
 	# Activate highscrore
 	%PinballMachine.is_highscore_active = true;
@@ -50,7 +51,12 @@ func _on_start_day():
 	self.get_tree().create_timer(DURATION_OF_DAY) \
 		## call end day method
 		.timeout.connect(_on_end_day)
-	
+
+func _reset_placed_parts():
+	for child in %PlacedParts.get_children():
+		if child.has_method("reset"):
+			child.reset()
+
 func _on_end_day():
 	# Replace shop with info display
 	%DayInfo.visible = false;
@@ -62,6 +68,7 @@ func _on_end_day():
 
 	# Reset pinballmachine
 	%PinballMachine.reset();
+	_reset_placed_parts()
 
 	# Activate highscrore
 	%PinballMachine.is_highscore_active = false;

@@ -19,3 +19,10 @@ func _on_trigger(id) -> void:
 	var _target_bumper =  (id + 1) % 3
 	bumpers[id].active = false
 	bumpers[_target_bumper].active = true
+
+func reset() -> void:
+	for child_pinball_maschine_part in self.child_pinball_maschine_parts:
+		child_pinball_maschine_part.reset();
+	bumpers[0].active = true
+	bumpers[1].active = false
+	bumpers[2].active = false
