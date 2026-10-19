@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://br2q81v582v75"]
+
+[ext_resource type="Theme" uid="uid://d1bm57laym1gy" path="res://ui/theme.tres" id="1_p6ctn"]
+[ext_resource type="StyleBox" uid="uid://dhoiouwwwmw6f" path="res://ui/black_style_box.tres" id="2_c4ako"]
+[ext_resource type="Script" uid="uid://tds8dmmtabnd" path="res://day_info/day.gd" id="3_p6ctn"]
+[ext_resource type="Shader" uid="uid://b4r047y0b24qy" path="res://shop/bulbs.gdshader" id="4_61g40"]
+[ext_resource type="Script" uid="uid://c1ifmju07qpn3" path="res://shop/bulbs.gd" id="5_jcbsd"]
+[ext_resource type="FontFile" uid="uid://7pxojp6ogpwc" path="res://ui/orbitron.ttf" id="6_ldge0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_er7c6"]
+shader = ExtResource("4_61g40")
+shader_parameter/size = Vector2(512, 96)
+shader_parameter/inset = 5.0
+shader_parameter/spacing = 18.0
+shader_parameter/radius = 3.0
+shader_parameter/speed = 3.0
+shader_parameter/mode = 0
+shader_parameter/on_color = Color(1, 0.965, 0.682, 1)
+shader_parameter/off_color = Color(0.408, 0.235, 0.204, 1)
+shader_parameter/disabled_color = Color(0.133, 0.165, 0.361, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_fjmi1"]
+base_font = ExtResource("6_ldge0")
+variation_opentype = {
+2003265652: 900
+}
+
+[node name="Day" type="PanelContainer" unique_id=2083558016]
+custom_minimum_size = Vector2(0, 96)
+theme = ExtResource("1_p6ctn")
+theme_override_styles/panel = ExtResource("2_c4ako")
+script = ExtResource("3_p6ctn")
+
+[node name="Bulbs" type="ColorRect" parent="." unique_id=1193277753]
+material = SubResource("ShaderMaterial_er7c6")
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("5_jcbsd")
+
+[node name="Title" type="Label" parent="." unique_id=566075414]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.5803922, 0.7019608, 1)
+theme_override_fonts/font = SubResource("FontVariation_fjmi1")
+theme_override_font_sizes/font_size = 32
+text = "Day 2"
+horizontal_alignment = 1
+vertical_alignment = 1

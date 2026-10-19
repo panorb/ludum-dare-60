@@ -1,3 +1,4 @@
+class_name AIController
 extends Node2D
 
 const MIN_PLUNGER_CHARGE_TIME: float = 0.5;
