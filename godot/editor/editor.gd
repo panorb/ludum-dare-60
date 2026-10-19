@@ -20,6 +20,10 @@ func _ready() -> void:
 	placer.placement_cancelled.connect(_on_placement_cancelled)
 	placer.part_sold.connect(_on_part_sold)
 	current_balance = current_balance
+	%PinballMachine.game_over.connect(_on_game_over)
+
+func _on_game_over(score, is_highscore) -> void:
+	_reset_placed_parts()
 
 func _on_start_day():
 	# Replace shop with info display
