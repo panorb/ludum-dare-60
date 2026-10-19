@@ -13,6 +13,15 @@
 [ext_resource type="StyleBox" uid="uid://dhoiouwwwmw6f" path="res://ui/black_style_box.tres" id="8_aws7q"]
 [ext_resource type="Script" uid="uid://bxfkr1g6ocqg2" path="res://day_info/day_info.gd" id="8_dblv8"]
 [ext_resource type="Script" uid="uid://bmmlntcuidvb7" path="res://shop/shop_entry_quantity.gd" id="8_wux1q"]
+[ext_resource type="Resource" uid="uid://3yrhcg8sq408" path="res://shop/entries/gift1.tres" id="9_j1vbl"]
+[ext_resource type="Resource" uid="uid://ku4uqvaow2q5" path="res://shop/entries/gift2.tres" id="10_l1a3q"]
+[ext_resource type="Resource" uid="uid://cq6pmkt3byc2j" path="res://shop/entries/accelerator.tres" id="11_g3esq"]
+[ext_resource type="Resource" uid="uid://flgy3f00pwsp" path="res://shop/entries/bumper_times_three.tres" id="12_j68xf"]
+[ext_resource type="Resource" uid="uid://cb042a6iks26j" path="res://shop/entries/drop_target.tres" id="13_nbwom"]
+[ext_resource type="Shader" uid="uid://b4r047y0b24qy" path="res://shop/bulbs.gdshader" id="14_anuej"]
+[ext_resource type="Resource" uid="uid://bm07t8x06w7pw" path="res://shop/entries/saucer.tres" id="14_f4kn2"]
+[ext_resource type="Resource" uid="uid://c5vatop2f4l2m" path="res://shop/entries/spinner_target.tres" id="15_f77pu"]
+[ext_resource type="Script" uid="uid://c1ifmju07qpn3" path="res://shop/bulbs.gd" id="15_wj0aq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ycap1"]
 shader = ExtResource("2_fjngd")
@@ -27,6 +36,60 @@ content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
 bg_color = Color(0.9254902, 0.38039216, 0.2901961, 1)
+
+[sub_resource type="Resource" id="Resource_gy7ao"]
+script = ExtResource("8_wux1q")
+entry = ExtResource("9_j1vbl")
+quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_q4g17"]
+script = ExtResource("8_wux1q")
+entry = ExtResource("10_l1a3q")
+quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_2wf2a"]
+script = ExtResource("8_wux1q")
+entry = ExtResource("11_g3esq")
+quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_xad5q"]
+script = ExtResource("8_wux1q")
+entry = ExtResource("12_j68xf")
+quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_ljlg5"]
+script = ExtResource("8_wux1q")
+entry = ExtResource("13_nbwom")
+quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_bv5vx"]
+script = ExtResource("8_wux1q")
+entry = ExtResource("14_f4kn2")
+quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_mmyc1"]
+script = ExtResource("8_wux1q")
+entry = ExtResource("15_f77pu")
+quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o72lw"]
+shader = ExtResource("14_anuej")
+shader_parameter/size = Vector2(512, 96)
+shader_parameter/inset = 5.0
+shader_parameter/spacing = 18.0
+shader_parameter/radius = 3.0
+shader_parameter/speed = 3.0
+shader_parameter/mode = 0
+shader_parameter/on_color = Color(1, 0.855, 0.439, 1)
+shader_parameter/off_color = Color(0.408, 0.235, 0.204, 1)
+shader_parameter/disabled_color = Color(0.133, 0.165, 0.361, 1)
 
 [node name="Editor" type="Control" unique_id=1403797738]
 layout_mode = 3
@@ -101,7 +164,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
-shop_inventory = Array[ExtResource("8_wux1q")]([])
+shop_inventory = Array[ExtResource("8_wux1q")]([SubResource("Resource_gy7ao"), SubResource("Resource_q4g17"), SubResource("Resource_2wf2a"), SubResource("Resource_xad5q"), SubResource("Resource_ljlg5"), SubResource("Resource_bv5vx"), SubResource("Resource_mmyc1")])
 
 [node name="DayInfo" type="PanelContainer" parent="Margin/HBoxContainer" unique_id=983540887]
 unique_name_in_owner = true
@@ -135,3 +198,44 @@ theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
 theme_override_fonts/font = ExtResource("8_3meo8")
 theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = ExtResource("8_aws7q")
+
+[node name="Intermission" type="Control" parent="." unique_id=136938500]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Intermission" unique_id=502712376]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="Intermission" unique_id=1923260913]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Intermission/CenterContainer" unique_id=1833545155]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "\"Heard you wanted to create the ultimate pinball machine?\""
+
+[node name="Bulbs" type="ColorRect" parent="Intermission/CenterContainer/Label" unique_id=602807697]
+material = SubResource("ShaderMaterial_o72lw")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("15_wj0aq")

@@ -3,8 +3,6 @@
 [ext_resource type="Theme" uid="uid://d1bm57laym1gy" path="res://ui/theme.tres" id="1_lggly"]
 [ext_resource type="PackedScene" uid="uid://b1hi4ao200pvr" path="res://shop/marquee.tscn" id="1_vd38c"]
 [ext_resource type="Script" uid="uid://5nayvcjmy70a" path="res://shop/shop.gd" id="2_gy7ao"]
-[ext_resource type="Script" uid="uid://bmmlntcuidvb7" path="res://shop/shop_entry_quantity.gd" id="3_2wf2a"]
-[ext_resource type="Resource" uid="uid://bm07t8x06w7pw" path="res://shop/entries/saucer.tres" id="5_2wf2a"]
 [ext_resource type="StyleBox" uid="uid://dhoiouwwwmw6f" path="res://ui/black_style_box.tres" id="10_mmyc1"]
 [ext_resource type="FontFile" uid="uid://bbrpa4t0wtrn6" path="res://ui/doto.ttf" id="11_orod7"]
 
@@ -23,18 +21,11 @@ corner_detail = 20
 shadow_size = 1
 shadow_offset = Vector2(0, 14)
 
-[sub_resource type="Resource" id="Resource_gy7ao"]
-script = ExtResource("3_2wf2a")
-entry = ExtResource("5_2wf2a")
-quantity = 3
-metadata/_custom_type_script = "uid://bmmlntcuidvb7"
-
 [node name="Shop" type="PanelContainer" unique_id=568133794]
 custom_minimum_size = Vector2(420, 0)
 theme = ExtResource("1_lggly")
 theme_override_styles/panel = SubResource("StyleBoxFlat_j82do")
 script = ExtResource("2_gy7ao")
-shop_inventory = Array[ExtResource("3_2wf2a")]([SubResource("Resource_gy7ao")])
 
 [node name="ShopLayout" type="VBoxContainer" parent="." unique_id=1579627575]
 layout_mode = 2
