@@ -13,11 +13,15 @@ var last_purchase_value := 0
 
 
 func _ready() -> void:
+	shop.start_day.connect(_on_start_day)
 	shop.item_pressed.connect(_on_shop_item_pressed)
 	placer.placement_finished.connect(_on_placement_finished)
 	placer.placement_cancelled.connect(_on_placement_cancelled)
 	placer.part_sold.connect(_on_part_sold)
 	current_balance = current_balance
+
+func _on_start_day():
+	%Shop.visible = false
 
 func _on_shop_item_pressed(entry: ShopEntry) -> void:
 	if placer.is_placing() or current_balance < entry.price:

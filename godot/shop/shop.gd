@@ -8,6 +8,7 @@ const SHOP_ITEM := preload("res://shop/item/shop_item.tscn")
 @export var shop_entries: Array[ShopEntry] = []
 
 @onready var items: GridContainer = %Items
+@onready var start_day_button : Button = %StartDayButton;
 
 signal item_pressed(entry: ShopEntry)
 var display_balance = 0:
@@ -15,11 +16,13 @@ var display_balance = 0:
 		%CoinsValue.text = str(value)
 		display_balance = value
 var coin_display_tween : Tween = null
-var interactable := true: set = _set_interactable
-		
-
+var interactable := true:
+	set = _set_interactable
 
 func _ready() -> void:
+	# If start day button is pressed send start_day signal
+	self.start_day_button.pressed.connect(func(): start_day.emit());
+	
 	# placer.placement_cancelled.connect(_on_placement_cancelled)
 	for i in len(shop_entries):
 		var entry = shop_entries[i]
