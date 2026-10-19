@@ -47,7 +47,6 @@ func on_trigger_ball() -> void:
 	plunge_ball()
 
 func on_summon_ball(_global_position, velocity) -> void:
-	print("pinball machine summons ball!")
 	var ball = BALL_SCENE.instantiate()
 	add_child(ball)
 	ball.position = _global_position

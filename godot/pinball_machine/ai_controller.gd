@@ -70,7 +70,6 @@ func _on_restart():
 		playfield.reset()
 		return
 	playfield.start()
-	print("restarting")
 
 var total := 0.0 # TODO remove this, it is just for printing every 2 seconds
 
