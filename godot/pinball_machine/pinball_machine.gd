@@ -36,8 +36,9 @@ func on_excite(value) -> void:
 	excitement.emit(value)
 
 func _on_drop_out(body: Node2D) -> void:
+	var _active_balls = self.active_balls - 1;
 	body.queue_free()
-	if self.active_balls == 0:
+	if _active_balls < 1:
 		print("highscore:", score)
 		var is_highscore = false
 		if score > highscore:
@@ -63,9 +64,16 @@ func initialize_field() -> void:
 func reset() -> void:
 	#TODO this should reset the game, i.e., reset all game elements, such as drop targets
 	# Remove/reset balls
+	## Laod balls from group
 	var removing_balls = self.get_tree().get_nodes_in_group('ball');
+	## Remove all balls
 	for ball in removing_balls:
 		ball.queue_free();
+	# stop game
+	self.running = false
+	
+	# Reset score
+	self.score = 0;
 
 func start() -> void:
 	if running:
