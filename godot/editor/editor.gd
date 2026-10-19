@@ -3,6 +3,8 @@ extends Control
 
 const DURATION_OF_DAY: float = 10.0;
 
+@onready var pinball_machine : PinballMachine = %PinballMachine;
+@onready var ai_controller : AIController = %AIController;
 @onready var shop := %Shop
 @onready var placer: Placer = %Placer
 var today : StoryDay
@@ -18,6 +20,9 @@ var last_purchase : ShopEntry = null
 func _ready() -> void:
 	shop.start_day.connect(_on_start_day)
 	shop.item_pressed.connect(_on_shop_item_pressed)
+	pinball_machine.score_changed.connect(_on_score_changed)
+	ai_controller.excitement_change.connect(_on_excitement_change)
+	ai_controller.total_excitement_change.connect(_on_total_excitement_change)
 	placer.placement_finished.connect(_on_placement_finished)
 	placer.placement_cancelled.connect(_on_placement_cancelled)
 	placer.part_sold.connect(_on_part_sold)
@@ -129,3 +134,12 @@ func _on_part_sold(entry: ShopEntry) -> void:
 	_refund_stock(entry)
 	
 	current_balance += int(entry.price / 2.0)
+
+func _on_score_changed(score: int):
+	pass
+	
+func _on_excitement_change(score: int):
+	pass
+	
+func _on_total_excitement_change(score: int):
+	pass

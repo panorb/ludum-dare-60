@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bwrc86hair3o"]
+
+[ext_resource type="Theme" uid="uid://d1bm57laym1gy" path="res://ui/theme.tres" id="1_2ndxp"]
+[ext_resource type="StyleBox" uid="uid://dhoiouwwwmw6f" path="res://ui/black_style_box.tres" id="1_g7wxx"]
+[ext_resource type="FontFile" uid="uid://bbrpa4t0wtrn6" path="res://ui/doto.ttf" id="2_2ndxp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uvpgr"]
+border_width_left = 3
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8048312, 0.8366627, 0.39996067, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Excitement" type="PanelContainer" unique_id=1650333735]
+custom_minimum_size = Vector2(0, 50)
+theme = ExtResource("1_2ndxp")
+theme_override_styles/panel = ExtResource("1_g7wxx")
+
+[node name="Row" type="HBoxContainer" parent="." unique_id=1074626561]
+layout_mode = 2
+alignment = 1
+
+[node name="ExcitementLabel" type="Label" parent="Row" unique_id=213978326]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("2_2ndxp")
+theme_override_font_sizes/font_size = 21
+text = "EXCITEMENT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="Row" unique_id=543976629]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_uvpgr")
+
+[node name="ColorRect" type="ColorRect" parent="Row/PanelContainer" unique_id=1546595936]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.79607844, 0.21960784, 1, 1)
