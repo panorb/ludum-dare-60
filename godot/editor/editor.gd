@@ -94,6 +94,9 @@ func _on_start_day():
 	# ??
 	%AIController.start();
 	
+	# Calculate coins
+	var today_excitement = ai_controller._total_excitement;
+	
 	# Start day timer
 	## Create timer with duration of day
 	self.get_tree().create_timer(DURATION_OF_DAY) \
