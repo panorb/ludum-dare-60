@@ -2,8 +2,6 @@ class_name Element
 extends PinballMashinePart
 
 signal trigger(id)
-signal score(id, amount)
-signal excite(value)
 
 var id := 0
 
