@@ -5,6 +5,7 @@ const DURATION_OF_DAY: float = 10.0;
 
 @onready var shop := %Shop
 @onready var placer: Placer = %Placer
+var today : StoryDay
 
 var current_balance := preload("res://shop/entries/saucer.tres").price + 800:
 	set(value):
@@ -12,6 +13,7 @@ var current_balance := preload("res://shop/entries/saucer.tres").price + 800:
 		if is_node_ready():
 			shop.update_available_balance(value)
 var last_purchase : ShopEntry = null
+@export var story_days : Array[StoryDay]
 
 func _ready() -> void:
 	shop.start_day.connect(_on_start_day)
@@ -19,6 +21,17 @@ func _ready() -> void:
 	placer.placement_finished.connect(_on_placement_finished)
 	placer.placement_cancelled.connect(_on_placement_cancelled)
 	placer.part_sold.connect(_on_part_sold)
+	%Intermission.finished.connect(_on_intermission_finished)
+	current_balance = current_balance
+	
+	_begin_new_day()
+
+func _begin_new_day():
+	today = story_days.pop_front()
+	%Intermission.start(today.intro_text)
+
+func _on_intermission_finished():
+	%Shop.add_to_inventory(today.shop_restock)
 	current_balance = current_balance
 
 func _on_start_day():
@@ -87,7 +100,7 @@ func _on_placement_finished(_placed: Node2D) -> void:
 
 func _refund_stock(entry: ShopEntry):
 	var stock = ShopEntryQuantity.new()
-	stock.entry = last_purchase
+	stock.entry = entry
 	stock.quantity = 1
 	var array : Array[ShopEntryQuantity] = [stock]
 	%Shop.add_to_inventory(array)

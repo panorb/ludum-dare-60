@@ -4,25 +4,23 @@
 [ext_resource type="Script" uid="uid://1qwnvr7h6rk" path="res://editor/editor.gd" id="2_6hpnh"]
 [ext_resource type="Shader" uid="uid://cycmvfxmkap4q" path="res://editor/editor_dots.gdshader" id="2_fjngd"]
 [ext_resource type="PackedScene" uid="uid://fkfmv77kd7cv" path="res://pinball_machine/playable_machine.tscn" id="3_6j37k"]
+[ext_resource type="Script" uid="uid://ba2t4smqoivon" path="res://story/story_day.gd" id="3_cw3ab"]
 [ext_resource type="PackedScene" uid="uid://d1mdtqx335w1g" path="res://shop/shop.tscn" id="4_6j37k"]
+[ext_resource type="Resource" uid="uid://cjkym1tc2n1un" path="res://story/days/day1.tres" id="4_mq4v0"]
+[ext_resource type="Resource" uid="uid://bbbp8e8syxw22" path="res://story/days/day2.tres" id="5_4qqsw"]
 [ext_resource type="Script" uid="uid://dhq2yc6bdnmhm" path="res://editor/placer.gd" id="5_6hpnh"]
 [ext_resource type="PackedScene" uid="uid://ba4u6apn3j0ke" path="res://pinball_machine/pinball_machine.tscn" id="5_yyul4"]
 [ext_resource type="PackedScene" uid="uid://be0wportk2k1r" path="res://pinball_machine/ai_controller.tscn" id="6_loxr8"]
+[ext_resource type="Resource" uid="uid://dy0urki5btvho" path="res://story/days/day3.tres" id="6_sj3js"]
+[ext_resource type="Resource" uid="uid://1vld7koitlqp" path="res://story/days/day4.tres" id="7_8am3x"]
 [ext_resource type="Texture2D" uid="uid://cybra0dvpae1x" path="res://ui/dotted.png" id="7_swf4p"]
 [ext_resource type="FontFile" uid="uid://bbrpa4t0wtrn6" path="res://ui/doto.ttf" id="8_3meo8"]
 [ext_resource type="StyleBox" uid="uid://dhoiouwwwmw6f" path="res://ui/black_style_box.tres" id="8_aws7q"]
 [ext_resource type="Script" uid="uid://bxfkr1g6ocqg2" path="res://day_info/day_info.gd" id="8_dblv8"]
-[ext_resource type="Script" uid="uid://bmmlntcuidvb7" path="res://shop/shop_entry_quantity.gd" id="8_wux1q"]
-[ext_resource type="Resource" uid="uid://3yrhcg8sq408" path="res://shop/entries/gift1.tres" id="9_j1vbl"]
-[ext_resource type="Resource" uid="uid://ku4uqvaow2q5" path="res://shop/entries/gift2.tres" id="10_l1a3q"]
-[ext_resource type="Resource" uid="uid://cq6pmkt3byc2j" path="res://shop/entries/accelerator.tres" id="11_g3esq"]
-[ext_resource type="Resource" uid="uid://flgy3f00pwsp" path="res://shop/entries/bumper_times_three.tres" id="12_j68xf"]
-[ext_resource type="Resource" uid="uid://cb042a6iks26j" path="res://shop/entries/drop_target.tres" id="13_nbwom"]
-[ext_resource type="Resource" uid="uid://bm07t8x06w7pw" path="res://shop/entries/saucer.tres" id="14_f4kn2"]
-[ext_resource type="Resource" uid="uid://c5vatop2f4l2m" path="res://shop/entries/spinner_target.tres" id="15_f77pu"]
+[ext_resource type="Resource" uid="uid://cd2omib2j2x2u" path="res://story/days/day5.tres" id="8_n6m0l"]
+[ext_resource type="Resource" uid="uid://bggde83pckssg" path="res://story/days/day6.tres" id="9_d0ujo"]
+[ext_resource type="Resource" uid="uid://c0eieagra73qu" path="res://story/days/day7.tres" id="10_ryg2c"]
 [ext_resource type="PackedScene" uid="uid://bqrqviwo72662" path="res://story/intermission.tscn" id="21_rvwij"]
-[ext_resource type="Script" uid="uid://c1ifmju07qpn3" path="res://shop/bulbs.gd" id="15_wj0aq"]
-[ext_resource type="Resource" uid="uid://mit1yo5e31kw" path="res://shop/entries/pop_bumpers.tres" id="16_l1a3q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ycap1"]
 shader = ExtResource("2_fjngd")
@@ -38,53 +36,6 @@ content_margin_right = 4.0
 content_margin_bottom = 4.0
 bg_color = Color(0.9254902, 0.38039216, 0.2901961, 1)
 
-[sub_resource type="Resource" id="Resource_gy7ao"]
-script = ExtResource("8_wux1q")
-entry = ExtResource("9_j1vbl")
-quantity = 999
-metadata/_custom_type_script = "uid://bmmlntcuidvb7"
-
-[sub_resource type="Resource" id="Resource_q4g17"]
-script = ExtResource("8_wux1q")
-entry = ExtResource("10_l1a3q")
-quantity = 999
-metadata/_custom_type_script = "uid://bmmlntcuidvb7"
-
-[sub_resource type="Resource" id="Resource_2wf2a"]
-script = ExtResource("8_wux1q")
-entry = ExtResource("11_g3esq")
-quantity = 999
-metadata/_custom_type_script = "uid://bmmlntcuidvb7"
-
-[sub_resource type="Resource" id="Resource_xad5q"]
-script = ExtResource("8_wux1q")
-entry = ExtResource("12_j68xf")
-quantity = 999
-metadata/_custom_type_script = "uid://bmmlntcuidvb7"
-
-[sub_resource type="Resource" id="Resource_ljlg5"]
-script = ExtResource("8_wux1q")
-entry = ExtResource("13_nbwom")
-quantity = 999
-metadata/_custom_type_script = "uid://bmmlntcuidvb7"
-
-[sub_resource type="Resource" id="Resource_bv5vx"]
-script = ExtResource("8_wux1q")
-entry = ExtResource("14_f4kn2")
-quantity = 999
-metadata/_custom_type_script = "uid://bmmlntcuidvb7"
-
-[sub_resource type="Resource" id="Resource_mmyc1"]
-script = ExtResource("8_wux1q")
-entry = ExtResource("15_f77pu")
-quantity = 999
-metadata/_custom_type_script = "uid://bmmlntcuidvb7"
-
-[sub_resource type="Resource" id="Resource_8ffbu"]
-script = ExtResource("8_wux1q")
-entry = ExtResource("16_l1a3q")
-metadata/_custom_type_script = "uid://bmmlntcuidvb7"
-
 [node name="Editor" type="Control" unique_id=1403797738]
 layout_mode = 3
 anchors_preset = 15
@@ -96,6 +47,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ycap1")
 script = ExtResource("2_6hpnh")
+story_days = Array[ExtResource("3_cw3ab")]([ExtResource("4_mq4v0"), ExtResource("5_4qqsw"), ExtResource("6_sj3js"), ExtResource("7_8am3x"), ExtResource("8_n6m0l"), ExtResource("9_d0ujo"), ExtResource("10_ryg2c")])
 
 [node name="Background" type="ColorRect" parent="." unique_id=1464735774]
 material = SubResource("ShaderMaterial_ycap1")
@@ -158,7 +110,6 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
-shop_inventory = Array[ExtResource("8_wux1q")]([SubResource("Resource_gy7ao"), SubResource("Resource_q4g17"), SubResource("Resource_2wf2a"), SubResource("Resource_xad5q"), SubResource("Resource_ljlg5"), SubResource("Resource_bv5vx"), SubResource("Resource_mmyc1"), SubResource("Resource_8ffbu")])
 
 [node name="DayInfo" type="PanelContainer" parent="Margin/HBoxContainer" unique_id=983540887]
 unique_name_in_owner = true
@@ -194,4 +145,5 @@ theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = ExtResource("8_aws7q")
 
 [node name="Intermission" parent="." unique_id=394377904 instance=ExtResource("21_rvwij")]
+unique_name_in_owner = true
 layout_mode = 1
