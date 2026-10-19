@@ -15,6 +15,14 @@ size = Vector2(204, 12)
 [node name="PinballMachine" type="Node2D" unique_id=1837038421]
 script = ExtResource("1_4760t")
 
+[node name="KeepClearZone" type="Area2D" parent="." unique_id=1576773495]
+collision_layer = 131072
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KeepClearZone" unique_id=1814527592]
+polygon = PackedVector2Array(42, 495, 197, 497, 195, 580, 244, 613, 288, 584, 293, 495, 458, 495, 455, 364, 485, 346, 486, 116, 459, 73, 420, 52, 378, 58, 342, 91, 295, 91, 342, 0, 536, 1, 535, 709, -1, 709, -1, 319, 22, 320, 45, 345)
+
 [node name="BackgroundColor" type="Polygon2D" parent="." unique_id=684571928]
 color = Color(0.3372549, 0.41568628, 0.5372549, 1)
 polygon = PackedVector2Array(0, 0, 535, 0, 536, 704.00006, 0, 703.99994)

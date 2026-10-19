@@ -20,14 +20,18 @@ var _home: Node = null
 var _part_scale := Vector2.ONE
 
 const ROTATE_STEP := deg_to_rad(15.0)
-const PLACEMENT_LAYER := 1 << 16
 const COLOR_OK := Color(1.0, 1.0, 1.0, 0.6)
 const COLOR_BLOCKED := Color(0.925, 0.380, 0.290, 0.75)
 
 const HINT_COLOR := Color("ffa468")
 const HINT_COLOR_BLOCKED := Color("ec614a")
 
-var _blocked := false
+const PLACEMENT_LAYER := 1 << 16   # layer 17: zones around parts and field elements
+const KEEP_CLEAR_LAYER := 1 << 17  # layer 18: areas that must stay empty
+
+enum Block { NONE, TOO_CLOSE, KEEP_CLEAR }
+
+var _block := Block.NONE
 
 func is_placing() -> bool:
 	return _set != null
@@ -58,20 +62,25 @@ func _pick_up_current() -> void:
 	part.scale = _part_scale * _table_scale()
 	part.modulate.a = 0.6
 	part.show()
-
-	_blocked = false
+	
+	_block = Block.NONE
 	hint.show()
 	_update_hint()
 	link_line.visible = _index > 0
 
 func _update_hint() -> void:
-	if _blocked:
-		hint.text = "TOO CLOSE..."
-	elif _parts.size() > 1:
-		hint.text = "PLACE %d OF %d" % [_index + 1, _parts.size()]
-	else:
-		hint.text = "PLACE THINGY"
-	hint.add_theme_color_override("font_color", HINT_COLOR_BLOCKED if _blocked else HINT_COLOR)
+	match _block:
+		Block.KEEP_CLEAR:
+			hint.text = "KEEP CLEARED"
+		Block.TOO_CLOSE:
+			hint.text = "TOO CLOSE..."
+		_:
+			if _parts.size() > 1:
+				hint.text = "PLACE %d OF %d" % [_index + 1, _parts.size()]
+			else:
+				hint.text = "PLACE THINGY"
+	var blocked := _block != Block.NONE
+	hint.add_theme_color_override("font_color", HINT_COLOR_BLOCKED if blocked else HINT_COLOR)
 
 func _process(_delta: float) -> void:
 	if not is_placing():
@@ -112,7 +121,7 @@ func _input(event: InputEvent) -> void:
 		return
 	if event.button_index == MOUSE_BUTTON_LEFT:
 		if table_view.get_global_rect().has_point(event.position):
-			if not _blocked:
+			if _block == Block.NONE:
 				_drop_current(event.position)
 	
 	elif event.button_index == MOUSE_BUTTON_RIGHT:
@@ -183,19 +192,29 @@ func _physics_process(_delta: float) -> void:
 	if not is_placing():
 		return
 	var mouse := get_viewport().get_mouse_position()
-	var over_table := table_view.get_global_rect().has_point(mouse)
 	var part := _parts[_index]
-	_blocked = over_table and not _is_free(part, _screen_to_world(mouse))
-	part.modulate = COLOR_BLOCKED if _blocked else COLOR_OK
+	if table_view.get_global_rect().has_point(mouse):
+		_block = _check_spot(part, _screen_to_world(mouse))
+	else:
+		_block = Block.NONE
+	part.modulate = COLOR_OK if _block == Block.NONE else COLOR_BLOCKED
 	_update_hint()
 
 
-func _is_free(part: Node2D, world_pos: Vector2) -> bool:
+func _check_spot(part: Node2D, world_pos: Vector2) -> Block:
+	# "Leave clear" wins if both apply, because it explains more.
+	if _overlaps(part, world_pos, KEEP_CLEAR_LAYER):
+		return Block.KEEP_CLEAR
+	if _overlaps(part, world_pos, PLACEMENT_LAYER):
+		return Block.TOO_CLOSE
+	return Block.NONE
+
+
+func _overlaps(part: Node2D, world_pos: Vector2, mask: int) -> bool:
 	var zone := part.get_node_or_null("ExclusionZone") as Area2D
 	if zone == null:
-		return true
+		return false
 	var space := sub_viewport.world_2d.direct_space_state
-	# Where the part would be on the table: mouse position, current rotation, normal scale.
 	var part_xform := Transform2D(part.rotation, _part_scale, 0.0, world_pos)
 	for child in zone.get_children():
 		var shape_node := child as CollisionShape2D
@@ -204,9 +223,9 @@ func _is_free(part: Node2D, world_pos: Vector2) -> bool:
 		var params := PhysicsShapeQueryParameters2D.new()
 		params.shape = shape_node.shape
 		params.transform = part_xform * zone.transform * shape_node.transform
-		params.collision_mask = PLACEMENT_LAYER
+		params.collision_mask = mask
 		params.collide_with_areas = true
 		params.collide_with_bodies = false
 		if not space.intersect_shape(params, 1).is_empty():
-			return false
-	return true
+			return true
+	return false

@@ -12,9 +12,13 @@ var is_hovered: bool = false:
 	set(value):
 		is_hovered = value
 		_update_state()
+var interactable: bool = true: set = _set_interactable
 const SLANT_ANGLE_MIN: float = 0.1
 const SLANT_ANGLE_MAX: float = 2.1
 
+func _set_interactable(value: bool):
+	interactable = value
+	_update_state()
 
 func _ready() -> void:
 	mouse_entered.connect(_on_hover_changed.bind(true))
@@ -47,15 +51,19 @@ func _update_state():
 		%SetSticker.add_theme_color_override("font_color", Color.BLACK)
 		%NameTag.add_theme_stylebox_override("normal", load("res://shop/name_tag_disabled.tres"))
 		%Price.add_theme_color_override("font_color", Color("#ec614a"))
-		%Art.add_theme_stylebox_override("normal", load("res://shop/art_disabled.tres"))
+		%Art.add_theme_stylebox_override("panel", load("res://shop/art_disabled.tres"))
 	else:
 		%SetSticker.add_theme_stylebox_override("normal", load("res://shop/set_sticker_enabled.tres"))
 		%SetSticker.add_theme_color_override("font_color", Color("#38002c"))
 		%NameTag.add_theme_stylebox_override("normal", load("res://shop/name_tag_enabled.tres"))
 		%Price.add_theme_color_override("font_color", Color("#fff6ae"))
-		%Art.add_theme_stylebox_override("normal", load("res://shop/art_enabled.tres"))
+		%Art.add_theme_stylebox_override("panel", load("res://shop/art_enabled.tres"))
 		
 		if is_hovered:
 			%Bulbs.set_lights(Bulbs.LightMode.ON)
 		else:
 			%Bulbs.set_lights(Bulbs.LightMode.OFF)
+	
+	if not interactable:
+		%Bulbs.set_lights(Bulbs.LightMode.DISABLED)
+	

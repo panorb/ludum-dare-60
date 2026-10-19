@@ -13,9 +13,11 @@ func _ready() -> void:
 
 func _on_shop_item_pressed(entry: ShopEntry):
 	if current_balance >= entry.price:
+		%Shop.interactable = false
 		current_balance -= entry.price
 		%Placer.start(entry.scene)
 		last_purchase_value = entry.price
 
 func _on_placement_cancelled():
 	current_balance += last_purchase_value # Refund!
+	%Shop.interactable = true

@@ -13,6 +13,8 @@ var display_balance = 0:
 		%CoinsValue.text = str(value)
 		display_balance = value
 var coin_display_tween : Tween = null
+var interactable := true: set = _set_interactable
+		
 
 
 func _ready() -> void:
@@ -24,6 +26,14 @@ func _ready() -> void:
 		items.add_child(tile)  # add first, so the % nodes are ready
 		tile.setup(entry, i % 2 == 1)
 		tile.pressed.connect(_on_item_pressed)
+
+func _set_interactable(value: bool):
+	print("woah")
+	for i in len(shop_entries):
+		var item = items.get_child(i)
+		item.interactable = value
+	interactable = value
+	
 
 func update_available_balance(balance: int):
 	_update_item_purchasability(balance)
