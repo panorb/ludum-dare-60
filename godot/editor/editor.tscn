@@ -22,6 +22,7 @@
 [ext_resource type="Resource" uid="uid://bm07t8x06w7pw" path="res://shop/entries/saucer.tres" id="14_f4kn2"]
 [ext_resource type="Resource" uid="uid://c5vatop2f4l2m" path="res://shop/entries/spinner_target.tres" id="15_f77pu"]
 [ext_resource type="Script" uid="uid://c1ifmju07qpn3" path="res://shop/bulbs.gd" id="15_wj0aq"]
+[ext_resource type="Resource" uid="uid://mit1yo5e31kw" path="res://shop/entries/pop_bumpers.tres" id="16_l1a3q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ycap1"]
 shader = ExtResource("2_fjngd")
@@ -77,6 +78,11 @@ metadata/_custom_type_script = "uid://bmmlntcuidvb7"
 script = ExtResource("8_wux1q")
 entry = ExtResource("15_f77pu")
 quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_8ffbu"]
+script = ExtResource("8_wux1q")
+entry = ExtResource("16_l1a3q")
 metadata/_custom_type_script = "uid://bmmlntcuidvb7"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o72lw"]
@@ -164,7 +170,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
-shop_inventory = Array[ExtResource("8_wux1q")]([SubResource("Resource_gy7ao"), SubResource("Resource_q4g17"), SubResource("Resource_2wf2a"), SubResource("Resource_xad5q"), SubResource("Resource_ljlg5"), SubResource("Resource_bv5vx"), SubResource("Resource_mmyc1")])
+shop_inventory = Array[ExtResource("8_wux1q")]([SubResource("Resource_gy7ao"), SubResource("Resource_q4g17"), SubResource("Resource_2wf2a"), SubResource("Resource_xad5q"), SubResource("Resource_ljlg5"), SubResource("Resource_bv5vx"), SubResource("Resource_mmyc1"), SubResource("Resource_8ffbu")])
 
 [node name="DayInfo" type="PanelContainer" parent="Margin/HBoxContainer" unique_id=983540887]
 unique_name_in_owner = true

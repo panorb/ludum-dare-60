@@ -12,6 +12,8 @@ signal excitement(value: int)
 @onready var drop_out := $DropOut
 @onready var plunger := $Plunger
 @onready var allowed_dead_zones := $AllowedDeadZones
+@onready var auto_ball_launcher := $AutoBallLauncher
+@onready var auto_ball_timer := $AutoballTimer
 
 var score := 0
 var highscore := 0
@@ -25,7 +27,10 @@ func _ready() -> void:
 		if child is Element:
 			child.score.connect(on_score)
 			child.excite.connect(on_excite)
+	auto_ball_timer.timeout.connect(_on_auto_ball_timer)
  
+func _on_auto_ball_timer() -> void:
+	auto_ball_launcher.active = false
 
 func on_score(id, points):
 	if not points:
@@ -37,6 +42,9 @@ func on_score(id, points):
 
 func on_excite(value) -> void:
 	excitement.emit(value)
+
+func on_trigger_ball() -> void:
+	plunge_ball()
 
 func _on_drop_out(body: Node2D) -> void:
 	var _active_balls = self.active_balls - 1;
@@ -94,6 +102,9 @@ func plunge_ball() -> void:
 	ball.linear_velocity = Vector2(1.0, -1.0)
 	#ball.linear_velocity = Vector2(0, -2200)
 	ball.apply_central_impulse(Vector2.from_angle(%BallSpawn.rotation-PI/2) * 200)
+	if active_balls > 1:
+		auto_ball_launcher.active = true
+		auto_ball_timer.start()
 
 func flip_left_press() -> void:
 	flipper_left.press()

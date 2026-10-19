@@ -157,7 +157,7 @@ position = Vector2(358, 550)
 position = Vector2(123, 550)
 scale = Vector2(-1, 1)
 
-[node name="Accelerator6" parent="." unique_id=2044316184 instance=ExtResource("6_phrn3")]
+[node name="AutoBallLauncher" parent="." unique_id=2044316184 instance=ExtResource("6_phrn3")]
 position = Vector2(471.99997, 653)
 rotation = 0.9302605
 force = 3000.0
@@ -190,3 +190,7 @@ shape = SubResource("CircleShape2D_eckxu")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="AllowedDeadZones" unique_id=391115249]
 position = Vector2(507, 684.5)
 shape = SubResource("RectangleShape2D_rhokp")
+
+[node name="AutoballTimer" type="Timer" parent="." unique_id=462380733]
+wait_time = 0.2
+one_shot = true

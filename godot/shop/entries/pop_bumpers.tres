@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ShopEntry" format=3 uid="uid://mit1yo5e31kw"]
+
+[ext_resource type="Texture2D" uid="uid://biyu0bcpw1ns4" path="res://icon.svg" id="1_0k1q5"]
+[ext_resource type="Script" uid="uid://cxrqn5fa81q5u" path="res://shop/shop_entry.gd" id="1_2u047"]
+[ext_resource type="PackedScene" uid="uid://bueaxutxjf5e7" path="res://pinball_machine/sets/pop_bumpers.tscn" id="2_vc8h4"]
+
+[resource]
+script = ExtResource("1_2u047")
+title = "Pop Bumpers (5)"
+price = 1
+icon = ExtResource("1_0k1q5")
+scene = ExtResource("2_vc8h4")
+metadata/_custom_type_script = "uid://cxrqn5fa81q5u"
