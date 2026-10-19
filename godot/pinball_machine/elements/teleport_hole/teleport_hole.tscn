@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://clxrclkyvo50w"]
+
+[ext_resource type="Script" uid="uid://dihu8kaj5o5uh" path="res://pinball_machine/elements/teleport_hole/teleport_hole.gd" id="1_igbhm"]
+[ext_resource type="Texture2D" uid="uid://ba5nvv8dv8ft3" path="res://pinball_machine/elements/teleport_hole/hole1.png" id="2_igbhm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_igbhm"]
+size = Vector2(28, 14)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_igbhm"]
+radius = 32.0
+height = 98.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k51w5"]
+radius = 25.0
+
+[node name="TeleportHole" type="Node2D" unique_id=737221587]
+script = ExtResource("1_igbhm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=645840659]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_igbhm")
+
+[node name="CoolDownTimer" type="Timer" parent="." unique_id=1218480760]
+wait_time = 0.1
+one_shot = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2029502069]
+collision_layer = 1024
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=940760037]
+polygon = PackedVector2Array(-15, 21, -15, 4, -10, -10, 10, -10, 14, 5, 14, 21, 17, 26, 25, 20, 31, 9, 32, 0, 29, -13, 21, -24, 11, -30, 0, -32, -12, -30, -21, -24, -28, -15, -32, 0, -29, 13, -24, 21, -18, 26)
+
+[node name="BallDetector" type="Area2D" parent="." unique_id=1149817183]
+collision_layer = 0
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BallDetector" unique_id=1778760341]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_igbhm")
+
+[node name="ExclusionZone" type="Area2D" parent="." unique_id=2070193018 groups=["disallow_placement"]]
+collision_layer = 65536
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExclusionZone" unique_id=79280638]
+position = Vector2(0, 17)
+shape = SubResource("CapsuleShape2D_igbhm")
+debug_color = Color(0.9991961, 0, 0.1340175, 0.41960785)
+
+[node name="HoverZone" type="Area2D" parent="." unique_id=1831365127]
+collision_layer = 262144
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoverZone" unique_id=814715644]
+shape = SubResource("CircleShape2D_k51w5")
+debug_color = Color(1.1070073e-06, 0.74929774, 0.01962464, 0.41960785)

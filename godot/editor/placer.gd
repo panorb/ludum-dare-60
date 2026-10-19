@@ -49,6 +49,7 @@ func start(entry: ShopEntry) -> void:
 	_set.score.connect(pinball_machine.on_score);
 	_set.excite.connect(pinball_machine.on_excite);
 	_set.trigger_ball.connect(pinball_machine.on_trigger_ball);
+	_set.summon_ball.connect(pinball_machine.on_summon_ball);
 
 	_parts.clear()
 	if _set.is_in_group("part"):

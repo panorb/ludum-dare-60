@@ -46,6 +46,13 @@ func on_excite(value) -> void:
 func on_trigger_ball() -> void:
 	plunge_ball()
 
+func on_summon_ball(_global_position, velocity) -> void:
+	print("pinball machine summons ball!")
+	var ball = BALL_SCENE.instantiate()
+	add_child(ball)
+	ball.position = _global_position
+	ball.linear_velocity = velocity
+
 func _on_drop_out(body: Node2D) -> void:
 	var _active_balls = self.active_balls - 1;
 	body.queue_free()

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b84icb7tgx6dv"]
+
+[ext_resource type="Script" uid="uid://dsgkpoed42rpd" path="res://pinball_machine/sets/wormhole.gd" id="1_4p4ii"]
+[ext_resource type="PackedScene" uid="uid://clxrclkyvo50w" path="res://pinball_machine/elements/teleport_hole/teleport_hole.tscn" id="1_nh8pw"]
+
+[node name="Wormhole" type="Node2D" unique_id=1938187729]
+script = ExtResource("1_4p4ii")
+
+[node name="TeleportHole1" parent="." unique_id=737221587 groups=["part"] instance=ExtResource("1_nh8pw")]
+
+[node name="TeleportHole2" parent="." unique_id=263575026 groups=["part"] instance=ExtResource("1_nh8pw")]
+variant = 2
