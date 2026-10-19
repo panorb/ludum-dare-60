@@ -22,6 +22,7 @@ func _ready() -> void:
 	placer.placement_cancelled.connect(_on_placement_cancelled)
 	placer.part_sold.connect(_on_part_sold)
 	%Intermission.finished.connect(_on_intermission_finished)
+	%PinballMachine.game_over.connect(_on_game_over)
 	current_balance = current_balance
 	
 	_begin_new_day()
@@ -33,7 +34,28 @@ func _begin_new_day():
 func _on_intermission_finished():
 	%Shop.add_to_inventory(today.shop_restock)
 	current_balance = current_balance
-	%PinballMachine.game_over.connect(_on_game_over)
+	
+	# Replace shop with info display
+	%DayInfo.visible = false;
+	%Shop.visible = true;
+	
+	# Activate user input disable AI
+	%AIController.active = false;
+	%PlayableMachine.active = true;
+
+	# Reset pinballmachine
+	%PinballMachine.reset();
+	_reset_placed_parts()
+
+	# Activate highscrore
+	%PinballMachine.is_highscore_active = false;
+
+	# Run engine normal
+	Engine.time_scale = 1.0
+
+	# ??
+	%AIController.stop();
+	
 
 func _on_game_over(score, is_highscore) -> void:
 	_reset_placed_parts()
@@ -75,27 +97,6 @@ func _reset_placed_parts():
 			child.reset()
 
 func _on_end_day():
-	# Replace shop with info display
-	%DayInfo.visible = false;
-	%Shop.visible = true;
-	
-	# Activate user input disable AI
-	%AIController.active = false;
-	%PlayableMachine.active = true;
-
-	# Reset pinballmachine
-	%PinballMachine.reset();
-	_reset_placed_parts()
-
-	# Activate highscrore
-	%PinballMachine.is_highscore_active = false;
-
-	# Run engine normal
-	Engine.time_scale = 1.0
-
-	# ??
-	%AIController.stop();
-	
 	_begin_new_day()
 
 func _on_shop_item_pressed(entry: ShopEntry) -> void:
