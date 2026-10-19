@@ -2,8 +2,37 @@
 
 [ext_resource type="Script" uid="uid://ba2t4smqoivon" path="res://story/story_day.gd" id="1_qpfq1"]
 [ext_resource type="Script" uid="uid://bmmlntcuidvb7" path="res://shop/shop_entry_quantity.gd" id="2_51k61"]
+[ext_resource type="Resource" uid="uid://flgy3f00pwsp" path="res://shop/entries/bumper_times_three.tres" id="3_51k61"]
+[ext_resource type="Resource" uid="uid://bm07t8x06w7pw" path="res://shop/entries/saucer.tres" id="4_td8lg"]
+[ext_resource type="Resource" uid="uid://cq6pmkt3byc2j" path="res://shop/entries/accelerator.tres" id="5_7jm80"]
+[ext_resource type="Resource" uid="uid://c5vatop2f4l2m" path="res://shop/entries/spinner_target.tres" id="6_sv56t"]
+
+[sub_resource type="Resource" id="Resource_ws1l1"]
+script = ExtResource("2_51k61")
+entry = ExtResource("3_51k61")
+quantity = 2
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_023ej"]
+script = ExtResource("2_51k61")
+entry = ExtResource("4_td8lg")
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_51k61"]
+script = ExtResource("2_51k61")
+entry = ExtResource("5_7jm80")
+quantity = 2
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_xp4xj"]
+script = ExtResource("2_51k61")
+entry = ExtResource("6_sv56t")
+quantity = 2
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
 
 [resource]
 script = ExtResource("1_qpfq1")
 title = "Friday"
+shop_restock = Array[ExtResource("2_51k61")]([SubResource("Resource_ws1l1"), SubResource("Resource_023ej"), SubResource("Resource_51k61"), SubResource("Resource_xp4xj")])
+intro_text = Array[String](["\"Heya!\"", "\"Didn't get to talk to you yesterday...\"", "\"Hope you're doing well! How is the machine?\"", "\"Tomorrow the weekend starts.\"", "\"Hope you're happy with your machine so far.\"", "\"Now: I want you to prove your machine.\"", "\"Make people happy. Earn coins.\"", "\"If you have 500 by the end of the week I will consider this a success!\"", "\"You got it? You got it!\"", "\"Get to work and get me those 500 coins.\""])
 metadata/_custom_type_script = "uid://ba2t4smqoivon"

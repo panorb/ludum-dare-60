@@ -2,8 +2,17 @@
 
 [ext_resource type="Script" uid="uid://ba2t4smqoivon" path="res://story/story_day.gd" id="1_ws1l1"]
 [ext_resource type="Script" uid="uid://bmmlntcuidvb7" path="res://shop/shop_entry_quantity.gd" id="2_023ej"]
+[ext_resource type="Resource" uid="uid://cb042a6iks26j" path="res://shop/entries/drop_target.tres" id="3_023ej"]
+
+[sub_resource type="Resource" id="Resource_7k803"]
+script = ExtResource("2_023ej")
+entry = ExtResource("3_023ej")
+quantity = 2
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
 
 [resource]
 script = ExtResource("1_ws1l1")
 title = "Saturday"
+shop_restock = Array[ExtResource("2_023ej")]([SubResource("Resource_7k803")])
+intro_text = Array[String](["(Your boss is not here today.)", "(Instead, you take a moment to look inward.)", "(Are you on track to have 500 coins by the end of tomorrow?)", "(...)", "(Only one way to find out.)"])
 metadata/_custom_type_script = "uid://ba2t4smqoivon"

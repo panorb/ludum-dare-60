@@ -19,4 +19,5 @@ metadata/_custom_type_script = "uid://bmmlntcuidvb7"
 script = ExtResource("1_darlp")
 title = "Monday"
 shop_restock = Array[ExtResource("2_mwk36")]([SubResource("Resource_k0wv2"), SubResource("Resource_6gxuk")])
+intro_text = Array[String](["\"Hey, new guy!\"", "\"Welcome to our arcade!\"", "\"Heard you wanted to create the ultimate pinball machine?\"", "\"Well, I have a setup right here you can use.\"", "\"You can have some old pop bumpers from a decommisioned machine.\"", "\"Those you can have for free.\"", "\"Starting tomorrow you will have to pay.\"", "\"When you're done, I will set it up in the arcade and you can see it played.\"", "\"Good luck.\""])
 metadata/_custom_type_script = "uid://ba2t4smqoivon"

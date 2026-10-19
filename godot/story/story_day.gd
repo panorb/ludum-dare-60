@@ -3,3 +3,4 @@ extends Resource
 
 @export var title : String
 @export var shop_restock : Array[ShopEntryQuantity]
+@export var intro_text : Array[String]

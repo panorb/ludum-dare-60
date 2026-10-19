@@ -6,4 +6,6 @@
 [resource]
 script = ExtResource("1_wdsw7")
 title = "Sunday"
+shop_restock = Array[ExtResource("2_dpof2")]([null])
+intro_text = Array[String](["\"Hi man!\"", "\"Today is the last day of our little experiment.\"", "\"500 coins by the end of the week? Remember?\"", "\"It was a real pleasure working with you.\"", "\"If I don't catch you on the way out later, goodbye!\"", "\"And best of luck!\""])
 metadata/_custom_type_script = "uid://ba2t4smqoivon"
