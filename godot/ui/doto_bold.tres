@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" format=3 uid="uid://bofryfe5f6oei"]
+
+[ext_resource type="FontFile" uid="uid://bbrpa4t0wtrn6" path="res://ui/doto.ttf" id="1_dldtk"]
+
+[resource]
+base_font = ExtResource("1_dldtk")
+variation_embolden = 2.0

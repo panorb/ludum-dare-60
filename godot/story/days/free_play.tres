@@ -1,0 +1,73 @@
+[gd_resource type="Resource" script_class="StoryDay" format=3 uid="uid://bvwjxp3othbgy"]
+
+[ext_resource type="Script" uid="uid://ba2t4smqoivon" path="res://story/story_day.gd" id="1_x7img"]
+[ext_resource type="Script" uid="uid://bmmlntcuidvb7" path="res://shop/shop_entry_quantity.gd" id="2_fd2jn"]
+[ext_resource type="Resource" uid="uid://cq6pmkt3byc2j" path="res://shop/entries/accelerator.tres" id="3_wm83p"]
+[ext_resource type="Resource" uid="uid://flgy3f00pwsp" path="res://shop/entries/bumper_times_three.tres" id="4_x67wo"]
+[ext_resource type="Resource" uid="uid://cb042a6iks26j" path="res://shop/entries/drop_target.tres" id="5_jiiap"]
+[ext_resource type="Resource" uid="uid://3yrhcg8sq408" path="res://shop/entries/gift1.tres" id="6_ww3lg"]
+[ext_resource type="Resource" uid="uid://ku4uqvaow2q5" path="res://shop/entries/gift2.tres" id="7_7xs82"]
+[ext_resource type="Resource" uid="uid://mit1yo5e31kw" path="res://shop/entries/pop_bumpers.tres" id="8_ked1v"]
+[ext_resource type="Resource" uid="uid://bm07t8x06w7pw" path="res://shop/entries/saucer.tres" id="9_xptfw"]
+[ext_resource type="Resource" uid="uid://c5vatop2f4l2m" path="res://shop/entries/spinner_target.tres" id="10_a1id1"]
+[ext_resource type="Resource" uid="uid://coe0x5j25e0tx" path="res://shop/entries/wormhole.tres" id="11_iqyiv"]
+
+[sub_resource type="Resource" id="Resource_m5s6v"]
+script = ExtResource("2_fd2jn")
+entry = ExtResource("3_wm83p")
+quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_o1shl"]
+script = ExtResource("2_fd2jn")
+entry = ExtResource("4_x67wo")
+quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_il8g2"]
+script = ExtResource("2_fd2jn")
+entry = ExtResource("5_jiiap")
+quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_noruv"]
+script = ExtResource("2_fd2jn")
+entry = ExtResource("6_ww3lg")
+quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_ffoif"]
+script = ExtResource("2_fd2jn")
+entry = ExtResource("7_7xs82")
+quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_s7a0y"]
+script = ExtResource("2_fd2jn")
+entry = ExtResource("8_ked1v")
+quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_wm83p"]
+script = ExtResource("2_fd2jn")
+entry = ExtResource("9_xptfw")
+quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_x67wo"]
+script = ExtResource("2_fd2jn")
+entry = ExtResource("10_a1id1")
+quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_jiiap"]
+script = ExtResource("2_fd2jn")
+entry = ExtResource("11_iqyiv")
+quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[resource]
+script = ExtResource("1_x7img")
+shop_restock = Array[ExtResource("2_fd2jn")]([SubResource("Resource_m5s6v"), SubResource("Resource_o1shl"), SubResource("Resource_il8g2"), SubResource("Resource_noruv"), SubResource("Resource_ffoif"), SubResource("Resource_s7a0y"), SubResource("Resource_wm83p"), SubResource("Resource_x67wo"), SubResource("Resource_jiiap")])
+intro_text = Array[String](["You finished the game.", "You can keep playing if you want.", "This day will keep repeating."])
+metadata/_custom_type_script = "uid://ba2t4smqoivon"

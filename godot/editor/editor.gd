@@ -39,7 +39,10 @@ func _ready() -> void:
 	_begin_new_day()
 
 func _begin_new_day():
-	today = story_days.pop_front()
+	if story_days:
+		today = story_days.pop_front()
+	else:
+		today = load("res://story/days/free_play.tres")
 	intermission.start(today.intro_text)
 
 func _on_intermission_finished():

@@ -19,6 +19,7 @@
 [ext_resource type="Resource" uid="uid://cd2omib2j2x2u" path="res://story/days/day5.tres" id="8_n6m0l"]
 [ext_resource type="Resource" uid="uid://bggde83pckssg" path="res://story/days/day6.tres" id="9_d0ujo"]
 [ext_resource type="Resource" uid="uid://c0eieagra73qu" path="res://story/days/day7.tres" id="10_ryg2c"]
+[ext_resource type="FontVariation" uid="uid://bofryfe5f6oei" path="res://ui/doto_bold.tres" id="14_j68xf"]
 [ext_resource type="PackedScene" uid="uid://ce5lkjhrn4wx7" path="res://day_info/day_info.tscn" id="16_rvwij"]
 [ext_resource type="Script" uid="uid://b26sfo7otc5te" path="res://shared/random_sound_player.gd" id="21_j1vbl"]
 [ext_resource type="PackedScene" uid="uid://bqrqviwo72662" path="res://story/intermission.tscn" id="21_rvwij"]
@@ -79,27 +80,27 @@ theme_override_constants/margin_bottom = 24
 layout_mode = 2
 theme_override_constants/separation = 24
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Margin/HBoxContainer" unique_id=1096044603]
+[node name="LeftSide" type="VBoxContainer" parent="Margin/HBoxContainer" unique_id=1096044603]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Spacer1" type="Control" parent="Margin/HBoxContainer/VBoxContainer" unique_id=600592496]
+[node name="Spacer1" type="Control" parent="Margin/HBoxContainer/LeftSide" unique_id=600592496]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ScoreContainer" type="PanelContainer" parent="Margin/HBoxContainer/VBoxContainer" unique_id=1284724]
+[node name="ScoreContainer" type="PanelContainer" parent="Margin/HBoxContainer/LeftSide" unique_id=1284724]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme = ExtResource("1_ycap1")
 theme_override_styles/panel = ExtResource("8_aws7q")
 
-[node name="Row" type="HBoxContainer" parent="Margin/HBoxContainer/VBoxContainer/ScoreContainer" unique_id=674765323]
+[node name="Row" type="HBoxContainer" parent="Margin/HBoxContainer/LeftSide/ScoreContainer" unique_id=674765323]
 layout_mode = 2
 theme_override_constants/separation = 24
 alignment = 1
 
-[node name="ScoreLabel" type="Label" parent="Margin/HBoxContainer/VBoxContainer/ScoreContainer/Row" unique_id=594346008]
+[node name="ScoreLabel" type="Label" parent="Margin/HBoxContainer/LeftSide/ScoreContainer/Row" unique_id=594346008]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
 theme_override_fonts/font = ExtResource("8_3meo8")
@@ -108,11 +109,11 @@ text = "SCORE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Spacer" type="Control" parent="Margin/HBoxContainer/VBoxContainer/ScoreContainer/Row" unique_id=2142776893]
+[node name="Spacer" type="Control" parent="Margin/HBoxContainer/LeftSide/ScoreContainer/Row" unique_id=2142776893]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScoreValue" type="Label" parent="Margin/HBoxContainer/VBoxContainer/ScoreContainer/Row" unique_id=1293571266]
+[node name="ScoreValue" type="Label" parent="Margin/HBoxContainer/LeftSide/ScoreContainer/Row" unique_id=1293571266]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
@@ -122,7 +123,176 @@ text = "00000000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Spacer2" type="Control" parent="Margin/HBoxContainer/VBoxContainer" unique_id=255062129]
+[node name="Spacer2" type="Control" parent="Margin/HBoxContainer/LeftSide" unique_id=255062129]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ControlsContainer1" type="PanelContainer" parent="Margin/HBoxContainer/LeftSide" unique_id=1935924793]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("1_ycap1")
+theme_override_styles/panel = ExtResource("8_aws7q")
+
+[node name="Row" type="HBoxContainer" parent="Margin/HBoxContainer/LeftSide/ControlsContainer1" unique_id=1401101234]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="ControlsLabel" type="Label" parent="Margin/HBoxContainer/LeftSide/ControlsContainer1/Row" unique_id=1906408340]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("14_j68xf")
+theme_override_font_sizes/font_size = 21
+text = "←"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="Margin/HBoxContainer/LeftSide/ControlsContainer1/Row" unique_id=1270028793]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ControlsLabel2" type="Label" parent="Margin/HBoxContainer/LeftSide/ControlsContainer1/Row" unique_id=1859283136]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("8_3meo8")
+theme_override_font_sizes/font_size = 22
+text = "L. FLIPPER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ControlsContainer2" type="PanelContainer" parent="Margin/HBoxContainer/LeftSide" unique_id=1480414891]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("1_ycap1")
+theme_override_styles/panel = ExtResource("8_aws7q")
+
+[node name="Row" type="HBoxContainer" parent="Margin/HBoxContainer/LeftSide/ControlsContainer2" unique_id=951857382]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="ControlsLabel" type="Label" parent="Margin/HBoxContainer/LeftSide/ControlsContainer2/Row" unique_id=1340874521]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("14_j68xf")
+theme_override_font_sizes/font_size = 21
+text = "→"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="Margin/HBoxContainer/LeftSide/ControlsContainer2/Row" unique_id=1484305262]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ControlsLabel2" type="Label" parent="Margin/HBoxContainer/LeftSide/ControlsContainer2/Row" unique_id=666578022]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("8_3meo8")
+theme_override_font_sizes/font_size = 22
+text = "R. FLIPPER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ControlsContainer3" type="PanelContainer" parent="Margin/HBoxContainer/LeftSide" unique_id=934577830]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("1_ycap1")
+theme_override_styles/panel = ExtResource("8_aws7q")
+
+[node name="Row" type="HBoxContainer" parent="Margin/HBoxContainer/LeftSide/ControlsContainer3" unique_id=983358920]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="ControlsLabel" type="Label" parent="Margin/HBoxContainer/LeftSide/ControlsContainer3/Row" unique_id=1686994933]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("14_j68xf")
+theme_override_font_sizes/font_size = 21
+text = "↓"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="Margin/HBoxContainer/LeftSide/ControlsContainer3/Row" unique_id=363247218]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ControlsLabel2" type="Label" parent="Margin/HBoxContainer/LeftSide/ControlsContainer3/Row" unique_id=448155384]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("8_3meo8")
+theme_override_font_sizes/font_size = 22
+text = "PLUNGER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ControlsContainer4" type="PanelContainer" parent="Margin/HBoxContainer/LeftSide" unique_id=845174537]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("1_ycap1")
+theme_override_styles/panel = ExtResource("8_aws7q")
+
+[node name="Row" type="HBoxContainer" parent="Margin/HBoxContainer/LeftSide/ControlsContainer4" unique_id=1224909151]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="ControlsLabel" type="Label" parent="Margin/HBoxContainer/LeftSide/ControlsContainer4/Row" unique_id=1882039080]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("8_3meo8")
+theme_override_font_sizes/font_size = 21
+text = "SPACE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="Margin/HBoxContainer/LeftSide/ControlsContainer4/Row" unique_id=315002787]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ControlsLabel2" type="Label" parent="Margin/HBoxContainer/LeftSide/ControlsContainer4/Row" unique_id=1002544087]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("8_3meo8")
+theme_override_font_sizes/font_size = 16
+text = "INSERT COIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ControlsContainer5" type="PanelContainer" parent="Margin/HBoxContainer/LeftSide" unique_id=985805248]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("1_ycap1")
+theme_override_styles/panel = ExtResource("8_aws7q")
+
+[node name="Row" type="HBoxContainer" parent="Margin/HBoxContainer/LeftSide/ControlsContainer5" unique_id=216305878]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="ControlsLabel" type="Label" parent="Margin/HBoxContainer/LeftSide/ControlsContainer5/Row" unique_id=575787582]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("8_3meo8")
+theme_override_font_sizes/font_size = 21
+text = "RMB"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="Margin/HBoxContainer/LeftSide/ControlsContainer5/Row" unique_id=734645860]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ControlsLabel2" type="Label" parent="Margin/HBoxContainer/LeftSide/ControlsContainer5/Row" unique_id=1375683803]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("8_3meo8")
+theme_override_font_sizes/font_size = 19
+text = "SELL PART"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer3" type="Control" parent="Margin/HBoxContainer/LeftSide" unique_id=604663394]
 layout_mode = 2
 size_flags_vertical = 3
 
