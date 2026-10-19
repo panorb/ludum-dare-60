@@ -157,7 +157,7 @@ func _on_part_sold(entry: ShopEntry) -> void:
 	current_balance += int(entry.price / 2.0)
 
 func _on_score_changed(score: int):
-	pass
+	%ScoreValue.text = str(min(score, 99999999)).pad_zeros(8)
 	
 func _on_excitement_change(score: int):
 	pass

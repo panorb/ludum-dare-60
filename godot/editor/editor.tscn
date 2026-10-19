@@ -76,6 +76,53 @@ theme_override_constants/margin_bottom = 24
 layout_mode = 2
 theme_override_constants/separation = 24
 
+[node name="VBoxContainer" type="VBoxContainer" parent="Margin/HBoxContainer" unique_id=1096044603]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Spacer1" type="Control" parent="Margin/HBoxContainer/VBoxContainer" unique_id=600592496]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScoreContainer" type="PanelContainer" parent="Margin/HBoxContainer/VBoxContainer" unique_id=1284724]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("1_ycap1")
+theme_override_styles/panel = ExtResource("8_aws7q")
+
+[node name="Row" type="HBoxContainer" parent="Margin/HBoxContainer/VBoxContainer/ScoreContainer" unique_id=674765323]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="Margin/HBoxContainer/VBoxContainer/ScoreContainer/Row" unique_id=594346008]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("8_3meo8")
+theme_override_font_sizes/font_size = 21
+text = "SCORE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="Margin/HBoxContainer/VBoxContainer/ScoreContainer/Row" unique_id=2142776893]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScoreValue" type="Label" parent="Margin/HBoxContainer/VBoxContainer/ScoreContainer/Row" unique_id=1293571266]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("8_3meo8")
+theme_override_font_sizes/font_size = 22
+text = "00000000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer2" type="Control" parent="Margin/HBoxContainer/VBoxContainer" unique_id=255062129]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="TableArea" type="CenterContainer" parent="Margin/HBoxContainer" unique_id=1661601562]
 layout_mode = 2
 size_flags_horizontal = 3
