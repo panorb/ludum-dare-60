@@ -38,6 +38,7 @@ func _begin_new_day():
 
 func _on_intermission_finished():
 	%Shop.add_to_inventory(today.shop_restock)
+	%DayInfo.title = today.title.to_upper()
 	current_balance = current_balance
 	
 	# Replace shop with info display

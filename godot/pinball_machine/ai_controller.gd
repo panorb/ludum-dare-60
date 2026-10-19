@@ -15,7 +15,6 @@ signal total_excitement_change(excitement: int)
 @onready var plunger_trigger := $PlungerTrigger
 @onready var playfield = %PinballMachine
 @onready var between_game_timer := $BetweenGameTimer
-@onready var sim_day := $SimDayTimer
 
 @export var active := false
 

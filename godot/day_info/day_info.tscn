@@ -1,10 +1,41 @@
 [gd_scene format=3 uid="uid://ce5lkjhrn4wx7"]
 
 [ext_resource type="Theme" uid="uid://d1bm57laym1gy" path="res://ui/theme.tres" id="1_br1ly"]
-[ext_resource type="Script" uid="uid://bxfkr1g6ocqg2" path="res://day_info/day_info.gd" id="1_y2ogq"]
+[ext_resource type="Script" uid="uid://cca4an5ml3011" path="res://day_info/day_info.gd" id="1_y2ogq"]
 [ext_resource type="StyleBox" uid="uid://cnb4ube188g71" path="res://ui/main_box_flat.tres" id="2_5hdg3"]
-[ext_resource type="PackedScene" uid="uid://br2q81v582v75" path="res://day_info/day.tscn" id="4_jjkgn"]
-[ext_resource type="PackedScene" uid="uid://bwrc86hair3o" path="res://day_info/excitement.tscn" id="5_jjkgn"]
+[ext_resource type="StyleBox" uid="uid://dhoiouwwwmw6f" path="res://ui/black_style_box.tres" id="4_14tur"]
+[ext_resource type="Shader" uid="uid://b4r047y0b24qy" path="res://shop/bulbs.gdshader" id="6_c551j"]
+[ext_resource type="Script" uid="uid://c1ifmju07qpn3" path="res://shop/bulbs.gd" id="7_yqd67"]
+[ext_resource type="FontFile" uid="uid://bbrpa4t0wtrn6" path="res://ui/doto.ttf" id="8_007ci"]
+[ext_resource type="FontFile" uid="uid://7pxojp6ogpwc" path="res://ui/orbitron.ttf" id="8_7j1ky"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_er7c6"]
+shader = ExtResource("6_c551j")
+shader_parameter/size = Vector2(512, 96)
+shader_parameter/inset = 5.0
+shader_parameter/spacing = 18.0
+shader_parameter/radius = 3.0
+shader_parameter/speed = 3.0
+shader_parameter/mode = 0
+shader_parameter/on_color = Color(1, 0.965, 0.682, 1)
+shader_parameter/off_color = Color(0.408, 0.235, 0.204, 1)
+shader_parameter/disabled_color = Color(0.133, 0.165, 0.361, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_fjmi1"]
+base_font = ExtResource("8_7j1ky")
+variation_opentype = {
+2003265652: 900
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_007ci"]
+bg_color = Color(0.40784314, 0.23529412, 0.20392157, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14tur"]
+bg_color = Color(1, 0.9647059, 0.68235296, 1)
 
 [node name="DayInfo" type="PanelContainer" unique_id=1389192191]
 custom_minimum_size = Vector2(420, 0)
@@ -14,26 +45,198 @@ anchor_bottom = 1.0
 offset_right = -860.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
 theme = ExtResource("1_br1ly")
 theme_override_styles/panel = ExtResource("2_5hdg3")
 script = ExtResource("1_y2ogq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=379756327]
 layout_mode = 2
+theme_override_constants/separation = 8
 
-[node name="DayPanel" parent="VBoxContainer" unique_id=2083558016 instance=ExtResource("4_jjkgn")]
+[node name="DayPanel" type="PanelContainer" parent="VBoxContainer" unique_id=2083558016]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme = ExtResource("1_br1ly")
+theme_override_styles/panel = ExtResource("4_14tur")
+
+[node name="Bulbs" type="ColorRect" parent="VBoxContainer/DayPanel" unique_id=1193277753]
+material = SubResource("ShaderMaterial_er7c6")
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("7_yqd67")
+
+[node name="Title" type="Label" parent="VBoxContainer/DayPanel" unique_id=566075414]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.5803922, 0.7019608, 1)
+theme_override_fonts/font = SubResource("FontVariation_fjmi1")
+theme_override_font_sizes/font_size = 32
+text = "Monday"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Excitement" parent="VBoxContainer" unique_id=1650333735 instance=ExtResource("5_jjkgn")]
+[node name="OpeningHours" type="PanelContainer" parent="VBoxContainer" unique_id=1245047927]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme = ExtResource("1_br1ly")
+theme_override_styles/panel = ExtResource("4_14tur")
 
-[node name="ScoreLabel" type="Label" parent="VBoxContainer" unique_id=34720995]
+[node name="Row" type="HBoxContainer" parent="VBoxContainer/OpeningHours" unique_id=127237731]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="ClockLabel" type="Label" parent="VBoxContainer/OpeningHours/Row" unique_id=1294831197]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("8_007ci")
+theme_override_font_sizes/font_size = 21
+text = "OPEN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="VBoxContainer/OpeningHours/Row" unique_id=2087888261]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ClockValue" type="Label" parent="VBoxContainer/OpeningHours/Row" unique_id=630359805]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("8_007ci")
+theme_override_font_sizes/font_size = 26
+text = "13:00 - 19:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Clock" type="PanelContainer" parent="VBoxContainer" unique_id=1400224393]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("1_br1ly")
+theme_override_styles/panel = ExtResource("4_14tur")
+
+[node name="Row" type="HBoxContainer" parent="VBoxContainer/Clock" unique_id=332028540]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="ClockLabel" type="Label" parent="VBoxContainer/Clock/Row" unique_id=1988102923]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("8_007ci")
+theme_override_font_sizes/font_size = 21
+text = "CLOCK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="VBoxContainer/Clock/Row" unique_id=1568329796]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ClockValue" type="Label" parent="VBoxContainer/Clock/Row" unique_id=2047454839]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Score: "
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("8_007ci")
+theme_override_font_sizes/font_size = 26
+text = "19:00"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=2047941503]
+[node name="Excitement" type="PanelContainer" parent="VBoxContainer" unique_id=1650333735]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-text = "jkahfkjdshfakjhfksjdf"
+theme = ExtResource("1_br1ly")
+theme_override_styles/panel = ExtResource("4_14tur")
+
+[node name="Row" type="HBoxContainer" parent="VBoxContainer/Excitement" unique_id=1074626561]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="ExcitementLabel" type="Label" parent="VBoxContainer/Excitement/Row" unique_id=213978326]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("8_007ci")
+theme_override_font_sizes/font_size = 21
+text = "EXCITEMENT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExcitementBar" type="ProgressBar" parent="VBoxContainer/Excitement/Row" unique_id=2001234156]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_007ci")
+theme_override_styles/fill = SubResource("StyleBoxFlat_14tur")
+value = 76.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Motto" type="PanelContainer" parent="VBoxContainer" unique_id=1639800595]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("1_br1ly")
+theme_override_styles/panel = ExtResource("4_14tur")
+
+[node name="Row" type="HBoxContainer" parent="VBoxContainer/Motto" unique_id=1493949508]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Motto/Row" unique_id=930073048]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("8_007ci")
+theme_override_font_sizes/font_size = 21
+text = "CUSTOMER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="VBoxContainer/Motto/Row" unique_id=645832627]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Value" type="Label" parent="VBoxContainer/Motto/Row" unique_id=1635279973]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("8_007ci")
+theme_override_font_sizes/font_size = 26
+text = "= KING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Motto2" type="PanelContainer" parent="VBoxContainer" unique_id=1788963074]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("1_br1ly")
+theme_override_styles/panel = ExtResource("4_14tur")
+
+[node name="Row" type="HBoxContainer" parent="VBoxContainer/Motto2" unique_id=1468282397]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Motto2/Row" unique_id=273317010]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("8_007ci")
+theme_override_font_sizes/font_size = 21
+text = "LIFE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="VBoxContainer/Motto2/Row" unique_id=552771022]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Value" type="Label" parent="VBoxContainer/Motto2/Row" unique_id=1014058401]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("8_007ci")
+theme_override_font_sizes/font_size = 26
+text = "= GOOD"
+horizontal_alignment = 1
+vertical_alignment = 1

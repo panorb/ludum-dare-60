@@ -16,10 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://cybra0dvpae1x" path="res://ui/dotted.png" id="7_swf4p"]
 [ext_resource type="FontFile" uid="uid://bbrpa4t0wtrn6" path="res://ui/doto.ttf" id="8_3meo8"]
 [ext_resource type="StyleBox" uid="uid://dhoiouwwwmw6f" path="res://ui/black_style_box.tres" id="8_aws7q"]
-[ext_resource type="Script" uid="uid://bxfkr1g6ocqg2" path="res://day_info/day_info.gd" id="8_dblv8"]
 [ext_resource type="Resource" uid="uid://cd2omib2j2x2u" path="res://story/days/day5.tres" id="8_n6m0l"]
 [ext_resource type="Resource" uid="uid://bggde83pckssg" path="res://story/days/day6.tres" id="9_d0ujo"]
 [ext_resource type="Resource" uid="uid://c0eieagra73qu" path="res://story/days/day7.tres" id="10_ryg2c"]
+[ext_resource type="PackedScene" uid="uid://ce5lkjhrn4wx7" path="res://day_info/day_info.tscn" id="16_rvwij"]
 [ext_resource type="PackedScene" uid="uid://bqrqviwo72662" path="res://story/intermission.tscn" id="21_rvwij"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ycap1"]
@@ -111,13 +111,10 @@ unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
 
-[node name="DayInfo" type="PanelContainer" parent="Margin/HBoxContainer" unique_id=983540887]
+[node name="DayInfo" parent="Margin/HBoxContainer" unique_id=1389192191 instance=ExtResource("16_rvwij")]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(420, 0)
 layout_mode = 2
-script = ExtResource("8_dblv8")
-metadata/_custom_type_script = "uid://bxfkr1g6ocqg2"
 
 [node name="Placer" type="Node" parent="." unique_id=1209718710 node_paths=PackedStringArray("table_view", "sub_viewport", "placed_parts")]
 unique_name_in_owner = true
