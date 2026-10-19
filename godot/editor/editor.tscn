@@ -198,12 +198,15 @@ metadata/_custom_type_script = "uid://b26sfo7otc5te"
 
 [node name="Bell1" type="AudioStreamPlayer" parent="Placer/PlacerSoundPlayer" unique_id=1624836277]
 stream = ExtResource("22_g3esq")
+bus = &"SFX-System"
 
 [node name="Bell2" type="AudioStreamPlayer" parent="Placer/PlacerSoundPlayer" unique_id=1666606963]
 stream = ExtResource("22_g3esq")
+bus = &"SFX-System"
 
 [node name="Bell3" type="AudioStreamPlayer" parent="Placer/PlacerSoundPlayer" unique_id=1988234708]
 stream = ExtResource("23_j68xf")
+bus = &"SFX-System"
 
 [node name="Intermission" parent="." unique_id=394377904 instance=ExtResource("21_rvwij")]
 unique_name_in_owner = true
