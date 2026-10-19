@@ -29,6 +29,9 @@ func _on_start_day():
 	# Reset pinballmachine
 	%PinballMachine.reset();
 	
+	# Activate highscrore
+	%PinballMachine.is_highscore_active = true;
+	
 	# Run engine Faster	
 	Engine.time_scale = 1.5
 
@@ -59,6 +62,9 @@ func _on_end_day():
 
 	# Reset pinballmachine
 	%PinballMachine.reset();
+
+	# Activate highscrore
+	%PinballMachine.is_highscore_active = false;
 
 	# Run engine normal
 	Engine.time_scale = 1.0

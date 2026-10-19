@@ -47,6 +47,7 @@ func _ready() -> void:
 	playfield.game_over.connect(_on_game_over)
 	between_game_timer.timeout.connect(_on_restart)
 
+# Integer is score value of PinballMachinePart
 var exposure:Dictionary[int, float]
 
 func _exciting_event(value) -> void:

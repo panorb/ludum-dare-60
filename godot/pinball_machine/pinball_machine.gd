@@ -16,6 +16,7 @@ var score := 0
 var highscore := 0
 var active_balls : int:
 	get: return self.get_tree().get_node_count_in_group('ball');
+var is_highscore_active := false
 
 func _ready() -> void:
 	drop_out.body_entered.connect(_on_drop_out)
@@ -38,7 +39,7 @@ func on_excite(value) -> void:
 func _on_drop_out(body: Node2D) -> void:
 	var _active_balls = self.active_balls - 1;
 	body.queue_free()
-	if _active_balls < 1:
+	if _active_balls < 1 and self.is_highscore_active:
 		print("highscore:", score)
 		var is_highscore = false
 		if score > highscore:
