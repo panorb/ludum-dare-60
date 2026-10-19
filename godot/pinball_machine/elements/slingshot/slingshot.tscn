@@ -19,6 +19,7 @@ radius = 24.020824
 
 [node name="Slingshot" type="Node2D" unique_id=1086058136]
 script = ExtResource("3_pvr2h")
+points = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1296644581]
 position = Vector2(-9.126747, -8.5)
