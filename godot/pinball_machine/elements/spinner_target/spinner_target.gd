@@ -28,11 +28,11 @@ func _physics_process(delta: float) -> void:
 
 	while _accumulated_angle >= TAU:
 		_accumulated_angle -= TAU
-		# todo score
+		score.emit(id, points)
 
 	while _accumulated_angle <= -TAU:
 		_accumulated_angle += TAU
-		# todo score
+		score.emit(id, points)
 
 func _on_body_entered(body: Node):
 	if body is Ball:

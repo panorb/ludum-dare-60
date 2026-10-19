@@ -44,6 +44,11 @@ func start(entry: ShopEntry) -> void:
 	_set.set_meta("entry", entry)
 	# _set.process_mode = Node.PROCESS_MODE_DISABLED
 	placed_parts.add_child(_set)
+	print("_set: ", _set)
+	print("_set: ", _set.points)
+	print("_set: ", _set.score)
+	print("_set: ", pinball_machine)
+	print("_set: ", pinball_machine.on_score)
 
 	# If a set or single element is adding to the tree, it will connecting with mashine
 	_set.score.connect(pinball_machine.on_score);

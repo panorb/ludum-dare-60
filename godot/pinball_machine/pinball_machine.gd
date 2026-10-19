@@ -41,6 +41,7 @@ func _on_auto_ball_timer() -> void:
 	auto_ball_launcher.active = false
 
 func on_score(id, points):
+	print("pinball score! ", points)
 	if not points:
 		return
 	score = score + points
