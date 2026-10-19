@@ -10,4 +10,5 @@ title = "Bumper x3"
 price = 160
 icon = ExtResource("1_ddk87")
 scene = ExtResource("1_4axhf")
+priority = 94
 metadata/_custom_type_script = "uid://cxrqn5fa81q5u"

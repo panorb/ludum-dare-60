@@ -3,7 +3,7 @@ extends Node
 
 signal placement_finished(placed: Node2D)
 signal placement_cancelled
-signal part_sold(refund: int)
+signal part_sold(sold: ShopEntry)
 
 const PLACEMENT_LAYER := 1 << 16
 const KEEP_CLEAR_LAYER := 1 << 17 
@@ -39,9 +39,9 @@ var _block := Block.NONE
 func is_placing() -> bool:
 	return _set != null
 
-func start(scene: PackedScene, price: int) -> void:
-	_set = scene.instantiate()
-	_set.set_meta("price", price)
+func start(entry: ShopEntry) -> void:
+	_set = entry.scene.instantiate()
+	_set.set_meta("entry", entry)
 	# _set.process_mode = Node.PROCESS_MODE_DISABLED
 	placed_parts.add_child(_set)
 
@@ -106,7 +106,7 @@ func _physics_process(_delta: float) -> void:
 func _update_hint() -> void:
 	match _block:
 		Block.KEEP_CLEAR:
-			hint.text = "LEAVE CLEAR"
+			hint.text = "KEEP CLEARED"
 		Block.TOO_CLOSE:
 			hint.text = "TOO CLOSE..."
 		_:
@@ -160,10 +160,10 @@ func _handle_sell_click(event: InputEvent) -> void:
 	var placed := _placed_at(_screen_to_world(click.position))
 	if placed == null:
 		return
-	var refund := int(placed.get_meta("price", 0) / 2.0)  # Hälfte wird rückerstattet
+	var entry : ShopEntry = placed.get_meta("entry")
 	placed.queue_free()
 	link_line.hide()
-	part_sold.emit(refund)
+	part_sold.emit(entry)
 	get_viewport().set_input_as_handled()
 
 func _drop_current(screen_pos: Vector2) -> void:

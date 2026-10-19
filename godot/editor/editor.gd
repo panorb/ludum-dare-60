@@ -4,12 +4,12 @@ extends Control
 @onready var shop := %Shop
 @onready var placer: Placer = %Placer
 
-var current_balance := preload("res://shop/entries/saucer.tres").price + 50:
+var current_balance := preload("res://shop/entries/saucer.tres").price + 800:
 	set(value):
 		current_balance = value
 		if is_node_ready():
 			shop.update_available_balance(value)
-var last_purchase_value := 0
+var last_purchase : ShopEntry = null
 
 
 func _ready() -> void:
@@ -53,17 +53,30 @@ func _on_end_day():
 func _on_shop_item_pressed(entry: ShopEntry) -> void:
 	if placer.is_placing() or current_balance < entry.price:
 		return
+	
+	%Shop.remove_from_inventory(entry)
 	shop.interactable = false
 	current_balance -= entry.price
-	last_purchase_value = entry.price
-	placer.start(entry.scene, entry.price)
+	last_purchase = entry
+	placer.start(entry)
 
 func _on_placement_finished(_placed: Node2D) -> void:
 	shop.interactable = true
 
+func _refund_stock(entry: ShopEntry):
+	var stock = ShopEntryQuantity.new()
+	stock.entry = last_purchase
+	stock.quantity = 1
+	var array : Array[ShopEntryQuantity] = [stock]
+	%Shop.add_to_inventory(array)
+
 func _on_placement_cancelled() -> void:
-	current_balance += last_purchase_value  # refund
+	_refund_stock(last_purchase)
+	
+	current_balance += last_purchase.price  # refund
 	shop.interactable = true
 
-func _on_part_sold(refund: int) -> void:
-	current_balance += refund
+func _on_part_sold(entry: ShopEntry) -> void:
+	_refund_stock(entry)
+	
+	current_balance += int(entry.price / 2.0)

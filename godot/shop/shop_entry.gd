@@ -6,3 +6,4 @@ extends Resource
 @export var icon: Texture2D
 @export var scene: PackedScene
 @export var is_set: bool = true
+@export var priority: int = 0

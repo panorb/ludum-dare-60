@@ -10,4 +10,5 @@ title = "Gift Bumpers"
 price = 0
 icon = ExtResource("1_k0wv2")
 scene = ExtResource("2_k0wv2")
+priority = 100
 metadata/_custom_type_script = "uid://cxrqn5fa81q5u"

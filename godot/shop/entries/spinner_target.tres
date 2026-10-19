@@ -11,4 +11,5 @@ price = 0
 icon = ExtResource("1_n7ib5")
 scene = ExtResource("2_ivffb")
 is_set = false
+priority = 65
 metadata/_custom_type_script = "uid://cxrqn5fa81q5u"
