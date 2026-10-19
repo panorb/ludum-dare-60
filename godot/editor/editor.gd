@@ -26,6 +26,12 @@ func _on_start_day():
 	%Shop.visible = false;
 	%DayInfo.visible = true;
 	
+	# Reset pinballmachine
+	%PinballMachine.reset();
+	
+	# Activate highscrore
+	%PinballMachine.is_highscore_active = true;
+	
 	# Run engine Faster	
 	Engine.time_scale = 1.5
 
@@ -53,6 +59,12 @@ func _on_end_day():
 	# Activate user input disable AI
 	%AIController.active = false;
 	%PlayableMachine.active = true;
+
+	# Reset pinballmachine
+	%PinballMachine.reset();
+
+	# Activate highscrore
+	%PinballMachine.is_highscore_active = false;
 
 	# Run engine normal
 	Engine.time_scale = 1.0

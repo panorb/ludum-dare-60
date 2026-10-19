@@ -1,4 +1,3 @@
-class_name PinballMachine
 extends Node
 
 @onready var playfield = %PinballMachine

@@ -36,7 +36,6 @@ const _excitement_half_life := 20 # how many seconds it takes for excitement to 
 const _repetition_half_life := 50 # how many seconds it takes for repeated excites to restore by half
 const _repetition_strength := 1.0 # how bad reperition is, multiplier
 
-
 func _ready() -> void:
 	right_flipper_trigger.body_entered.connect(_flipper_right_press)
 	right_flipper_trigger.body_exited.connect(_flipper_right_release)
@@ -48,6 +47,7 @@ func _ready() -> void:
 	playfield.game_over.connect(_on_game_over)
 	between_game_timer.timeout.connect(_on_restart)
 
+# Integer is score value of PinballMachinePart
 var exposure:Dictionary[int, float]
 
 func _exciting_event(value) -> void:
@@ -74,15 +74,16 @@ func _on_restart():
 var total := 0.0 # TODO remove this, it is just for printing every 2 seconds
 
 func _process(delta: float) -> void:
-	_excitement *= 2**(-delta/_excitement_half_life)
-	var memory_decay = 2**(-delta/_repetition_half_life)
-	for category in exposure:
-		exposure[category] *= memory_decay
-	#print(_excitement)
-	total += delta # TODO remove this, it is just for printing every 2 seconds
-	if total > 2.0:
-		total -= 2.0
-		print(_excitement, " ", _total_excitement)
+	if active:
+		_excitement *= 2**(-delta/_excitement_half_life)
+		var memory_decay = 2**(-delta/_repetition_half_life)
+		for category in exposure:
+			exposure[category] *= memory_decay
+		#print(_excitement)
+		total += delta # TODO remove this, it is just for printing every 2 seconds
+		if total > 2.0:
+			total -= 2.0
+			print(_excitement, " ", _total_excitement)
 
 func start() -> void:
 	playfield.start()
@@ -93,7 +94,7 @@ func stop() -> void:
 
 func reset(excitement: float = DEFAULT_EXCITEMENT, total_excitement: float = DEFAULT_TOTAL_EXCITEMENT) -> void:
 	self._excitement = excitement;
-	self._total_excitement = _total_excitement;
+	self._total_excitement = total_excitement;
 
 func _flipper_right_press(body) -> void:
 		if not active:

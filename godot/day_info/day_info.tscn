@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bxfkr1g6ocqg2" path="res://day_info/day_info.gd" id="1_y2ogq"]
 
 [node name="DayInfo" type="PanelContainer" unique_id=1389192191]
+custom_minimum_size = Vector2(420, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
