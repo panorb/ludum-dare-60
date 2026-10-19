@@ -174,9 +174,6 @@ func _on_score_changed(score: int):
 	
 func _on_excitement_change(excitement: float):
 	pass
-	
-func _on_total_excitement_change(score: int):
-	pass
 
 func _on_total_excitement_change(excitement: float):
 	todays_excitement = excitement
