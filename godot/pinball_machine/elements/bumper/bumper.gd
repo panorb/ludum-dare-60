@@ -22,6 +22,13 @@ const START := -1.0 / 6.0 * PI     # Grenze oben links (-150°)
 @export var strength := 500.0;
 var _cushion_tweens : Array[Tween] = [null, null, null]
 
+func set_active(_active=true) -> void:
+	if _active:
+		$Sprite2D.texture = load("res://pinball_machine/elements/bumper/bumper{0}.png".format([self.variant]))
+	else:
+		$Sprite2D.texture = load("res://pinball_machine/elements/bumper/disabled.png")
+	active = _active
+
 func set_points(_points) -> void:
 	%ScoreLabel.text = str(_points)
 	points = _points
@@ -33,7 +40,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	# Is this body a ball?
-	if body is Ball and self.active:
+	if body is Ball:
 		# Get ball
 		var ball = body as Ball;
 		# Calculate direction
@@ -61,8 +68,9 @@ func _on_body_entered(body: Node2D) -> void:
 			.set_trans(Tween.TRANS_CIRC) \
 			.set_delay(0.15)
 		
-		self.trigger.emit(id)
-		self.score.emit(id, points)
+		if  self.active:
+			self.trigger.emit(id)
+			self.score.emit(id, points)
 
 func on_bump(body: Node2D) -> void:
 	body_entered.emit(body)

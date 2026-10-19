@@ -6,6 +6,7 @@ extends Node2D
 
 signal score(id, score: int)
 signal excite(excitement: float)
+signal trigger_ball()
 
 @export var active = true:
 	set = set_active;

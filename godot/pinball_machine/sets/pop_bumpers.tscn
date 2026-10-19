@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bueaxutxjf5e7"]
+
+[ext_resource type="Script" uid="uid://dg4rn5e2liylt" path="res://pinball_machine/sets/pop_bumpers.gd" id="1_40mv7"]
+[ext_resource type="PackedScene" uid="uid://btkofrqrrj4wb" path="res://pinball_machine/elements/bumper/bumper.tscn" id="2_kt6ur"]
+
+[node name="PopBumpers" type="Node2D" unique_id=1963514747]
+script = ExtResource("1_40mv7")
+
+[node name="Bumper1" parent="." unique_id=58277578 instance=ExtResource("2_kt6ur")]
+unique_name_in_owner = true
+points = 30
+
+[node name="Bumper2" parent="." unique_id=704044506 instance=ExtResource("2_kt6ur")]
+unique_name_in_owner = true
+variant = 2
+points = 30
+
+[node name="Bumper3" parent="." unique_id=2000440836 instance=ExtResource("2_kt6ur")]
+unique_name_in_owner = true
+variant = 3
+points = 30
+
+[node name="Bumper4" parent="." unique_id=421795541 instance=ExtResource("2_kt6ur")]
+unique_name_in_owner = true
+variant = 2
+points = 30
+
+[node name="Bumper5" parent="." unique_id=519259815 instance=ExtResource("2_kt6ur")]
+unique_name_in_owner = true
+points = 30
+
+[node name="Timer" type="Timer" parent="." unique_id=189487823]
+one_shot = true

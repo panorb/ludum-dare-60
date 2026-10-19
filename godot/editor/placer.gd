@@ -48,6 +48,7 @@ func start(entry: ShopEntry) -> void:
 	# If a set or single element is adding to the tree, it will connecting with mashine
 	_set.score.connect(pinball_machine.on_score);
 	_set.excite.connect(pinball_machine.on_excite);
+	_set.trigger_ball.connect(pinball_machine.on_trigger_ball);
 
 	_parts.clear()
 	if _set.is_in_group("part"):
@@ -66,7 +67,7 @@ func _pick_up_current() -> void:
 	_home = part.get_parent()
 	_part_scale = part.scale
 	part.reparent(cursor_layer, false)
-	part.process_mode = Node.PROCESS_MODE_DISABLED
+	#part.process_mode = Node.PROCESS_MODE_DISABLED
 	part.scale = _part_scale * _table_scale()
 	part.modulate = COLOR_OK
 	part.show()
