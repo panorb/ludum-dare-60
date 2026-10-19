@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://d1bm57laym1gy" path="res://ui/theme.tres" id="1_lggly"]
 [ext_resource type="PackedScene" uid="uid://b1hi4ao200pvr" path="res://shop/marquee.tscn" id="1_vd38c"]
 [ext_resource type="Script" uid="uid://5nayvcjmy70a" path="res://shop/shop.gd" id="2_gy7ao"]
+[ext_resource type="AudioStream" uid="uid://ogcl5v7bag7y" path="res://shop/money_cash.wav" id="6_q4g17"]
 [ext_resource type="StyleBox" uid="uid://dhoiouwwwmw6f" path="res://ui/black_style_box.tres" id="10_mmyc1"]
 [ext_resource type="FontFile" uid="uid://bbrpa4t0wtrn6" path="res://ui/doto.ttf" id="11_orod7"]
 
@@ -88,3 +89,8 @@ unique_name_in_owner = true
 layout_mode = 2
 focus_mode = 0
 text = "Start Day"
+
+[node name="SoundMoneyCash" type="AudioStreamPlayer" parent="." unique_id=1983498368]
+unique_name_in_owner = true
+stream = ExtResource("6_q4g17")
+bus = &"SFX-System"

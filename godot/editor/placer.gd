@@ -175,7 +175,8 @@ func _drop_current(screen_pos: Vector2) -> void:
 	part.global_position = _screen_to_world(screen_pos)
 	part.modulate = Color.WHITE
 	part.process_mode = Node.PROCESS_MODE_INHERIT
-
+	
+	$PlacerSoundPlayer.play()
 	_index += 1
 	if _index < _parts.size():
 		_pick_up_current()
@@ -184,8 +185,6 @@ func _drop_current(screen_pos: Vector2) -> void:
 	var placed := _set
 	_reset()
 	#placed.process_mode = Node.PROCESS_MODE_INHERIT
-	
-	
 	placement_finished.emit(placed)
 
 func _cancel() -> void:

@@ -20,7 +20,10 @@
 [ext_resource type="Resource" uid="uid://bggde83pckssg" path="res://story/days/day6.tres" id="9_d0ujo"]
 [ext_resource type="Resource" uid="uid://c0eieagra73qu" path="res://story/days/day7.tres" id="10_ryg2c"]
 [ext_resource type="PackedScene" uid="uid://ce5lkjhrn4wx7" path="res://day_info/day_info.tscn" id="16_rvwij"]
+[ext_resource type="Script" uid="uid://b26sfo7otc5te" path="res://shared/random_sound_player.gd" id="21_j1vbl"]
 [ext_resource type="PackedScene" uid="uid://bqrqviwo72662" path="res://story/intermission.tscn" id="21_rvwij"]
+[ext_resource type="AudioStream" uid="uid://b3u663v7x75o2" path="res://editor/bell2.wav" id="22_g3esq"]
+[ext_resource type="AudioStream" uid="uid://b38n0ew1828ji" path="res://editor/bell3.wav" id="23_j68xf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ycap1"]
 shader = ExtResource("2_fjngd")
@@ -188,6 +191,19 @@ theme_override_colors/font_color = Color(1, 0.9647059, 0.68235296, 1)
 theme_override_fonts/font = ExtResource("8_3meo8")
 theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = ExtResource("8_aws7q")
+
+[node name="PlacerSoundPlayer" type="Node" parent="Placer" unique_id=280863060]
+script = ExtResource("21_j1vbl")
+metadata/_custom_type_script = "uid://b26sfo7otc5te"
+
+[node name="Bell1" type="AudioStreamPlayer" parent="Placer/PlacerSoundPlayer" unique_id=1624836277]
+stream = ExtResource("22_g3esq")
+
+[node name="Bell2" type="AudioStreamPlayer" parent="Placer/PlacerSoundPlayer" unique_id=1666606963]
+stream = ExtResource("22_g3esq")
+
+[node name="Bell3" type="AudioStreamPlayer" parent="Placer/PlacerSoundPlayer" unique_id=1988234708]
+stream = ExtResource("23_j68xf")
 
 [node name="Intermission" parent="." unique_id=394377904 instance=ExtResource("21_rvwij")]
 unique_name_in_owner = true

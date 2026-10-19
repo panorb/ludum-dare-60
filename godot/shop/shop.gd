@@ -103,5 +103,7 @@ func _update_item_purchasability(balance: int):
 		item.is_active = stock.entry.price <= balance
 
 func _on_item_pressed(entry: ShopEntry):
+	if entry.price:
+		%SoundMoneyCash.play()
 	%Marquee.celebrate_purchase()
 	item_pressed.emit(entry)
