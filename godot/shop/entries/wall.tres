@@ -10,4 +10,5 @@ title = "Wall"
 price = 20
 icon = ExtResource("1_eh7dg")
 scene = ExtResource("2_p7ih7")
+is_set = false
 metadata/_custom_type_script = "uid://cxrqn5fa81q5u"
