@@ -151,10 +151,10 @@ position = Vector2(188, 657)
 shape = SubResource("RectangleShape2D_eckxu")
 
 [node name="Slingshot" parent="." unique_id=1796760020 instance=ExtResource("5_ll1gr")]
-position = Vector2(358, 550)
+position = Vector2(397, 538)
 
 [node name="Slingshot2" parent="." unique_id=1086058136 instance=ExtResource("5_ll1gr")]
-position = Vector2(123, 550)
+position = Vector2(108, 538)
 scale = Vector2(-1, 1)
 
 [node name="AutoBallLauncher" parent="." unique_id=2044316184 instance=ExtResource("6_phrn3")]
