@@ -24,6 +24,9 @@ func press() -> void:
 func release() -> void:
 	pressed = false
 
+func reset() -> void:
+	pressed = false
+
 func _init():
 	pass
 

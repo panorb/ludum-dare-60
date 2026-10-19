@@ -50,6 +50,7 @@ func _on_intermission_finished():
 	# Activate user input disable AI
 	%AIController.active = false;
 	%PlayableMachine.active = true;
+	%PinballMachine.lenient = true;
 
 	# Reset pinballmachine
 	%PinballMachine.reset();
@@ -88,6 +89,7 @@ func _on_start_day():
 	# Activate AI disable user_input
 	%AIController.active = true;
 	%PlayableMachine.active = false;
+	%PinballMachine.lenient = false;
 
 	# ??
 	%AIController.start();

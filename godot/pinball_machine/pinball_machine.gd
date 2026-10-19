@@ -20,6 +20,7 @@ var highscore := 0
 var active_balls : int:
 	get: return self.get_tree().get_node_count_in_group('ball');
 var is_highscore_active := false
+var lenient := true # wether to allow stuck balls in AlloweDeadZones. Set to false while in AI mode
 
 func _ready() -> void:
 	drop_out.body_entered.connect(_on_drop_out)
@@ -94,6 +95,10 @@ func reset() -> void:
 	
 	# Reset score
 	self.score = 0;
+	
+	# Reset flippers
+	flipper_right.reset()
+	flipper_left.reset()
 
 func start() -> void:
 	if running:
@@ -133,7 +138,7 @@ func _process(delta: float) -> void:
 	for ball in self.get_tree().get_nodes_in_group('ball'):
 		if ball.linear_velocity.length_squared() < LINEAR_THRESHOLD * LINEAR_THRESHOLD and \
 		   abs(ball.angular_velocity) < ANGULAR_THRESHOLD:
-			if allowed_dead_zones.overlaps_body(ball):
+			if lenient and allowed_dead_zones.overlaps_body(ball):
 				continue
 			print("stopped! ", ball.linear_velocity)
 			_ball_stopped(ball)
