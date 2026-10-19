@@ -175,6 +175,10 @@ value = 76.0
 fill_mode = 3
 show_percentage = false
 
+[node name="Spacer" type="Control" parent="VBoxContainer" unique_id=1694179205]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="Motto" type="PanelContainer" parent="VBoxContainer" unique_id=1639800595]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
