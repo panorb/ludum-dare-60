@@ -17,6 +17,11 @@ func _on_drop(body) -> void:
 		standing = false
 		fall()
 
+func reset() -> void:
+	if not standing:
+		standing = true
+		standup()
+
 func fall() -> void:
 	fallen_sound.play()
 	blocker_standing.set_deferred('disabled', true)

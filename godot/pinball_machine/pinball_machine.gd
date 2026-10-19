@@ -15,7 +15,14 @@ signal excitement(value: int)
 @onready var auto_ball_launcher := $AutoBallLauncher
 @onready var auto_ball_timer := $AutoballTimer
 
-var score := 0
+var _score := 0
+
+var score : int :
+	get: return self._score;
+	set(new_score):
+		self._score = new_score;
+		self.score_changed.emit(new_score)
+
 var highscore := 0
 var active_balls : int:
 	get: return self.get_tree().get_node_count_in_group('ball');
@@ -36,9 +43,9 @@ func _on_auto_ball_timer() -> void:
 func on_score(id, points):
 	if not points:
 		return
-	score += points
+	score = score + points
 	print(score)
-	score_changed.emit(points)
+	score_changed.emit(score)
 	excitement.emit(points)
 
 func on_excite(value) -> void:
