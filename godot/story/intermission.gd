@@ -14,6 +14,7 @@ func start(lines: Array[String]):
 			.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0) \
 			.from(Color(1.0, 1.0, 1.0, 0.0))
 	
+	_first_time = false
 	_present_line()
 
 var line_read_tween = null

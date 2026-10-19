@@ -7,7 +7,7 @@ const DURATION_OF_DAY: float = 10.0;
 @onready var placer: Placer = %Placer
 var today : StoryDay
 
-var current_balance := preload("res://shop/entries/saucer.tres").price + 800:
+var current_balance := 0:
 	set(value):
 		current_balance = value
 		if is_node_ready():
@@ -95,6 +95,8 @@ func _on_end_day():
 
 	# ??
 	%AIController.stop();
+	
+	_begin_new_day()
 
 func _on_shop_item_pressed(entry: ShopEntry) -> void:
 	if placer.is_placing() or current_balance < entry.price:
