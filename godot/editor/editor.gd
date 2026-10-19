@@ -22,6 +22,7 @@ func _ready() -> void:
 
 func _on_start_day():
 	%Shop.visible = false
+	%DayInfo.visible = true
 
 func _on_shop_item_pressed(entry: ShopEntry) -> void:
 	if placer.is_placing() or current_balance < entry.price:
