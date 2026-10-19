@@ -26,6 +26,11 @@ func _on_hold_timeout() -> void:
 	trigger.emit(id)
 	score.emit(id, points)
 
+func reset():
+	hold_timer.stop()
+	reset_timer.stop()
+	ball = null
+
 func _on_reset_timeout() -> void:
 	open = true
 	reset_timer.stop()

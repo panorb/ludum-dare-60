@@ -13,7 +13,6 @@ metadata/_custom_type_script = "uid://bmmlntcuidvb7"
 [sub_resource type="Resource" id="Resource_01t1h"]
 script = ExtResource("2_01t1h")
 entry = ExtResource("4_8mqoe")
-quantity = 3
 metadata/_custom_type_script = "uid://bmmlntcuidvb7"
 
 [resource]
