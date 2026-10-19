@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ShopEntry" format=3 uid="uid://bjoye1tfxgr5x"]
+
+[ext_resource type="Script" uid="uid://cxrqn5fa81q5u" path="res://shop/shop_entry.gd" id="1_0h0dk"]
+[ext_resource type="Texture2D" uid="uid://g033q373hs8i" path="res://pinball_machine/elements/saucer/saucer_indicator.png" id="1_eh7dg"]
+[ext_resource type="PackedScene" uid="uid://bvd2fbkkygawt" path="res://pinball_machine/elements/wall/wall.tscn" id="2_p7ih7"]
+
+[resource]
+script = ExtResource("1_0h0dk")
+title = "Wall"
+price = 20
+icon = ExtResource("1_eh7dg")
+scene = ExtResource("2_p7ih7")
+metadata/_custom_type_script = "uid://cxrqn5fa81q5u"

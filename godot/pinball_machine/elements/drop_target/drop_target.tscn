@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://b26sfo7otc5te" path="res://shared/random_sound_player.gd" id="4_i1lxi"]
 [ext_resource type="AudioStream" uid="uid://boxtej6dl2ltg" path="res://pinball_machine/elements/drop_target/fallen1.wav" id="4_x6gxg"]
 [ext_resource type="AudioStream" uid="uid://d3lq14odbqaf" path="res://pinball_machine/elements/drop_target/fallen2.wav" id="5_emwxc"]
+[ext_resource type="Texture2D" uid="uid://d1x1bxnx5dhj3" path="res://pinball_machine/elements/drop_target/indicator.png" id="7_xul1f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_276rf"]
 radius = 15.0
@@ -21,6 +22,7 @@ size = Vector2(28, 45)
 
 [node name="DropTarget" type="Node2D" unique_id=416927007 groups=["part"]]
 script = ExtResource("1_276rf")
+points = 25
 metadata/_custom_type_script = "uid://c55dcj4rrkgmt"
 
 [node name="ExclusionZone" type="Area2D" parent="." unique_id=1640070826 groups=["disallow_placement"]]
@@ -77,3 +79,9 @@ stream = ExtResource("5_emwxc")
 
 [node name="Fallen1" type="AudioStreamPlayer" parent="FallenSoundPlayer" unique_id=1829067518]
 stream = ExtResource("4_x6gxg")
+
+[node name="Indicator" type="Sprite2D" parent="." unique_id=764157171]
+position = Vector2(1.0058284e-07, 12)
+rotation = -0.017453292
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("7_xul1f")

@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("1_6vngo")
 title = "Wormhole"
-price = 0
+price = 500
 icon = ExtResource("1_j13f5")
 scene = ExtResource("2_n072o")
 metadata/_custom_type_script = "uid://cxrqn5fa81q5u"

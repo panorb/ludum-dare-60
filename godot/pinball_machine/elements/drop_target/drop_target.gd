@@ -27,6 +27,7 @@ func fall() -> void:
 	blocker_standing.set_deferred('disabled', true)
 	sprite_fallen.show()
 	sprite_standing.hide()
+	score.emit(id, points)
 
 func standup() -> void:
 	blocker_standing.set_deferred('disabled', false)
