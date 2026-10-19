@@ -2,6 +2,7 @@ class_name Editor
 extends Control
 
 const DURATION_OF_DAY: float = 10.0;
+const COIN_FACTOR := 50
 
 @onready var pinball_machine : PinballMachine = %PinballMachine;
 @onready var ai_controller : AIController = %AIController;
@@ -10,6 +11,9 @@ const DURATION_OF_DAY: float = 10.0;
 @onready var intermission: Intermission = %Intermission;
 
 var today : StoryDay
+
+var todays_excitement := 0.0
+var yesterdays_excitement := 20.0
 
 var current_balance := 0:
 	set(value):
@@ -69,6 +73,7 @@ func _on_game_over(score, is_highscore) -> void:
 	_reset_placed_parts()
 
 func _on_start_day():
+	todays_excitement = 0.0
 	# Replace shop with info display
 	%Shop.visible = false;
 	%DayInfo.visible = true;
@@ -110,6 +115,9 @@ func _reset_placed_parts():
 
 func _on_end_day():
 	# Activate user input disable AI
+	yesterdays_excitement = todays_excitement
+	current_balance += int(yesterdays_excitement*COIN_FACTOR)
+	todays_excitement = 0.0
 	%AIController.active = false;
 	%PlayableMachine.active = true;
 
@@ -164,11 +172,11 @@ func _on_part_sold(entry: ShopEntry) -> void:
 func _on_score_changed(score: int):
 	%ScoreValue.text = str(min(score, 99999999)).pad_zeros(8)
 	
-func _on_excitement_change(score: int):
+func _on_excitement_change(excitement: float):
 	pass
 	
 func _on_total_excitement_change(score: int):
 	pass
 
-func excitement_to_coins(excitement: float):
-	return excitement / 100;
+func _on_total_excitement_change(excitement: float):
+	todays_excitement = excitement
