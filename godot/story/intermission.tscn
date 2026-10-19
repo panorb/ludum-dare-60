@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bqrqviwo72662"]
+
+[ext_resource type="Script" uid="uid://db543mmhrtnnd" path="res://story/intermission.gd" id="1_rla2e"]
+[ext_resource type="Shader" uid="uid://b4r047y0b24qy" path="res://shop/bulbs.gdshader" id="2_xwt0g"]
+[ext_resource type="Script" uid="uid://c1ifmju07qpn3" path="res://shop/bulbs.gd" id="3_vu112"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o72lw"]
+shader = ExtResource("2_xwt0g")
+shader_parameter/size = Vector2(512, 96)
+shader_parameter/inset = 5.0
+shader_parameter/spacing = 18.0
+shader_parameter/radius = 3.0
+shader_parameter/speed = 1.0
+shader_parameter/mode = 3
+shader_parameter/on_color = Color(1, 0.855, 0.439, 1)
+shader_parameter/off_color = Color(0.408, 0.235, 0.204, 1)
+shader_parameter/disabled_color = Color(0.133, 0.165, 0.361, 1)
+
+[node name="Intermission" type="Control" unique_id=394377904]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rla2e")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1579101105]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1412626839]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextLine" type="Label" parent="CenterContainer" unique_id=1963989614]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 28
+text = "\"Heard you wanted to create the ultimate pinball machine?\""
+visible_characters_behavior = 1
+
+[node name="Bulbs" type="ColorRect" parent="CenterContainer/TextLine" unique_id=1063977000]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_o72lw")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_vu112")

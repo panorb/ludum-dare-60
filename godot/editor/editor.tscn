@@ -18,10 +18,9 @@
 [ext_resource type="Resource" uid="uid://cq6pmkt3byc2j" path="res://shop/entries/accelerator.tres" id="11_g3esq"]
 [ext_resource type="Resource" uid="uid://flgy3f00pwsp" path="res://shop/entries/bumper_times_three.tres" id="12_j68xf"]
 [ext_resource type="Resource" uid="uid://cb042a6iks26j" path="res://shop/entries/drop_target.tres" id="13_nbwom"]
-[ext_resource type="Shader" uid="uid://b4r047y0b24qy" path="res://shop/bulbs.gdshader" id="14_anuej"]
 [ext_resource type="Resource" uid="uid://bm07t8x06w7pw" path="res://shop/entries/saucer.tres" id="14_f4kn2"]
 [ext_resource type="Resource" uid="uid://c5vatop2f4l2m" path="res://shop/entries/spinner_target.tres" id="15_f77pu"]
-[ext_resource type="Script" uid="uid://c1ifmju07qpn3" path="res://shop/bulbs.gd" id="15_wj0aq"]
+[ext_resource type="PackedScene" uid="uid://bqrqviwo72662" path="res://story/intermission.tscn" id="21_rvwij"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ycap1"]
 shader = ExtResource("2_fjngd")
@@ -78,18 +77,6 @@ script = ExtResource("8_wux1q")
 entry = ExtResource("15_f77pu")
 quantity = 999
 metadata/_custom_type_script = "uid://bmmlntcuidvb7"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_o72lw"]
-shader = ExtResource("14_anuej")
-shader_parameter/size = Vector2(512, 96)
-shader_parameter/inset = 5.0
-shader_parameter/spacing = 18.0
-shader_parameter/radius = 3.0
-shader_parameter/speed = 3.0
-shader_parameter/mode = 0
-shader_parameter/on_color = Color(1, 0.855, 0.439, 1)
-shader_parameter/off_color = Color(0.408, 0.235, 0.204, 1)
-shader_parameter/disabled_color = Color(0.133, 0.165, 0.361, 1)
 
 [node name="Editor" type="Control" unique_id=1403797738]
 layout_mode = 3
@@ -199,43 +186,5 @@ theme_override_fonts/font = ExtResource("8_3meo8")
 theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = ExtResource("8_aws7q")
 
-[node name="Intermission" type="Control" parent="." unique_id=136938500]
-visible = false
+[node name="Intermission" parent="." unique_id=394377904 instance=ExtResource("21_rvwij")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Intermission" unique_id=502712376]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="CenterContainer" type="CenterContainer" parent="Intermission" unique_id=1923260913]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Intermission/CenterContainer" unique_id=1833545155]
-layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "\"Heard you wanted to create the ultimate pinball machine?\""
-
-[node name="Bulbs" type="ColorRect" parent="Intermission/CenterContainer/Label" unique_id=602807697]
-material = SubResource("ShaderMaterial_o72lw")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("15_wj0aq")
