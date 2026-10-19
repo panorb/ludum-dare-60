@@ -1,3 +1,4 @@
+class_name Editor
 extends Control
 
 @onready var shop := %Shop

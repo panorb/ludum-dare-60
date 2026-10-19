@@ -40,8 +40,12 @@ func is_placing() -> bool:
 func start(scene: PackedScene, price: int) -> void:
 	_set = scene.instantiate()
 	_set.set_meta("price", price)
-	_set.process_mode = Node.PROCESS_MODE_DISABLED
+	# _set.process_mode = Node.PROCESS_MODE_DISABLED
 	placed_parts.add_child(_set)
+
+	# If a set or single element is adding to the tree, it will connecting with mashine
+	_set.score.connect(pinball_machine.on_score);
+	_set.excite.connect(pinball_machine.on_excite);
 
 	_parts.clear()
 	if _set.is_in_group("part"):
@@ -175,7 +179,9 @@ func _drop_current(screen_pos: Vector2) -> void:
 
 	var placed := _set
 	_reset()
-	placed.process_mode = Node.PROCESS_MODE_INHERIT
+	#placed.process_mode = Node.PROCESS_MODE_INHERIT
+	
+	
 	placement_finished.emit(placed)
 
 func _cancel() -> void:
