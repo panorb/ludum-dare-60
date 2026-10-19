@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bvd2fbkkygawt"]
 
-[ext_resource type="Script" uid="uid://c55dcj4rrkgmt" path="res://pinball_machine/elements/element.gd" id="1_k7ia4"]
 [ext_resource type="Script" uid="uid://h3uyrspu87re" path="res://pinball_machine/elements/wall/wall.gd" id="1_y2fy7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y2fy7"]
+radius = 45.01111
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k7ia4"]
 radius = 16.0
@@ -26,9 +28,9 @@ polygon = PackedVector2Array(-4, -33, 10, -20, 16, -11, 23, 4, 25, 15, 24, 26, 2
 collision_layer = 65536
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="ExclusionZone" unique_id=1614874937]
-polygon = PackedVector2Array(-12, -9, -19, -31, -35, -46, -56, -54, -63, -68, -44, -75, -23, -71, -8, -62, 14, -38, 25, -9, 23, 11, 8, 38, -16, 57, -44, 63, -58, 57, -50, 43, -33, 34, -22, 20, -13, 4)
-script = ExtResource("1_k7ia4")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExclusionZone" unique_id=1338530971]
+position = Vector2(-11, -4)
+shape = SubResource("CircleShape2D_y2fy7")
 
 [node name="HoverZone" type="Area2D" parent="." unique_id=1338224256]
 collision_layer = 262144
