@@ -16,7 +16,9 @@ collision_layer = 0
 collision_mask = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightFlipperTrigger" unique_id=1679516431]
+z_index = 100
 position = Vector2(302, 646)
+scale = Vector2(1.1, 1.1)
 shape = SubResource("CircleShape2D_eckxu")
 
 [node name="LeftFlipperTrigger" type="Area2D" parent="." unique_id=1911908240]
@@ -24,7 +26,9 @@ collision_layer = 0
 collision_mask = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftFlipperTrigger" unique_id=1980598372]
+z_index = 100
 position = Vector2(207, 645)
+scale = Vector2(1.1, 1.1)
 shape = SubResource("CircleShape2D_eckxu")
 
 [node name="PlungerTrigger" type="Area2D" parent="." unique_id=2028876943]
