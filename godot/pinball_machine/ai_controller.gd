@@ -36,7 +36,6 @@ const _excitement_half_life := 20 # how many seconds it takes for excitement to 
 const _repetition_half_life := 50 # how many seconds it takes for repeated excites to restore by half
 const _repetition_strength := 1.0 # how bad reperition is, multiplier
 
-
 func _ready() -> void:
 	right_flipper_trigger.body_entered.connect(_flipper_right_press)
 	right_flipper_trigger.body_exited.connect(_flipper_right_release)
