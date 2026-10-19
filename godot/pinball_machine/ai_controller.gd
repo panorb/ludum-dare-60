@@ -1,7 +1,7 @@
 extends Node2D
 
-const MAX_PLUNGER_CHARGE_TIME: float = 1.0;
-const MIN_PLUNGER_CHARGE_TIME: float = 2.0;
+const MIN_PLUNGER_CHARGE_TIME: float = 0.5;
+const MAX_PLUNGER_CHARGE_TIME: float = 1.6;
 
 signal sim_end(coins: int)
 
@@ -20,7 +20,7 @@ func _ready() -> void:
 	left_flipper_trigger.body_entered.connect(_flipper_left_press)
 	left_flipper_trigger.body_exited.connect(_flipper_left_release)
 	plunger_trigger.body_entered.connect(_flipper_charge_press)
-	plunger_trigger.body_exited.connect(_flipper_charge_release)
+#	plunger_trigger.body_exited.connect(_flipper_charge_release)
 	playfield.excitement.connect(_exciting_event)
 	playfield.game_over.connect(_on_game_over)
 	between_game_timer.timeout.connect(_on_restart)
@@ -108,11 +108,13 @@ func _flipper_charge_press(body) -> void:
 		self.get_tree().create_timer(plunger_charge_time) \
 			# After change time is over release plunger
 			.timeout.connect(func(): playfield.plunger_release());
-		print("entered")
 		# Charge plunger
 		playfield.plunger_charge()
 
-func _flipper_charge_release(body) -> void:
-		if not active:
-			return
-		playfield.plunger_release()
+		print("Charge plunger with: " + str(plunger_charge_time) + "s" )
+		
+
+#func _flipper_charge_release(body) -> void:
+#		if not active:
+#			return
+#		playfield.plunger_release()
