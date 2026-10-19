@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ShopEntry" format=3 uid="uid://ood66or8hvqm"]
+
+[ext_resource type="Texture2D" uid="uid://bgda0765kw7pv" path="res://pinball_machine/decals/alien_left.png" id="1_d1ie5"]
+[ext_resource type="Script" uid="uid://cxrqn5fa81q5u" path="res://shop/shop_entry.gd" id="1_j7nn3"]
+[ext_resource type="PackedScene" uid="uid://dounesd5jn6qd" path="res://pinball_machine/sets/decal_aliens.tscn" id="2_2bils"]
+
+[resource]
+script = ExtResource("1_j7nn3")
+title = "Sticker"
+price = 10
+icon = ExtResource("1_d1ie5")
+scene = ExtResource("2_2bils")
+metadata/_custom_type_script = "uid://cxrqn5fa81q5u"

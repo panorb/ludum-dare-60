@@ -4,6 +4,10 @@
 [ext_resource type="Script" uid="uid://bmmlntcuidvb7" path="res://shop/shop_entry_quantity.gd" id="2_01t1h"]
 [ext_resource type="Resource" uid="uid://flgy3f00pwsp" path="res://shop/entries/bumper_times_three.tres" id="3_gnp1d"]
 [ext_resource type="Resource" uid="uid://bm07t8x06w7pw" path="res://shop/entries/saucer.tres" id="4_8mqoe"]
+[ext_resource type="Resource" uid="uid://ood66or8hvqm" path="res://shop/entries/sticker_aliens.tres" id="5_8mqoe"]
+[ext_resource type="Resource" uid="uid://bno0ssrycswpc" path="res://shop/entries/sticker_shootingstar.tres" id="6_diqll"]
+[ext_resource type="Resource" uid="uid://btn5njc7ab6nv" path="res://shop/entries/sticker_meteor.tres" id="7_fv00s"]
+[ext_resource type="Resource" uid="uid://d4by8ldpiwe8c" path="res://shop/entries/sticker_lasergun.tres" id="8_mv75c"]
 
 [sub_resource type="Resource" id="Resource_eomhv"]
 script = ExtResource("2_01t1h")
@@ -16,9 +20,33 @@ entry = ExtResource("4_8mqoe")
 quantity = 3
 metadata/_custom_type_script = "uid://bmmlntcuidvb7"
 
+[sub_resource type="Resource" id="Resource_msbrl"]
+script = ExtResource("2_01t1h")
+entry = ExtResource("5_8mqoe")
+quantity = 2
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_6amlj"]
+script = ExtResource("2_01t1h")
+entry = ExtResource("6_diqll")
+quantity = 3
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_33jk1"]
+script = ExtResource("2_01t1h")
+entry = ExtResource("7_fv00s")
+quantity = 3
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_2lup7"]
+script = ExtResource("2_01t1h")
+entry = ExtResource("8_mv75c")
+quantity = 3
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
 [resource]
 script = ExtResource("1_eomhv")
 title = "Tuesday"
-shop_restock = Array[ExtResource("2_01t1h")]([SubResource("Resource_eomhv"), SubResource("Resource_01t1h")])
+shop_restock = Array[ExtResource("2_01t1h")]([SubResource("Resource_eomhv"), SubResource("Resource_01t1h"), SubResource("Resource_msbrl"), SubResource("Resource_6amlj"), SubResource("Resource_33jk1"), SubResource("Resource_2lup7")])
 intro_text = Array[String](["\"You're back! Let's get to work.\"", "\"Starting today you will have to pay me for the parts.\"", "\"I have another pop bumper set for you.\"", "\"Those ones are actually connected and activate each other\"", "\"Pretty neat, huh!?\"", "\"Oh, you can also have some saucers.\"", "\"They suck in the ball and then release it again.\"", "\"If you're unhappy with the placement...\"", "\"You can right click parts to sell them.\"", "\"I will give you half the price back.\"", "\"The rest I keep for my troubles, he he.\"", "\"Best be careful not to misplace them!\"", "\"Well, off you go.\""])
 metadata/_custom_type_script = "uid://ba2t4smqoivon"

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://btob2d3cco2y1"]
+
+[ext_resource type="Texture2D" uid="uid://bgda0765kw7pv" path="res://pinball_machine/decals/alien_left.png" id="1_wtnbg"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_qjevt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1s0aw"]
+radius = 50.249374
+
+[node name="Decal" type="Sprite2D" unique_id=1337499131 groups=["part"]]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_wtnbg")
+
+[node name="ExclusionZone" type="Area2D" parent="." unique_id=1997979668 groups=["disallow_placement"]]
+collision_layer = 65536
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExclusionZone" unique_id=1411097672]
+shape = SubResource("ConvexPolygonShape2D_qjevt")
+disabled = true
+debug_color = Color(0.9991961, 0, 0.1340175, 0.41960785)
+
+[node name="HoverZone" type="Area2D" parent="." unique_id=1699967957]
+collision_layer = 262144
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoverZone" unique_id=229938259]
+shape = SubResource("CircleShape2D_1s0aw")
+debug_color = Color(1.1070073e-06, 0.74929774, 0.01962464, 0.41960785)

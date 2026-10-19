@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dounesd5jn6qd"]
+
+[ext_resource type="Script" uid="uid://cgx536dmmleiu" path="res://pinball_machine/sets/set.gd" id="1_2wup1"]
+[ext_resource type="PackedScene" uid="uid://btob2d3cco2y1" path="res://pinball_machine/decals/decal.tscn" id="1_h1nfa"]
+[ext_resource type="Texture2D" uid="uid://cfgfyj01xjftn" path="res://pinball_machine/decals/alien_right.png" id="2_2wup1"]
+
+[node name="DecalAliens" type="Node2D" unique_id=376220712]
+script = ExtResource("1_2wup1")
+
+[node name="Decal1" parent="." unique_id=1337499131 instance=ExtResource("1_h1nfa")]
+
+[node name="Decal2" parent="." unique_id=1525704858 instance=ExtResource("1_h1nfa")]
+texture = ExtResource("2_2wup1")

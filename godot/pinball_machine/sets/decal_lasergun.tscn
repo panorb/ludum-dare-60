@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://blp2q63vkyqht"]
+
+[ext_resource type="Script" uid="uid://cgx536dmmleiu" path="res://pinball_machine/sets/set.gd" id="1_w0bm7"]
+[ext_resource type="PackedScene" uid="uid://btob2d3cco2y1" path="res://pinball_machine/decals/decal.tscn" id="2_8n7m0"]
+[ext_resource type="Texture2D" uid="uid://bvhnp6fo634l" path="res://pinball_machine/decals/lasergun.png" id="3_w0bm7"]
+
+[node name="DecalLasergun" type="Node2D" unique_id=376220712]
+script = ExtResource("1_w0bm7")
+
+[node name="Decal" parent="." unique_id=1337499131 instance=ExtResource("2_8n7m0")]
+texture = ExtResource("3_w0bm7")

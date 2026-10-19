@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://4kfw5imx6tvj"]
+
+[ext_resource type="Script" uid="uid://cgx536dmmleiu" path="res://pinball_machine/sets/set.gd" id="1_ls2x8"]
+[ext_resource type="PackedScene" uid="uid://btob2d3cco2y1" path="res://pinball_machine/decals/decal.tscn" id="2_7urm6"]
+[ext_resource type="Texture2D" uid="uid://d0g2rt776xhni" path="res://pinball_machine/decals/meteor.png" id="3_ls2x8"]
+
+[node name="DecalMeteor" type="Node2D" unique_id=376220712]
+script = ExtResource("1_ls2x8")
+
+[node name="Decal" parent="." unique_id=1337499131 instance=ExtResource("2_7urm6")]
+texture = ExtResource("3_ls2x8")

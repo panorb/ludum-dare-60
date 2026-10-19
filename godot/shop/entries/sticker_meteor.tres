@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopEntry" format=3 uid="uid://btn5njc7ab6nv"]
+
+[ext_resource type="Texture2D" uid="uid://d0g2rt776xhni" path="res://pinball_machine/decals/meteor.png" id="1_l8k8r"]
+[ext_resource type="PackedScene" uid="uid://4kfw5imx6tvj" path="res://pinball_machine/sets/decal_meteor.tscn" id="2_6csbr"]
+[ext_resource type="Script" uid="uid://cxrqn5fa81q5u" path="res://shop/shop_entry.gd" id="3_6amlj"]
+
+[resource]
+script = ExtResource("3_6amlj")
+title = "Sticker"
+price = 10
+icon = ExtResource("1_l8k8r")
+scene = ExtResource("2_6csbr")
+is_set = false
+metadata/_custom_type_script = "uid://cxrqn5fa81q5u"

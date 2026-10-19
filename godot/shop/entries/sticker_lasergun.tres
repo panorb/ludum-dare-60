@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopEntry" format=3 uid="uid://d4by8ldpiwe8c"]
+
+[ext_resource type="Texture2D" uid="uid://bvhnp6fo634l" path="res://pinball_machine/decals/lasergun.png" id="1_3plt8"]
+[ext_resource type="PackedScene" uid="uid://blp2q63vkyqht" path="res://pinball_machine/sets/decal_lasergun.tscn" id="2_3kgr8"]
+[ext_resource type="Script" uid="uid://cxrqn5fa81q5u" path="res://shop/shop_entry.gd" id="3_rvn6t"]
+
+[resource]
+script = ExtResource("3_rvn6t")
+title = "Sticker"
+price = 10
+icon = ExtResource("1_3plt8")
+scene = ExtResource("2_3kgr8")
+is_set = false
+metadata/_custom_type_script = "uid://cxrqn5fa81q5u"

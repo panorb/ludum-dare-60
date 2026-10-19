@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopEntry" format=3 uid="uid://bno0ssrycswpc"]
+
+[ext_resource type="Texture2D" uid="uid://b47hnwoxbyxn6" path="res://pinball_machine/decals/shooting_star.png" id="1_lks78"]
+[ext_resource type="PackedScene" uid="uid://b1jntbhnnqvmn" path="res://pinball_machine/sets/decal_shootingstar.tscn" id="2_lks78"]
+[ext_resource type="Script" uid="uid://cxrqn5fa81q5u" path="res://shop/shop_entry.gd" id="3_4qim2"]
+
+[resource]
+script = ExtResource("3_4qim2")
+title = "Sticker"
+price = 10
+icon = ExtResource("1_lks78")
+scene = ExtResource("2_lks78")
+is_set = false
+metadata/_custom_type_script = "uid://cxrqn5fa81q5u"
