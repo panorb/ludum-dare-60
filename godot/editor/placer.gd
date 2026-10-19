@@ -26,6 +26,8 @@ enum Block { NONE, TOO_CLOSE, KEEP_CLEAR }
 @onready var link_line: Line2D = $CursorLayer/LinkLine
 @onready var hint: Label = $CursorLayer/PlaceHint
 
+@onready var pinball_machine := %PinballMachine
+
 var _set: Node2D = null
 var _parts: Array[Node2D] = []
 var _index := 0
