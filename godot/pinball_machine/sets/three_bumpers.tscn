@@ -13,9 +13,11 @@ points = 10
 [node name="Bumper2" parent="." unique_id=704044506 instance=ExtResource("1_dx5uw")]
 unique_name_in_owner = true
 variant = 2
+active = false
 points = 15
 
 [node name="Bumper3" parent="." unique_id=2000440836 instance=ExtResource("1_dx5uw")]
 unique_name_in_owner = true
 variant = 3
+active = false
 points = 20
