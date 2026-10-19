@@ -85,6 +85,7 @@ size = Vector2i(535, 705)
 render_target_update_mode = 4
 
 [node name="PlayableMachine" parent="Margin/HBoxContainer/TableArea/Cabinet/TableView/SubViewport" unique_id=996228279 instance=ExtResource("3_6j37k")]
+unique_name_in_owner = true
 
 [node name="AIController" parent="Margin/HBoxContainer/TableArea/Cabinet/TableView/SubViewport" unique_id=1763298502 instance=ExtResource("6_loxr8")]
 unique_name_in_owner = true

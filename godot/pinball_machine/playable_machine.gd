@@ -1,3 +1,4 @@
+class_name PinballMachine
 extends Node
 
 @onready var playfield = %PinballMachine
@@ -26,14 +27,4 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.is_action_pressed("flipper_right"):
 			playfield.flip_right_press()
 		if event.is_action_released("flipper_right"):
-			playfield.flip_right_release()
-	if event.is_action_pressed("debug_ai_toggle"): #TODO trigger this with the start day button instead!
-		if ai_controller.active:
-			ai_controller.active = false
-			Engine.time_scale = 1.0
-			active = true
-		else:
-			ai_controller.active = true
-			Engine.time_scale = 1.5
-			active = false
-			ai_controller.start()
+			playfield.flip_right_release() 

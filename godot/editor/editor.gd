@@ -21,8 +21,34 @@ func _ready() -> void:
 	current_balance = current_balance
 
 func _on_start_day():
-	%Shop.visible = false
-	%DayInfo.visible = true
+	# Replace shop with info display
+	%Shop.visible = false;
+	%DayInfo.visible = true;
+	
+	# Activate AI disable user_input
+	%AIController.active = true;
+	%PlayableMachine.active = false;
+
+	# Run engine Faster	
+	Engine.time_scale = 1.5
+
+	# ??
+	%AIController.start();
+	
+func _on_end_day():
+	# Replace shop with info display
+	%DayInfo.visible = false;
+	%Shop.visible = true;
+	
+	# Activate user input disable AI
+	%AIController.active = false;
+	%PlayableMachine.active = true;
+
+	# Run engine normal
+	Engine.time_scale = 1.0
+
+	# ??
+	%AIController.stop();
 
 func _on_shop_item_pressed(entry: ShopEntry) -> void:
 	if placer.is_placing() or current_balance < entry.price:

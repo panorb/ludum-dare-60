@@ -1,5 +1,8 @@
 extends Node2D
 
+const MAX_PLUNGER_CHARGE_TIME: float = 1.0;
+const MIN_PLUNGER_CHARGE_TIME: float = 2.0;
+
 signal sim_end(coins: int)
 
 @onready var right_flipper_trigger := $RightFlipperTrigger
@@ -10,7 +13,6 @@ signal sim_end(coins: int)
 @onready var sim_day := $SimDayTimer
 
 @export var active := false
-
 
 func _ready() -> void:
 	right_flipper_trigger.body_entered.connect(_flipper_right_press)
@@ -99,9 +101,15 @@ func _flipper_left_release(body) -> void:
 		playfield.flip_left_release()
 
 func _flipper_charge_press(body) -> void:
-		if not active:
-			return
+	if self.active:
+		# Calculate timer for plunger to release by random time
+		var plunger_charge_time := randf_range(MIN_PLUNGER_CHARGE_TIME, MAX_PLUNGER_CHARGE_TIME);
+		# Get Timer wirh random plunge time
+		self.get_tree().create_timer(plunger_charge_time) \
+			# After change time is over release plunger
+			.timeout.connect(func(): playfield.plunger_release());
 		print("entered")
+		# Charge plunger
 		playfield.plunger_charge()
 
 func _flipper_charge_release(body) -> void:
