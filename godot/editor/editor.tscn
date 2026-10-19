@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cybra0dvpae1x" path="res://ui/dotted.png" id="7_swf4p"]
 [ext_resource type="FontFile" uid="uid://bbrpa4t0wtrn6" path="res://ui/doto.ttf" id="8_3meo8"]
 [ext_resource type="StyleBox" uid="uid://dhoiouwwwmw6f" path="res://ui/black_style_box.tres" id="8_aws7q"]
+[ext_resource type="Script" uid="uid://bxfkr1g6ocqg2" path="res://day_info/day_info.gd" id="8_dblv8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ycap1"]
 shader = ExtResource("2_fjngd")
@@ -98,6 +99,13 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
+
+[node name="DayInfo" type="PanelContainer" parent="Margin/HBoxContainer" unique_id=983540887]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("8_dblv8")
+metadata/_custom_type_script = "uid://bxfkr1g6ocqg2"
 
 [node name="Placer" type="Node" parent="." unique_id=1209718710 node_paths=PackedStringArray("table_view", "sub_viewport", "placed_parts")]
 unique_name_in_owner = true
