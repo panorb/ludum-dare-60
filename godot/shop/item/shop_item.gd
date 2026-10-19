@@ -33,6 +33,8 @@ func setup(new_stock: ShopEntryQuantity, is_right_side: bool) -> void:
 	%Price.text = str(stock.entry.price)
 	%SetSticker.visible = stock.entry.is_set
 	%NameTag.offset_transform_rotation = (float(is_right_side) * 2.0 - 1.0) * deg_to_rad(randf_range(SLANT_ANGLE_MIN, SLANT_ANGLE_MAX))
+	%Quantity.text = "x" + str(stock.quantity)
+	%Quantity.visible = stock.quantity < 100
 
 func set_active(active: bool):
 	is_active = active
