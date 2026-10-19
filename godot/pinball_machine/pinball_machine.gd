@@ -11,6 +11,7 @@ signal excitement(value: int)
 @onready var flipper_left := $FlipperLeft
 @onready var drop_out := $DropOut
 @onready var plunger := $Plunger
+@onready var allowed_dead_zones := $AllowedDeadZones
 
 var score := 0
 var highscore := 0
@@ -86,6 +87,7 @@ func plunge_ball() -> void:
 	var ball = BALL_SCENE.instantiate()
 	add_child(ball)
 	ball.position = %BallSpawn.position
+	ball.linear_velocity = Vector2(1.0, -1.0)
 	#ball.linear_velocity = Vector2(0, -2200)
 	ball.apply_central_impulse(Vector2.from_angle(%BallSpawn.rotation-PI/2) * 200)
 
@@ -102,3 +104,19 @@ func plunger_charge() -> void:
 	plunger.press()
 func plunger_release() -> void:
 	plunger.release()
+
+const LINEAR_THRESHOLD := 0.001
+const ANGULAR_THRESHOLD := 0.001
+
+func _process(delta: float) -> void:
+	for ball in self.get_tree().get_nodes_in_group('ball'):
+		if ball.linear_velocity.length_squared() < LINEAR_THRESHOLD * LINEAR_THRESHOLD and \
+		   abs(ball.angular_velocity) < ANGULAR_THRESHOLD:
+			if allowed_dead_zones.overlaps_body(ball):
+				continue
+			print("stopped! ", ball.linear_velocity)
+			_ball_stopped(ball)
+
+func _ball_stopped(ball) -> void:
+	ball.queue_free()
+	plunge_ball()

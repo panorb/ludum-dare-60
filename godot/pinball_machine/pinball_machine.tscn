@@ -12,6 +12,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eckxu"]
 size = Vector2(204, 12)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_eckxu"]
+radius = 17.117243
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhokp"]
+size = Vector2(34, 91)
+
 [node name="PinballMachine" type="Node2D" unique_id=1837038421]
 script = ExtResource("1_4760t")
 
@@ -168,3 +174,19 @@ position = Vector2(507, 655)
 [node name="OneWayGate" parent="." unique_id=1446678896 instance=ExtResource("9_qjevt")]
 position = Vector2(423, 28)
 rotation = -1.5707964
+
+[node name="AllowedDeadZones" type="Area2D" parent="." unique_id=951557312]
+collision_layer = 0
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AllowedDeadZones" unique_id=1630632530]
+position = Vector2(146, 607)
+shape = SubResource("CircleShape2D_eckxu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AllowedDeadZones" unique_id=1837683925]
+position = Vector2(351, 608)
+shape = SubResource("CircleShape2D_eckxu")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="AllowedDeadZones" unique_id=391115249]
+position = Vector2(507, 684.5)
+shape = SubResource("RectangleShape2D_rhokp")
