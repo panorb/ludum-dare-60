@@ -73,7 +73,7 @@ func _on_restart():
 var total := 0.0 # TODO remove this, it is just for printing every 2 seconds
 
 func _process(delta: float) -> void:
-	if is_simulating:
+	if active:
 		_excitement *= 2**(-delta/_excitement_half_life)
 		var memory_decay = 2**(-delta/_repetition_half_life)
 		for category in exposure:
