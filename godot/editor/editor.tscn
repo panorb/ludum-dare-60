@@ -114,6 +114,7 @@ mouse_filter = 1
 [node name="DayInfo" type="PanelContainer" parent="Margin/HBoxContainer" unique_id=983540887]
 unique_name_in_owner = true
 visible = false
+custom_minimum_size = Vector2(420, 0)
 layout_mode = 2
 script = ExtResource("8_dblv8")
 metadata/_custom_type_script = "uid://bxfkr1g6ocqg2"
