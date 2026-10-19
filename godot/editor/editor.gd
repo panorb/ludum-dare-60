@@ -1,7 +1,7 @@
 class_name Editor
 extends Control
 
-const DURATION_OF_DAY: float = 10;
+const DURATION_OF_DAY: float = 10.0;
 
 @onready var shop := %Shop
 @onready var placer: Placer = %Placer
