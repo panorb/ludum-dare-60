@@ -14,6 +14,7 @@ var today : StoryDay
 
 var todays_excitement := 0.0
 var yesterdays_excitement := 20.0
+var excitement_reference_value := 32.0
 
 var current_balance := 0:
 	set(value):
@@ -77,6 +78,7 @@ func _on_game_over(score, is_highscore) -> void:
 
 func _on_start_day():
 	todays_excitement = 0.0
+	excitement_reference_value *= 1.15
 	# Replace shop with info display
 	%Shop.visible = false;
 	%DayInfo.visible = true;
@@ -174,9 +176,11 @@ func _on_part_sold(entry: ShopEntry) -> void:
 
 func _on_score_changed(score: int):
 	%ScoreValue.text = str(min(score, 99999999)).pad_zeros(8)
-	
+
 func _on_excitement_change(excitement: float):
-	pass
+	%DayInfo.excitement_percent = excitement / excitement_reference_value
+	if excitement > excitement_reference_value:
+		excitement_reference_value = excitement
 
 func _on_total_excitement_change(excitement: float):
 	todays_excitement = excitement
