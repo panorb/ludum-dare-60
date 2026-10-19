@@ -1,9 +1,13 @@
 extends Node2D
 
-const MAX_PLUNGER_CHARGE_TIME: float = 1.0;
-const MIN_PLUNGER_CHARGE_TIME: float = 2.0;
+const MIN_PLUNGER_CHARGE_TIME: float = 0.5;
+const MAX_PLUNGER_CHARGE_TIME: float = 1.6;
 
-signal sim_end(coins: int)
+const DEFAULT_EXCITEMENT: float = 5.0;
+const DEFAULT_TOTAL_EXCITEMENT: float = 0.0;
+
+signal excitement_change(excitement: int)
+signal total_excitement_change(excitement: int)
 
 @onready var right_flipper_trigger := $RightFlipperTrigger
 @onready var left_flipper_trigger := $LeftFlipperTrigger
@@ -14,23 +18,37 @@ signal sim_end(coins: int)
 
 @export var active := false
 
+
+
+var _excitement : float = DEFAULT_EXCITEMENT :
+	get:
+		return _excitement;
+	set(excitement):
+		_excitement = excitement
+		self.excitement_change.emit(self._excitement)
+
+var _total_excitement : float = DEFAULT_TOTAL_EXCITEMENT :
+	get:
+		return _total_excitement;
+	set(total_excitement):
+		_total_excitement = total_excitement;
+		self.total_excitement_change.emit(self._total_excitement)
+
+const _excitement_half_life := 20 # how many seconds it takes for excitement to half
+const _repetition_half_life := 50 # how many seconds it takes for repeated excites to restore by half
+const _repetition_strength := 1.0 # how bad reperition is, multiplier
+
+
 func _ready() -> void:
 	right_flipper_trigger.body_entered.connect(_flipper_right_press)
 	right_flipper_trigger.body_exited.connect(_flipper_right_release)
 	left_flipper_trigger.body_entered.connect(_flipper_left_press)
 	left_flipper_trigger.body_exited.connect(_flipper_left_release)
 	plunger_trigger.body_entered.connect(_flipper_charge_press)
-	plunger_trigger.body_exited.connect(_flipper_charge_release)
+#	plunger_trigger.body_exited.connect(_flipper_charge_release)
 	playfield.excitement.connect(_exciting_event)
 	playfield.game_over.connect(_on_game_over)
 	between_game_timer.timeout.connect(_on_restart)
-	sim_day.timeout.connect(stop)
-
-var _excitement := 5.0
-var _total_excitement := 0.0
-const _excitement_half_life := 20 # how many seconds it takes for excitement to half
-const _repetition_half_life := 50 # how many seconds it takes for repeated excites to restore by half
-const _repetition_strength := 1.0 # how bad reperition is, multiplier
 
 var exposure:Dictionary[int, float]
 
@@ -70,13 +88,14 @@ func _process(delta: float) -> void:
 
 func start() -> void:
 	playfield.start()
-	sim_day.start()
 	# TODO display something about people playing the game over the day. Maybe have a clock that speeds through the day?
 
 func stop() -> void:
 	active = false
-	sim_end.emit(0) # TODO calculate amount of coins from total excitement
-	# TODO reset total excitement
+
+func reset(excitement: float = DEFAULT_EXCITEMENT, total_excitement: float = DEFAULT_TOTAL_EXCITEMENT) -> void:
+	self._excitement = excitement;
+	self._total_excitement = _total_excitement;
 
 func _flipper_right_press(body) -> void:
 		if not active:
@@ -108,11 +127,7 @@ func _flipper_charge_press(body) -> void:
 		self.get_tree().create_timer(plunger_charge_time) \
 			# After change time is over release plunger
 			.timeout.connect(func(): playfield.plunger_release());
-		print("entered")
 		# Charge plunger
 		playfield.plunger_charge()
 
-func _flipper_charge_release(body) -> void:
-		if not active:
-			return
-		playfield.plunger_release()
+		print("Charge plunger with: " + str(plunger_charge_time) + "s" )

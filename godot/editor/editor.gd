@@ -1,6 +1,8 @@
 class_name Editor
 extends Control
 
+const DURATION_OF_DAY: float = 10;
+
 @onready var shop := %Shop
 @onready var placer: Placer = %Placer
 
@@ -10,7 +12,6 @@ var current_balance := preload("res://shop/entries/saucer.tres").price + 800:
 		if is_node_ready():
 			shop.update_available_balance(value)
 var last_purchase : ShopEntry = null
-
 
 func _ready() -> void:
 	shop.start_day.connect(_on_start_day)
@@ -25,15 +26,24 @@ func _on_start_day():
 	%Shop.visible = false;
 	%DayInfo.visible = true;
 	
+	# Run engine Faster	
+	Engine.time_scale = 1.5
+
+	# Reset AI (excitement)
+	%AIController.reset();
+
 	# Activate AI disable user_input
 	%AIController.active = true;
 	%PlayableMachine.active = false;
 
-	# Run engine Faster	
-	Engine.time_scale = 1.5
-
 	# ??
 	%AIController.start();
+	
+	# Start day timer
+	## Create timer with duration of day
+	self.get_tree().create_timer(DURATION_OF_DAY) \
+		## call end day method
+		.timeout.connect(_on_end_day)
 	
 func _on_end_day():
 	# Replace shop with info display
