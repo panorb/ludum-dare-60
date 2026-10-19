@@ -15,6 +15,9 @@ radius = 28.071337
 [sub_resource type="CircleShape2D" id="CircleShape2D_rhokp"]
 radius = 1.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1s0aw"]
+radius = 16.0
+
 [node name="Saucer" type="Node2D" unique_id=280133016 groups=["part"]]
 script = ExtResource("1_4ee05")
 
@@ -43,6 +46,15 @@ collision_mask = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InnerArea2D" unique_id=1864099493]
 shape = SubResource("CircleShape2D_rhokp")
+
+[node name="HoverZone" type="Area2D" parent="." unique_id=1699967957]
+collision_layer = 262144
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoverZone" unique_id=229938259]
+shape = SubResource("CircleShape2D_1s0aw")
+debug_color = Color(1.1070073e-06, 0.74929774, 0.01962464, 0.41960785)
 
 [node name="HoldTimer" type="Timer" parent="." unique_id=1326431568]
 

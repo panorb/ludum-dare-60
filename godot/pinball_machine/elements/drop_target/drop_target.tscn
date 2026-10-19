@@ -10,6 +10,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_276rf"]
 radius = 15.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_emwxc"]
+radius = 16.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i6ibw"]
 size = Vector2(28, 6)
 
@@ -27,6 +30,15 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExclusionZone" unique_id=1870982423]
 shape = SubResource("CircleShape2D_276rf")
 debug_color = Color(0.9991961, 0, 0.1340175, 0.41960785)
+
+[node name="HoverZone" type="Area2D" parent="." unique_id=1267460651]
+collision_layer = 262144
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoverZone" unique_id=848296422]
+shape = SubResource("CircleShape2D_emwxc")
+debug_color = Color(1.1070073e-06, 0.74929774, 0.01962464, 0.41960785)
 
 [node name="SpriteFallen" type="Sprite2D" parent="." unique_id=513954002]
 visible = false

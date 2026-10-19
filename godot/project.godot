@@ -82,6 +82,7 @@ debug_ai_toggle={
 2d_physics/layer_11="Walls"
 2d_physics/layer_17="TooClose"
 2d_physics/layer_18="KeepClear"
+2d_physics/layer_19="Hover"
 
 [physics]
 

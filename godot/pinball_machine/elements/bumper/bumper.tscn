@@ -11,6 +11,9 @@ radius = 19.104973
 [sub_resource type="CircleShape2D" id="CircleShape2D_v0qbg"]
 radius = 32.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_puaod"]
+radius = 18.0
+
 [node name="Bumper" type="StaticBody2D" unique_id=58277578 groups=["no_rotate", "part"]]
 collision_layer = 1024
 collision_mask = 0
@@ -78,3 +81,12 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExclusionZone" unique_id=880538305]
 shape = SubResource("CircleShape2D_v0qbg")
 debug_color = Color(0.9991961, 0, 0.1340175, 0.41960785)
+
+[node name="HoverZone" type="Area2D" parent="." unique_id=824641539]
+collision_layer = 262144
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoverZone" unique_id=893410499]
+shape = SubResource("CircleShape2D_puaod")
+debug_color = Color(1.1070073e-06, 0.74929774, 0.01962464, 0.41960785)

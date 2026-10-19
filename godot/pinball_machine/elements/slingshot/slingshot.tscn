@@ -14,6 +14,9 @@ radius = 8.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_pvr2h"]
 radius = 51.009804
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_o72lw"]
+radius = 24.020824
+
 [node name="Slingshot" type="Node2D" unique_id=1086058136]
 script = ExtResource("3_pvr2h")
 
@@ -64,3 +67,12 @@ collision_mask = 0
 position = Vector2(-4, -3)
 shape = SubResource("CircleShape2D_pvr2h")
 debug_color = Color(0.9991961, 0, 0.1340175, 0.41960785)
+
+[node name="HoverZone" type="Area2D" parent="." unique_id=1615153157]
+collision_layer = 262144
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoverZone" unique_id=498628598]
+shape = SubResource("CircleShape2D_o72lw")
+debug_color = Color(1.1070073e-06, 0.74929774, 0.01962464, 0.41960785)
