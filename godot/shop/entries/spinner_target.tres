@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ShopEntry" format=3 uid="uid://c5vatop2f4l2m"]
 
-[ext_resource type="Texture2D" uid="uid://biyu0bcpw1ns4" path="res://icon.svg" id="1_n7ib5"]
+[ext_resource type="Texture2D" uid="uid://c384u5wwshsfo" path="res://shop/icons/spinner_icon.png" id="1_ivffb"]
 [ext_resource type="Script" uid="uid://cxrqn5fa81q5u" path="res://shop/shop_entry.gd" id="1_tlq2j"]
 [ext_resource type="PackedScene" uid="uid://dk56fc7iae3d7" path="res://pinball_machine/elements/spinner_target/spinner_target.tscn" id="2_ivffb"]
 
@@ -8,7 +8,7 @@
 script = ExtResource("1_tlq2j")
 title = "Spinner"
 price = 0
-icon = ExtResource("1_n7ib5")
+icon = ExtResource("1_ivffb")
 scene = ExtResource("2_ivffb")
 is_set = false
 priority = 65
