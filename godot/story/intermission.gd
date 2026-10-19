@@ -36,7 +36,7 @@ func _present_line():
 		return
 	
 	%Bulbs.set_lights(Bulbs.LightMode.OFF)
-	var next_line = _lines.pop_front() + "↪"
+	var next_line = _lines.pop_front() + "->"
 	
 	if line_read_tween:
 		line_read_tween.kill()
