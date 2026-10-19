@@ -21,7 +21,7 @@ radius = 16.0
 
 [node name="Saucer" type="Node2D" unique_id=280133016 groups=["part"]]
 script = ExtResource("1_4ee05")
-points = 500
+points = 50
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1209170175]
 scale = Vector2(0.2, 0.2)
