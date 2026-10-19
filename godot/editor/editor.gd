@@ -1,3 +1,4 @@
+class_name Editor
 extends Control
 
 var current_balance := preload("res://shop/entries/saucer.tres").price + 50:

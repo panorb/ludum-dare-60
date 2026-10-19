@@ -41,6 +41,10 @@ func start(scene: PackedScene) -> void:
 	#_set.process_mode = Node.PROCESS_MODE_DISABLED
 	placed_parts.add_child(_set)
 
+	# If a set or single element is adding to the tree, it will connecting with mashine
+	_set.score.connect(pinball_machine.on_score);
+	_set.excite.connect(pinball_machine.on_excite);
+
 	_parts.clear()
 	if _set.is_in_group("part"):
 		_parts.append(_set)
@@ -152,9 +156,6 @@ func _drop_current(screen_pos: Vector2) -> void:
 	_reset()
 	#placed.process_mode = Node.PROCESS_MODE_INHERIT
 	
-	# TODO @panorb do this better if you can
-	part.score.connect(pinball_machine.on_score)
-	part.excite.connect(pinball_machine.on_excite)
 	
 	placement_finished.emit(placed)
 
