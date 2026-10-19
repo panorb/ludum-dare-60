@@ -1,5 +1,7 @@
 extends PanelContainer
 
+signal start_day()
+
 # editor.gd (addition)
 const SHOP_ITEM := preload("res://shop/item/shop_item.tscn")
 

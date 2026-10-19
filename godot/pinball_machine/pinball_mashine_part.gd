@@ -4,7 +4,8 @@
 class_name PinballMashinePart
 extends Node2D
 
-signal hit(score: int, excitement: float)
+signal score(id, score: int)
+signal excite(excitement: float)
 
 @export var active = true:
 	set = set_active;
