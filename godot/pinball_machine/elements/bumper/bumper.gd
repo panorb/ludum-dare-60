@@ -5,7 +5,9 @@ extends Element
 enum BUMPER_VARIANT {
 	GREEN = 1,
 	RED,
-	YELLOW
+	YELLOW,
+	BROKEN_1,
+	BROKEN_2
 }
 
 const SECTOR := TAU / 3.0          # 120° pro Cushion

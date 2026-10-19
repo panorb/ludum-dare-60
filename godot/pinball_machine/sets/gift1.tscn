@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://6u85dibn4ddh"]
+
+[ext_resource type="Script" uid="uid://cgx536dmmleiu" path="res://pinball_machine/sets/set.gd" id="1_wpr5i"]
+[ext_resource type="PackedScene" uid="uid://btkofrqrrj4wb" path="res://pinball_machine/elements/bumper/bumper.tscn" id="2_scfdm"]
+
+[node name="Gift1" type="Node2D" unique_id=1551064212]
+script = ExtResource("1_wpr5i")
+
+[node name="Bumper1" parent="." unique_id=58277578 instance=ExtResource("2_scfdm")]
+variant = 4
+points = 2
+
+[node name="Bumper2" parent="." unique_id=642343460 instance=ExtResource("2_scfdm")]
+variant = 4
+points = 2

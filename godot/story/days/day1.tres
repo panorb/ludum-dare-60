@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="StoryDay" format=3 uid="uid://cjkym1tc2n1un"]
+
+[ext_resource type="Script" uid="uid://ba2t4smqoivon" path="res://story/story_day.gd" id="1_darlp"]
+[ext_resource type="Script" uid="uid://bmmlntcuidvb7" path="res://shop/shop_entry_quantity.gd" id="2_mwk36"]
+[ext_resource type="Resource" uid="uid://3yrhcg8sq408" path="res://shop/entries/gift1.tres" id="3_3trfe"]
+[ext_resource type="Resource" uid="uid://ku4uqvaow2q5" path="res://shop/entries/gift2.tres" id="4_xcmj7"]
+
+[sub_resource type="Resource" id="Resource_k0wv2"]
+script = ExtResource("2_mwk36")
+entry = ExtResource("3_3trfe")
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_6gxuk"]
+script = ExtResource("2_mwk36")
+entry = ExtResource("4_xcmj7")
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[resource]
+script = ExtResource("1_darlp")
+title = "Monday"
+shop_restock = Array[ExtResource("2_mwk36")]([SubResource("Resource_k0wv2"), SubResource("Resource_6gxuk")])
+metadata/_custom_type_script = "uid://ba2t4smqoivon"

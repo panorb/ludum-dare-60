@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ShopEntry" format=3 uid="uid://3yrhcg8sq408"]
+
+[ext_resource type="Texture2D" uid="uid://dws2yivea3rwr" path="res://shop/icons/gift1.png" id="1_k0wv2"]
+[ext_resource type="PackedScene" uid="uid://6u85dibn4ddh" path="res://pinball_machine/sets/gift1.tscn" id="2_k0wv2"]
+[ext_resource type="Script" uid="uid://cxrqn5fa81q5u" path="res://shop/shop_entry.gd" id="3_6fqgo"]
+
+[resource]
+script = ExtResource("3_6fqgo")
+title = "Gift Bumpers"
+price = 0
+icon = ExtResource("1_k0wv2")
+scene = ExtResource("2_k0wv2")
+metadata/_custom_type_script = "uid://cxrqn5fa81q5u"

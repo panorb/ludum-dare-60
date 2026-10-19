@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="StoryDay" format=3 uid="uid://bggde83pckssg"]
+
+[ext_resource type="Script" uid="uid://ba2t4smqoivon" path="res://story/story_day.gd" id="1_ws1l1"]
+[ext_resource type="Script" uid="uid://bmmlntcuidvb7" path="res://shop/shop_entry_quantity.gd" id="2_023ej"]
+
+[resource]
+script = ExtResource("1_ws1l1")
+title = "Saturday"
+metadata/_custom_type_script = "uid://ba2t4smqoivon"
