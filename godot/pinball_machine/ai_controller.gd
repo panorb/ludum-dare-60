@@ -73,15 +73,16 @@ func _on_restart():
 var total := 0.0 # TODO remove this, it is just for printing every 2 seconds
 
 func _process(delta: float) -> void:
-	_excitement *= 2**(-delta/_excitement_half_life)
-	var memory_decay = 2**(-delta/_repetition_half_life)
-	for category in exposure:
-		exposure[category] *= memory_decay
-	#print(_excitement)
-	total += delta # TODO remove this, it is just for printing every 2 seconds
-	if total > 2.0:
-		total -= 2.0
-		print(_excitement, " ", _total_excitement)
+	if is_simulating:
+		_excitement *= 2**(-delta/_excitement_half_life)
+		var memory_decay = 2**(-delta/_repetition_half_life)
+		for category in exposure:
+			exposure[category] *= memory_decay
+		#print(_excitement)
+		total += delta # TODO remove this, it is just for printing every 2 seconds
+		if total > 2.0:
+			total -= 2.0
+			print(_excitement, " ", _total_excitement)
 
 func start() -> void:
 	playfield.start()
@@ -92,7 +93,7 @@ func stop() -> void:
 
 func reset(excitement: float = DEFAULT_EXCITEMENT, total_excitement: float = DEFAULT_TOTAL_EXCITEMENT) -> void:
 	self._excitement = excitement;
-	self._total_excitement = _total_excitement;
+	self._total_excitement = total_excitement;
 
 func _flipper_right_press(body) -> void:
 		if not active:
