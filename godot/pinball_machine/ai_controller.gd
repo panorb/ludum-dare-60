@@ -24,14 +24,14 @@ var _excitement : float = DEFAULT_EXCITEMENT :
 	get:
 		return _excitement;
 	set(excitement):
-		self._excitement = excitement
+		_excitement = excitement
 		self.excitement_change.emit(self._excitement)
 
 var _total_excitement : float = DEFAULT_TOTAL_EXCITEMENT :
 	get:
 		return _total_excitement;
 	set(total_excitement):
-		self._total_excitement = total_excitement;
+		_total_excitement = total_excitement;
 		self.total_excitement_change.emit(self._total_excitement)
 
 const _excitement_half_life := 20 # how many seconds it takes for excitement to half
@@ -49,8 +49,6 @@ func _ready() -> void:
 	playfield.excitement.connect(_exciting_event)
 	playfield.game_over.connect(_on_game_over)
 	between_game_timer.timeout.connect(_on_restart)
-	sim_day.timeout.connect(stop)
-
 
 var exposure:Dictionary[int, float]
 

@@ -6,12 +6,6 @@ extends Node
 
 var active := true
 
-func _ready() -> void:
-	ai_controller.sim_end.connect(_on_sim_end)
-
-func _on_sim_end(coins):
-	active = true
-
 func _unhandled_input(event: InputEvent) -> void:
 	if active:
 		if event.is_action_pressed("insert_coin"):
