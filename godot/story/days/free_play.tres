@@ -11,6 +11,11 @@
 [ext_resource type="Resource" uid="uid://bm07t8x06w7pw" path="res://shop/entries/saucer.tres" id="9_xptfw"]
 [ext_resource type="Resource" uid="uid://c5vatop2f4l2m" path="res://shop/entries/spinner_target.tres" id="10_a1id1"]
 [ext_resource type="Resource" uid="uid://coe0x5j25e0tx" path="res://shop/entries/wormhole.tres" id="11_iqyiv"]
+[ext_resource type="Resource" uid="uid://ood66or8hvqm" path="res://shop/entries/sticker_aliens.tres" id="12_ked1v"]
+[ext_resource type="Resource" uid="uid://d4by8ldpiwe8c" path="res://shop/entries/sticker_lasergun.tres" id="13_xptfw"]
+[ext_resource type="Resource" uid="uid://btn5njc7ab6nv" path="res://shop/entries/sticker_meteor.tres" id="14_a1id1"]
+[ext_resource type="Resource" uid="uid://bno0ssrycswpc" path="res://shop/entries/sticker_shootingstar.tres" id="15_iqyiv"]
+[ext_resource type="Resource" uid="uid://bjoye1tfxgr5x" path="res://shop/entries/wall.tres" id="16_ad244"]
 
 [sub_resource type="Resource" id="Resource_m5s6v"]
 script = ExtResource("2_fd2jn")
@@ -66,8 +71,38 @@ entry = ExtResource("11_iqyiv")
 quantity = 999
 metadata/_custom_type_script = "uid://bmmlntcuidvb7"
 
+[sub_resource type="Resource" id="Resource_fv00s"]
+script = ExtResource("2_fd2jn")
+entry = ExtResource("12_ked1v")
+quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_mv75c"]
+script = ExtResource("2_fd2jn")
+entry = ExtResource("13_xptfw")
+quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_o2viw"]
+script = ExtResource("2_fd2jn")
+entry = ExtResource("14_a1id1")
+quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_v3rjj"]
+script = ExtResource("2_fd2jn")
+entry = ExtResource("15_iqyiv")
+quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
+[sub_resource type="Resource" id="Resource_7cpyo"]
+script = ExtResource("2_fd2jn")
+entry = ExtResource("16_ad244")
+quantity = 999
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
 [resource]
 script = ExtResource("1_x7img")
-shop_restock = Array[ExtResource("2_fd2jn")]([SubResource("Resource_m5s6v"), SubResource("Resource_o1shl"), SubResource("Resource_il8g2"), SubResource("Resource_noruv"), SubResource("Resource_ffoif"), SubResource("Resource_s7a0y"), SubResource("Resource_wm83p"), SubResource("Resource_x67wo"), SubResource("Resource_jiiap")])
+shop_restock = Array[ExtResource("2_fd2jn")]([SubResource("Resource_m5s6v"), SubResource("Resource_o1shl"), SubResource("Resource_il8g2"), SubResource("Resource_noruv"), SubResource("Resource_ffoif"), SubResource("Resource_s7a0y"), SubResource("Resource_wm83p"), SubResource("Resource_x67wo"), SubResource("Resource_jiiap"), SubResource("Resource_fv00s"), SubResource("Resource_mv75c"), SubResource("Resource_o2viw"), SubResource("Resource_v3rjj"), SubResource("Resource_7cpyo")])
 intro_text = Array[String](["You finished the game.", "You can keep playing if you want.", "This day will keep repeating."])
 metadata/_custom_type_script = "uid://ba2t4smqoivon"
