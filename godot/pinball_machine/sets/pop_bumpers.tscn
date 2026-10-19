@@ -12,17 +12,14 @@ points = 30
 
 [node name="Bumper2" parent="." unique_id=704044506 instance=ExtResource("2_kt6ur")]
 unique_name_in_owner = true
-variant = 2
 points = 30
 
 [node name="Bumper3" parent="." unique_id=2000440836 instance=ExtResource("2_kt6ur")]
 unique_name_in_owner = true
-variant = 3
 points = 30
 
 [node name="Bumper4" parent="." unique_id=421795541 instance=ExtResource("2_kt6ur")]
 unique_name_in_owner = true
-variant = 2
 points = 30
 
 [node name="Bumper5" parent="." unique_id=519259815 instance=ExtResource("2_kt6ur")]

@@ -2,10 +2,16 @@
 
 [ext_resource type="Script" uid="uid://ba2t4smqoivon" path="res://story/story_day.gd" id="1_wdsw7"]
 [ext_resource type="Script" uid="uid://bmmlntcuidvb7" path="res://shop/shop_entry_quantity.gd" id="2_dpof2"]
+[ext_resource type="Resource" uid="uid://mit1yo5e31kw" path="res://shop/entries/pop_bumpers.tres" id="3_dpof2"]
+
+[sub_resource type="Resource" id="Resource_0g62g"]
+script = ExtResource("2_dpof2")
+entry = ExtResource("3_dpof2")
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
 
 [resource]
 script = ExtResource("1_wdsw7")
 title = "Sunday"
-shop_restock = Array[ExtResource("2_dpof2")]([null])
+shop_restock = Array[ExtResource("2_dpof2")]([SubResource("Resource_0g62g")])
 intro_text = Array[String](["\"Hi man!\"", "\"Today is the last day of our little experiment.\"", "\"500 coins by the end of the week? Remember?\"", "\"It was a real pleasure working with you.\"", "\"If I don't catch you on the way out later, goodbye!\"", "\"And best of luck!\""])
 metadata/_custom_type_script = "uid://ba2t4smqoivon"

@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("1_tlq2j")
 title = "Spinner"
-price = 0
+price = 200
 icon = ExtResource("1_ivffb")
 scene = ExtResource("2_ivffb")
 is_set = false

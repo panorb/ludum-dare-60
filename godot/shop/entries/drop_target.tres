@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("1_2wj2r")
 title = "Drop Target"
-price = 0
+price = 50
 icon = ExtResource("1_nb5gp")
 scene = ExtResource("2_jbkxt")
 is_set = false

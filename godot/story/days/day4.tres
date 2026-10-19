@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://cq6pmkt3byc2j" path="res://shop/entries/accelerator.tres" id="3_nwogf"]
 [ext_resource type="Resource" uid="uid://c5vatop2f4l2m" path="res://shop/entries/spinner_target.tres" id="4_66bug"]
 [ext_resource type="Resource" uid="uid://cb042a6iks26j" path="res://shop/entries/drop_target.tres" id="5_0af7t"]
+[ext_resource type="Resource" uid="uid://coe0x5j25e0tx" path="res://shop/entries/wormhole.tres" id="6_66bug"]
 
 [sub_resource type="Resource" id="Resource_3hwby"]
 script = ExtResource("2_7e8gn")
@@ -24,9 +25,14 @@ entry = ExtResource("5_0af7t")
 quantity = 5
 metadata/_custom_type_script = "uid://bmmlntcuidvb7"
 
+[sub_resource type="Resource" id="Resource_j68xf"]
+script = ExtResource("2_7e8gn")
+entry = ExtResource("6_66bug")
+metadata/_custom_type_script = "uid://bmmlntcuidvb7"
+
 [resource]
 script = ExtResource("1_3hwby")
 title = "Thursday"
-shop_restock = Array[ExtResource("2_7e8gn")]([SubResource("Resource_3hwby"), SubResource("Resource_7e8gn"), SubResource("Resource_18p23")])
+shop_restock = Array[ExtResource("2_7e8gn")]([SubResource("Resource_3hwby"), SubResource("Resource_7e8gn"), SubResource("Resource_18p23"), SubResource("Resource_j68xf")])
 intro_text = Array[String](["(Your boss is busy today.)", "(You decide to just get to work.)"])
 metadata/_custom_type_script = "uid://ba2t4smqoivon"
