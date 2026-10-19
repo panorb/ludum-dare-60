@@ -94,6 +94,10 @@ func reset() -> void:
 	
 	# Reset score
 	self.score = 0;
+	
+	# Reset flippers
+	flipper_right.reset()
+	flipper_left.reset()
 
 func start() -> void:
 	if running:
