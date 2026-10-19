@@ -13,6 +13,14 @@ var score := 0
 var highscore := 0
 var active_balls := 0
 
+# List of all balls in game
+var balls: Array[Ball] :
+	get: return self.get_children() \
+		.filter(func(child): child is Ball)
+
+# Position of all balls
+var last_ball_positions: Dictionary[Ball, Vector2] = {}
+
 func _ready() -> void:
 	drop_out.body_entered.connect(_on_drop_out)
 	for child in get_children():

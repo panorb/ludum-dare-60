@@ -18,8 +18,6 @@ signal total_excitement_change(excitement: int)
 
 @export var active := false
 
-
-
 var _excitement : float = DEFAULT_EXCITEMENT :
 	get:
 		return _excitement;
