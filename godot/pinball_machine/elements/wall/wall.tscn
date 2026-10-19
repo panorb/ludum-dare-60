@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bvd2fbkkygawt"]
+
+[ext_resource type="Script" uid="uid://c55dcj4rrkgmt" path="res://pinball_machine/elements/element.gd" id="1_k7ia4"]
+[ext_resource type="Script" uid="uid://h3uyrspu87re" path="res://pinball_machine/elements/wall/wall.gd" id="1_y2fy7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k7ia4"]
+radius = 16.0
+
+[node name="Wall" type="Node2D" unique_id=161228143 groups=["part"]]
+script = ExtResource("1_y2fy7")
+
+[node name="CollisionPolygon2D" type="StaticBody2D" parent="." unique_id=1127593419]
+collision_layer = 1024
+collision_mask = 0
+
+[node name="Polygon2D" type="CollisionPolygon2D" parent="CollisionPolygon2D" unique_id=1811042942]
+position = Vector2(-13, -20)
+polygon = PackedVector2Array(-4, -33, 10, -20, 16, -11, 23, 4, 25, 15, 24, 26, 20, 35, 14, 45, 9, 52, 0, 60, -9, 65, -24, 70, -15, 66, -6, 60, 1, 53, 8, 43, 13, 31, 15, 21, 15, 13, 13, 3, 7, -12, 0, -23, -16, -36, -30, -41, -17, -39)
+
+[node name="Polygon2D2" type="Polygon2D" parent="CollisionPolygon2D" unique_id=2050336129]
+position = Vector2(-13, -20)
+color = Color(0.21960784, 0, 0.17254902, 1)
+polygon = PackedVector2Array(-4, -33, 10, -20, 16, -11, 23, 4, 25, 15, 24, 26, 20, 35, 14, 45, 9, 52, 0, 60, -9, 65, -24, 70, -15, 66, -6, 60, 1, 53, 8, 43, 13, 31, 15, 21, 15, 13, 13, 3, 7, -12, 0, -23, -16, -36, -30, -41, -17, -39)
+
+[node name="ExclusionZone" type="Area2D" parent="." unique_id=1409734647 groups=["disallow_placement"]]
+collision_layer = 65536
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="ExclusionZone" unique_id=1614874937]
+polygon = PackedVector2Array(-12, -9, -19, -31, -35, -46, -56, -54, -63, -68, -44, -75, -23, -71, -8, -62, 14, -38, 25, -9, 23, 11, 8, 38, -16, 57, -44, 63, -58, 57, -50, 43, -33, 34, -22, 20, -13, 4)
+script = ExtResource("1_k7ia4")
+
+[node name="HoverZone" type="Area2D" parent="." unique_id=1338224256]
+collision_layer = 262144
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoverZone" unique_id=513998515]
+shape = SubResource("CircleShape2D_k7ia4")
+debug_color = Color(1.1070073e-06, 0.74929774, 0.01962464, 0.41960785)
