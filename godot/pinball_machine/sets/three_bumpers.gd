@@ -22,7 +22,8 @@ func _on_trigger(id) -> void:
 
 func reset() -> void:
 	for child_pinball_maschine_part in self.child_pinball_maschine_parts:
-		child_pinball_maschine_part.reset();
+		if child_pinball_maschine_part.has_method("reset"):
+			child_pinball_maschine_part.reset();
 	bumpers[0].active = true
 	bumpers[1].active = false
 	bumpers[2].active = false
