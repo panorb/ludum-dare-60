@@ -25,6 +25,7 @@ func _ready() -> void:
 		if child is Element:
 			child.score.connect(on_score)
 			child.excite.connect(on_excite)
+ 
 
 func on_score(id, points):
 	if not points:
@@ -40,13 +41,14 @@ func on_excite(value) -> void:
 func _on_drop_out(body: Node2D) -> void:
 	var _active_balls = self.active_balls - 1;
 	body.queue_free()
-	if _active_balls < 1 and self.is_highscore_active:
-		print("highscore:", score)
-		var is_highscore = false
-		if score > highscore:
-			highscore = score
-			is_highscore = true
-		game_over.emit(score, is_highscore)
+	if _active_balls < 1:
+		if self.is_highscore_active:
+			print("highscore:", score)
+			var is_highscore = false
+			if score > highscore:
+				highscore = score
+				is_highscore = true
+			game_over.emit(score, is_highscore)
 		score = 0 
 		running = false
 
