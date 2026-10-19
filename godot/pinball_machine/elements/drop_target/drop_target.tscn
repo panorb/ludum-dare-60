@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://btnilrq3idw6k" path="res://pinball_machine/elements/drop_target/drop_target.gd" id="1_276rf"]
 [ext_resource type="Texture2D" uid="uid://c1boxnrt7yp4d" path="res://pinball_machine/elements/drop_target/fallen.png" id="2_x6gxg"]
 [ext_resource type="Texture2D" uid="uid://dmdtavnx5nrws" path="res://pinball_machine/elements/drop_target/standing.png" id="3_i1lxi"]
+[ext_resource type="Script" uid="uid://b26sfo7otc5te" path="res://shared/random_sound_player.gd" id="4_i1lxi"]
+[ext_resource type="AudioStream" uid="uid://boxtej6dl2ltg" path="res://pinball_machine/elements/drop_target/fallen1.wav" id="4_x6gxg"]
+[ext_resource type="AudioStream" uid="uid://d3lq14odbqaf" path="res://pinball_machine/elements/drop_target/fallen2.wav" id="5_emwxc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_276rf"]
 radius = 15.0
@@ -51,3 +54,14 @@ collision_mask = 512
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1814556565]
 position = Vector2(0, -8.5)
 shape = SubResource("RectangleShape2D_rhokp")
+
+[node name="FallenSoundPlayer" type="Node" parent="." unique_id=111330076]
+unique_name_in_owner = true
+script = ExtResource("4_i1lxi")
+metadata/_custom_type_script = "uid://b26sfo7otc5te"
+
+[node name="Fallen2" type="AudioStreamPlayer" parent="FallenSoundPlayer" unique_id=1711882397]
+stream = ExtResource("5_emwxc")
+
+[node name="Fallen1" type="AudioStreamPlayer" parent="FallenSoundPlayer" unique_id=1829067518]
+stream = ExtResource("4_x6gxg")

@@ -4,6 +4,7 @@ extends Element
 @onready var blocker_standing = $StaticBodyStanding/CollisionShape2D
 @onready var sprite_fallen = $SpriteFallen
 @onready var sprite_standing = $SpriteStanding
+@onready var fallen_sound = %FallenSoundPlayer
 
 var standing = true
 
@@ -12,12 +13,12 @@ func _ready() -> void:
 
 func _on_drop(body) -> void:
 	print("_on_drop")
-	if not standing:
-		return
-	standing = false
-	fall()
+	if standing:
+		standing = false
+		fall()
 
 func fall() -> void:
+	fallen_sound.play()
 	blocker_standing.set_deferred('disabled', true)
 	sprite_fallen.show()
 	sprite_standing.hide()
