@@ -28,8 +28,8 @@ func release() -> void:
 			print(((plunger.position.y/maximum)*force))
 			body.apply_central_impulse(Vector2.from_angle(rotation-PI/2) * body.mass * ((plunger.position.y/maximum)*force))
 
-func _init():
-	pass
+func _init() -> void:
+	category = Category.CONTROL
 
 func _physics_process(_delta: float) -> void:
 	if pressed and active:

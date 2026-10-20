@@ -4,6 +4,9 @@ extends Element
 
 @export var force := 300.0
 
+func _init() -> void:
+	category = Category.GUIDE
+
 func _physics_process(_delta: float) -> void:
 	if not active:
 		return

@@ -5,6 +5,9 @@ extends Element
 var _accumulated_angle: float
 var _angle: float
 
+func _init() -> void:
+	category = Category.SPINNER
+
 func _ready() -> void:
 	_angle = global_rotation
 
@@ -28,11 +31,11 @@ func _physics_process(delta: float) -> void:
 
 	while _accumulated_angle >= TAU:
 		_accumulated_angle -= TAU
-		score.emit(id, points)
+		score.emit(category, points)
 
 	while _accumulated_angle <= -TAU:
 		_accumulated_angle += TAU
-		score.emit(id, points)
+		score.emit(category, points)
 
 func _on_body_entered(body: Node):
 	if body is Ball:

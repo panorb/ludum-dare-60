@@ -7,6 +7,9 @@ extends Element
 
 @export var strength := 500.0;
 
+func _init() -> void:
+	category = Category.SLINGSHOT
+
 func _ready() -> void:
 	push_back_static_body_2d.body_entered.connect(_on_body_entered)
 
@@ -17,8 +20,8 @@ func _on_body_entered(body: Node2D) -> void:
 		var direction := (body.global_position - global_position).normalized()
 		body.apply_central_impulse(direction * ball.mass * self.strength) 
 		self.trigger.emit(id)
-		self.score.emit(id, points)
-		self.excite.emit(3)
+		self.score.emit(category, points)
+		self.excite.emit(category, 3)
 		
 		# play push back sound
 		push_back_audio_stream_player.play()

@@ -5,7 +5,7 @@ const BALLS_GROUP = 'ball';
 
 signal game_over(score: int, is_highscore: bool)
 signal score_changed(score: int)
-signal excitement(value: int)
+signal excitement(value: float, category: PinballMashinePart.Category)
 
 @onready var flipper_right := $FlipperRight
 @onready var flipper_left := $FlipperLeft
@@ -40,17 +40,17 @@ func _ready() -> void:
 func _on_auto_ball_timer() -> void:
 	auto_ball_launcher.active = false
 
-func on_score(id, points):
+func on_score(category, points):
 	print("pinball score! ", points)
 	if not points:
 		return
 	score = score + points
 	print(score)
 	score_changed.emit(score)
-	excitement.emit(points)
+	excitement.emit(points, category)
 
-func on_excite(value) -> void:
-	excitement.emit(value)
+func on_excite(category, value) -> void:
+	excitement.emit(value, category)
 
 func on_trigger_ball() -> void:
 	plunge_ball()

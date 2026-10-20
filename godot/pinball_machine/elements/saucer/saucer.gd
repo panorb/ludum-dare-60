@@ -12,6 +12,9 @@ var pull_force := -50.0
 var open = true
 var ball:RigidBody2D = null
 
+func _init() -> void:
+	category = Category.CAPTURE
+
 func _ready() -> void:
 	hold_timer.timeout.connect(_on_hold_timeout)
 	reset_timer.timeout.connect(_on_reset_timeout)
@@ -24,7 +27,7 @@ func _on_hold_timeout() -> void:
 	ball.apply_central_impulse(Vector2.from_angle(rotation) * ball.mass * out_force)
 	ball = null
 	trigger.emit(id)
-	score.emit(id, points)
+	score.emit(category, points)
 
 func reset():
 	hold_timer.stop()

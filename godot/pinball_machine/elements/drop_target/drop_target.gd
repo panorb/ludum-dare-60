@@ -8,6 +8,9 @@ extends Element
 
 var standing = true
 
+func _init() -> void:
+	category = Category.TARGET
+
 func _ready() -> void:
 	drop_area.body_entered.connect(_on_drop)
 
@@ -27,7 +30,7 @@ func fall() -> void:
 	blocker_standing.set_deferred('disabled', true)
 	sprite_fallen.show()
 	sprite_standing.hide()
-	score.emit(id, points)
+	score.emit(category, points)
 
 func standup() -> void:
 	blocker_standing.set_deferred('disabled', false)

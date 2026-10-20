@@ -12,11 +12,11 @@ func get_ma_pinball_children():
 			parts.append(kiddy)
 	return parts
 
-func _on_score(id, score: int):
-	self.score.emit(id, score);
+func _on_score(part_category: Category, score: int):
+	self.score.emit(part_category, score);
 
-func _on_excite(excitement: float):
-	self.excite.emit(excitement);
+func _on_excite(part_category: Category, excitement: float):
+	self.excite.emit(part_category, excitement);
 
 func _ready() -> void:
 	for child_pinball_maschine_part in self.child_pinball_maschine_parts:

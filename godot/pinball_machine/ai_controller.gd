@@ -47,21 +47,21 @@ func _ready() -> void:
 	playfield.game_over.connect(_on_game_over)
 	between_game_timer.timeout.connect(_on_restart)
 
-# Integer is score value of PinballMachinePart
+# Integer is the PinballMashinePart.Category of the exciting event
 var exposure:Dictionary[int, float]
 
-func _exciting_event(value) -> void:
+func _exciting_event(value: float, category: PinballMashinePart.Category) -> void:
 	if not active:
 		return
-	var familiarity = exposure.get(value, 0.0)
+	var familiarity = exposure.get(category, 0.0)
 	var impact = value/(1+_repetition_strength*familiarity)
 	_excitement += impact
 	_total_excitement += impact
-	exposure[value] = exposure.get(value, 0.0) + 1.0
+	exposure[category] = exposure.get(category, 0.0) + 1.0
 
 func _on_game_over(score, is_highscore) -> void:
 	if is_highscore:
-		_exciting_event(score)
+		_exciting_event(score, PinballMashinePart.Category.HIGHSCORE)
 	between_game_timer.wait_time = 0.1
 	between_game_timer.start()
 
@@ -101,7 +101,7 @@ func _flipper_right_press(body) -> void:
 		if not active:
 			return
 		playfield.flip_right_press()
-		_exciting_event(0.5)
+		_exciting_event(0.5, PinballMashinePart.Category.CONTROL)
 
 func _flipper_right_release(body) -> void:
 		if not active:
@@ -112,7 +112,7 @@ func _flipper_left_press(body) -> void:
 		if not active:
 			return
 		playfield.flip_left_press()
-		_exciting_event(0.5)
+		_exciting_event(0.5, PinballMashinePart.Category.CONTROL)
 
 func _flipper_left_release(body) -> void:
 		if not active:

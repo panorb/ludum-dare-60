@@ -11,6 +11,9 @@ enum HOLE_VARIANT {
 
 @export var force := 1000.0
 
+func _init() -> void:
+	category = Category.CAPTURE
+
 func _ready() -> void:
 	ball_detector.body_entered.connect(_on_ball_entered)
 

@@ -27,8 +27,8 @@ func release() -> void:
 func reset() -> void:
 	pressed = false
 
-func _init():
-	pass
+func _init() -> void:
+	category = Category.CONTROL
 
 func _physics_process(_delta: float) -> void:
 	if pressed and active:
