@@ -22,6 +22,7 @@ var current_balance := 0:
 		if is_node_ready():
 			shop.update_available_balance(value)
 var last_purchase : ShopEntry = null
+var _day_timer : SceneTreeTimer = null
 @export var story_days : Array[StoryDay]
 
 func _ready() -> void:
@@ -109,9 +110,14 @@ func _on_start_day():
 	
 	# Start day timer
 	## Create timer with duration of day
-	self.get_tree().create_timer(DURATION_OF_DAY) \
-		## call end day method
-		.timeout.connect(_on_end_day)
+	_day_timer = self.get_tree().create_timer(DURATION_OF_DAY)
+	## call end day method
+	_day_timer.timeout.connect(_on_end_day)
+	%DayInfo.day_progress = 0.0
+
+func _process(_delta: float) -> void:
+	if _day_timer:
+		%DayInfo.day_progress = 1.0 - _day_timer.time_left / DURATION_OF_DAY
 
 func _reset_placed_parts():
 	for child in %PlacedParts.get_children():
@@ -119,6 +125,9 @@ func _reset_placed_parts():
 			child.reset()
 
 func _on_end_day():
+	_day_timer = null
+	%DayInfo.day_progress = 1.0
+
 	# Activate user input disable AI
 	yesterdays_excitement = todays_excitement
 	current_balance += int(yesterdays_excitement*COIN_FACTOR)
