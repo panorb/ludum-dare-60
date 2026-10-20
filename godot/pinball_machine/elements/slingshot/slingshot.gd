@@ -18,7 +18,7 @@ func _on_body_entered(body: Node2D) -> void:
 		body.apply_central_impulse(direction * ball.mass * self.strength) 
 		self.trigger.emit(id)
 		self.score.emit(id, points)
-		self.excite.emit(id, 3)
+		self.excite.emit(3)
 		
 		# play push back sound
 		push_back_audio_stream_player.play()
