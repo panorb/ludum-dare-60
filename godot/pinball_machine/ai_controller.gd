@@ -51,6 +51,8 @@ func _ready() -> void:
 var exposure:Dictionary[int, float]
 
 func _exciting_event(value) -> void:
+	if not active:
+		return
 	var familiarity = exposure.get(value, 0.0)
 	var impact = value/(1+_repetition_strength*familiarity)
 	_excitement += impact
