@@ -9,22 +9,27 @@ script = ExtResource("1_40mv7")
 [node name="Bumper1" parent="." unique_id=58277578 instance=ExtResource("2_kt6ur")]
 unique_name_in_owner = true
 points = 30
+category = 1
 
 [node name="Bumper2" parent="." unique_id=704044506 instance=ExtResource("2_kt6ur")]
 unique_name_in_owner = true
 points = 30
+category = 1
 
 [node name="Bumper3" parent="." unique_id=2000440836 instance=ExtResource("2_kt6ur")]
 unique_name_in_owner = true
 points = 30
+category = 1
 
 [node name="Bumper4" parent="." unique_id=421795541 instance=ExtResource("2_kt6ur")]
 unique_name_in_owner = true
 points = 30
+category = 1
 
 [node name="Bumper5" parent="." unique_id=519259815 instance=ExtResource("2_kt6ur")]
 unique_name_in_owner = true
 points = 30
+category = 1
 
 [node name="Timer" type="Timer" parent="." unique_id=189487823]
 one_shot = true
